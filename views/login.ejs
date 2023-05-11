@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <script src="https://kit.fontawesome.com/854a317bd6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css"/>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="intro"></div>
+    <div class="back">
+        <img class="inbackimg" src="./images/The_Press_Intro_Image_4.webp">
+    </div>
+
+    <div id="menuToggle">
+        <input type="checkbox">
+        <span id="span1"></span>
+        <span id="span2"></span>
+        <span id="span3"></span>
+        <nav class="nav-menu">
+          <div class="nav1">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="design.html">Design</a>
+            <a href="contact.html">Contact</a>
+            <a id="searchnav" href="search.html">Search</a>
+            <a id="Signupnav" href="reg.html">SignUp</a>
+          </div>
+          </div>
+        </nav>
+    </div>
+    
+    
+    <div class="container" id="container">
+        <div class="form-container signup-form">
+                <form onsubmit='return validate(this)' method="post" action="/login.ejs">
+                <div class="title">Sign Up</div>
+                <div class="Social-cont">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span class="intitle">or use email for registration</span>
+                <br>             
+                <input class="init" type="text" name="username" placeholder="Username">
+                <!-- <% //if(errors&&errors.username){ %> -->
+                <div id='nameErr' class='err'>
+                    <!-- <%//=errors.username.msg%> -->
+                </div>
+                <i class="error-icon fas fa-exclamation-circle" id="er1"></i>
+                <!-- <% //}%> -->
+
+                <input class="init" type="text" name="email" placeholder="Email">
+                <!-- <% //if(errors&&errors.email){ %> -->
+                <div id='emailErr' class='err'>
+                    <!-- <%//=errors.email.msg%> -->
+                </div>
+                <i class="error-icon fas fa-exclamation-circle" id="er2"></i>
+                <% //}%>
+                <input class="init" type="text" id="phonee" name="phone" placeholder="Phone">
+                <div id='phoneerr' class='err'></div>
+                <i class="error-icon fas fa-exclamation-circle" id="er3"></i>
+
+                <input class="init" type="password" name="pass" placeholder="Password">
+                <div id='passErr' class='err'></div>
+                <i class="error-icon fas fa-exclamation-circle" id="er4"></i>
+
+                <input class="init" type="password" name="pass1" placeholder="Confirm-Password">
+                <div id='passcErr' class='err'></div>
+                <i class="error-icon fas fa-exclamation-circle" id="er5"></i>
+                <div class="checkbox-wrapper-33">
+                    <label class="checkbox">
+                      <input type="checkbox" class="checkbox__trigger visuallyhidden" id="checker" name="Role">
+                      <span class="checkbox__symbol">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 28 28" height="28px" width="28px" class="icon-checkbox" aria-hidden="true">
+                          <path d="M4 14l8 7L24 7"></path>
+                        </svg>
+                      </span>
+                      <p class="checkbox__textwrapper">Admin</p>
+                    </label>
+                  </div>
+                <button type="submit">Sign Up</button>
+
+            </form>
+        </div>
+        <div class="form-container signin-form">
+              <form onsubmit='return in_validate(this)' method="post" action="/login.ejs">
+                <div class="title">Sign In</div>
+                <div class="Social-cont">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span class="intitle">or use your account</span>
+                <br>
+                <input class="init" name="username_in" type="text" placeholder="UserName">
+                <div id='nameErr_in' class='err'></div>
+                <i class="error-icon fas fa-exclamation-circle" id="er1_in"></i>
+
+                <input class="init" name="password_in" type="password" placeholder="Password">
+                <div id='passErr_in' class='err'></div>
+                <i class="error-icon fas fa-exclamation-circle" id="er2_in"></i>
+                <button type="submit"> Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-pannel left1">
+                    <div class="title">Welcome to ReEstate</div>
+                    <p class="intitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                         empore, at dolore
+                        ipsa atque est consequuntur temporibus!</p>
+                        <button class="press1" id="signin">Sign In</button>
+                        </div>
+                        <div class="overlay-pannel right1">
+                            <div class="title">Welcome to ReEstate</div>
+                            <p class="intitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                 empore, at dolore
+                                ipsa atque est consequuntur temporibus!</p>
+                                <button class="press1" id="signup">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/scripts/signup.js"> </script>
+    <script src="/scripts/signin.js"> </script>
+</body>
+</html>
+
+<script>
+    const cursor = new MouseFollower({
+      el: null,
+      container: document.body,
+      className: "mf-cursor",
+      innerClassName: "mf-cursor-inner",
+      textClassName: "mf-cursor-text",
+      mediaClassName: "mf-cursor-media",
+      mediaBoxClassName: "mf-cursor-media-box",
+      iconSvgClassName: "mf-svgsprite",
+      iconSvgNamePrefix: "-",
+      iconSvgSrc: "",
+      dataAttr: "cursor",
+      hiddenState: "-hidden",
+      textState: "-text",
+      iconState: "-icon",
+      activeState: "-active",
+      mediaState: "-media",
+      stateDetection: {
+        "-pointer": "a,button",
+        "-hidden": "iframe"
+      },
+      visible: true,
+      visibleOnState: false,
+      speed: 1,
+      ease: "expo.out",
+      overwrite: true,
+      skewing: 0,
+      skewingText: 0,
+      skewingIcon: 2,
+      skewingMedia: 2,
+      skewingDelta: 0.001,
+      skewingDeltaMax: 0.15,
+      stickDelta: 0.15,
+      showTimeout: 20,
+      hideOnLeave: true,
+      hideTimeout: 300,
+      hideMediaTimeout: 300,
+    });
+  </script>
+
