@@ -496,11 +496,13 @@ transform: translateX(5%);
     margin-top: -10%;
   }
   .input {
+
     position: relative;
-    width: 2.5em;
-    height: 2.5em;
-    margin: 1em;
+    width: 3em;
+    height: 3em;
+    margin: 0.5em;
     border-radius: 5px;
+    font-family: 'BW Gradual Bold';
     border: none;
     outline: none;
     background-color: rgb(235, 235, 235);
@@ -537,4 +539,9 @@ transform: translateX(5%);
   .btn2 {
     font-size: 12px;
     
+  }
+
+  .getdown
+  {
+    padding-top: 50%;
   }

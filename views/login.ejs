@@ -116,6 +116,10 @@
                 <button type="submit"> Sign In</button>
                 
             </form>
+
+
+
+
             <form id="myForm2"  method="post" action="/login.ejs">
               <div class="title spaces">Forget Password</div>
               <div class="Social-cont">
@@ -157,14 +161,42 @@
             bWVzdGFtcAAyMDIzLTAyLTEzVDEzOjE1OjUxKzAwOjAwIIO3fQAAAABJRU5ErkJggg=="></image>
             </svg>
               <div class="box">
-              <input class="input" id="inp1" type="password" maxlength="1">
-              <input class="input" id="inp2" type="password" maxlength="1"> 
-              <input class="input" id="inp3" type="password" maxlength="1">
-              <input class="input" id="inp4" type="password" maxlength="1">
+              <input class="input" id="inp1" type="text" maxlength="1">
+              <input class="input" id="inp2" type="text" maxlength="1"> 
+              <input class="input" id="inp3" type="text" maxlength="1">
+              <input class="input" id="inp4" type="text" maxlength="1">
               </div>
+              <div id='codeerr' class='err'></div>
+              <i class="error-icon fas fa-exclamation-circle" id="err12"></i>
               <button class="btn1" type="submit">Submit</button>
               <button class="btn2"onclick="return Email()">Back</button>
             </form>
+
+
+            <form id="myForm4"  method="post" action="/login.ejs">
+              <div class="title getdown">Change Password</div>
+              <div class="Social-cont">
+                  <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                  <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <span class="intitle">or use your account</span>
+              <br>
+              <input class="init" name="newpass" type="text" placeholder="Password" id="newpass">
+              <div id='nameErr_in' class='err'></div>
+              <i class="error-icon fas fa-exclamation-circle" id="er1_in"></i>
+
+              <input class="init" name="confpass" type="text" placeholder="Confirm-Password" id="confpass">
+              <div id='passErr_in' class='err'></div>
+              <i class="error-icon fas fa-exclamation-circle" id="er2_in"></i>
+              <!-- <button class="forgetpass" onclick=" return forget()">Forget Password</button> -->
+              <button type="submit">Change</button>
+              
+          </form>
+
+
+
+
 
 
 

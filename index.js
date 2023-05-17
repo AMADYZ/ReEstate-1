@@ -77,11 +77,16 @@ app.post('/login.ejs',async(req,res)=>
     }
     else if(page2=='emailsend')
     {
+        let user1=await user.find().where('email').equals(Email);
+        if(user1.length==0)
+        {
+            res.send({success:"fail"});//ma3naha 2no email mesh mawgod fy db
+        }
+        else{
         const min = 1000; // Minimum value (inclusive)
         const max = 9999; // Maximum value (inclusive)
         const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
         let number=randomNumber;
-
         var transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -102,9 +107,9 @@ app.post('/login.ejs',async(req,res)=>
               console.log('Email sent: ' + info.response);
             }
           });
-          res.send({success:"success",number:number});
-
-    }
+          res.send({success:"success",number:number,email:Email});
+      }
+   }
 })
 
 
