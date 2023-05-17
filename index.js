@@ -72,12 +72,12 @@ app.post('/login.ejs',async(req,res)=>
         }
         else
         {
-            res.send({success:"success",Role:user1[0].Role})
+            res.send({success:"success",Role:user1[0].Role});
         }
     }
     else
     {
-          
+
     }
 })
 
