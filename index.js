@@ -97,8 +97,8 @@ app.post('/login.ejs',async(req,res)=>
           var mailOptions = {
             from: 'mario2100022@miuegypt.edu.eg',
             to: Email,
-            subject: 'Sending Email using Node.js',
-            text:`the number is ${number}`, 
+            subject: 'PASSWORD CHANGE VERIFICATION',
+            text:`For Changing your PASSWORD please Enter the following CODE: ${number}`, 
                 };
           transporter.sendMail(mailOptions, function(error, info){
             if (error) {
