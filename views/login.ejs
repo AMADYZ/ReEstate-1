@@ -50,7 +50,7 @@
     
     <div class="container" id="container">
         <div class="form-container signup-form">
-                <form onsubmit='return validate(this)' method="post" action="/login.ejs">
+                <form id="myForm"  method="post" action="/login.ejs">
                 <div class="title">Sign Up</div>
                 <div class="Social-cont">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -59,30 +59,19 @@
                 </div>
                 <span class="intitle">or use email for registration</span>
                 <br>             
-                <input class="init" type="text" name="username" placeholder="Username">
-                <!-- <% //if(errors&&errors.username){ %> -->
-                <div id='nameErr' class='err'>
-                    <!-- <%//=errors.username.msg%> -->
-                </div>
+                <input class="init" type="text" name="username" placeholder="Username" id="username">
+                <div id='nameErr' class='err'></div>
                 <i class="error-icon fas fa-exclamation-circle" id="er1"></i>
-                <!-- <% //}%> -->
-
-                <input class="init" type="text" name="email" placeholder="Email">
-                <!-- <% //if(errors&&errors.email){ %> -->
-                <div id='emailErr' class='err'>
-                    <!-- <%//=errors.email.msg%> -->
-                </div>
+                <input class="init" type="text" name="email" placeholder="Email" id="email"/>
+                <div id='emailErr' class='err'></div>
                 <i class="error-icon fas fa-exclamation-circle" id="er2"></i>
-                <% //}%>
                 <input class="init" type="text" id="phonee" name="phone" placeholder="Phone">
                 <div id='phoneerr' class='err'></div>
                 <i class="error-icon fas fa-exclamation-circle" id="er3"></i>
-
-                <input class="init" type="password" name="pass" placeholder="Password">
+                <input class="init" type="password" name="pass" placeholder="Password" id="pass">
                 <div id='passErr' class='err'></div>
                 <i class="error-icon fas fa-exclamation-circle" id="er4"></i>
-
-                <input class="init" type="password" name="pass1" placeholder="Confirm-Password">
+                <input class="init" type="password" name="pass1" placeholder="Confirm-Password" id="cpass">
                 <div id='passcErr' class='err'></div>
                 <i class="error-icon fas fa-exclamation-circle" id="er5"></i>
                 <div class="checkbox-wrapper-33">
@@ -97,10 +86,7 @@
                     </label>
                   </div>
                 <button type="submit">Sign Up</button>
-
-
             </form>
-           
         </div>
 
 
@@ -110,7 +96,7 @@
         
         <!-- ------------------------------   signin  ------------------------------------- -->
         <div class="form-container signin-form">
-              <form  method="post" action="/login.ejs">
+              <form id="myForm1"  method="post" action="/login.ejs">
                 <div class="title">Sign In</div>
                 <div class="Social-cont">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -119,20 +105,42 @@
                 </div>
                 <span class="intitle">or use your account</span>
                 <br>
-                <input class="init" name="username_in" type="text" placeholder="UserName">
+                <input class="init" name="username_in" type="text" placeholder="UserName" id="username_in">
                 <div id='nameErr_in' class='err'></div>
                 <i class="error-icon fas fa-exclamation-circle" id="er1_in"></i>
 
-                <input class="init" name="password_in" type="password" placeholder="Password">
+                <input class="init" name="password_in" type="password" placeholder="Password" id="password_in">
                 <div id='passErr_in' class='err'></div>
                 <i class="error-icon fas fa-exclamation-circle" id="er2_in"></i>
-                <button id="forgetpass" onclick=" return forget()">Forget Password</button>
-                <button onclick="return sendmessage(form)"> Sign In</button>
+                <button class="forgetpass" onclick=" return forget()">Forget Password</button>
+                <button type="submit"> Sign In</button>
+                
             </form>
+            <form id="myForm2"  method="post" action="/login.ejs">
+              <div class="title spaces">Forget Password</div>
+              <div class="Social-cont">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span class="intitle">or use your account</span>
+            <br>
+
+            <input class="init" name="Email" type="text" placeholder="Email" id="Email">
+            <div id='Emailerr' class='err'></div>
+            <i class="error-icon fas fa-exclamation-circle" id="err1"></i>
+            <button type="submit"> Send Email</button>
+            <button class="bbt12" onclick="return signin()">Back</button>
+            </form>
+
+
+
             
 
 
-            <script>
+
+
+            <!-- <script>
               const socket=io("http://localhost:5000/");
               socket.on("connection");
 
@@ -306,10 +314,16 @@
               }
 
 
-            </script>
+            </script> -->
 
 
-            <script src="/scripts/signin.js"> </script>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	          <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		        integrity=
+		        "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		        crossorigin="anonymous">
+	          </script>
+            
    
         </div>
         <div class="overlay-container">
@@ -327,14 +341,19 @@
                                  empore, at dolore
                                 ipsa atque est consequuntur temporibus!</p>
                                 <button class="press1" id="signup">Sign Up</button>
+                               
                 </div>
             </div>
         </div>
-    </div>
+      </div>
+      
+        
     
 </body>
 </html>
 <script src="/scripts/signup.js"> </script>
+<script src="/scripts/signin.js"> </script>
+<script src="/scripts/signin_up_error.js"> </script>
 
 
 

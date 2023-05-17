@@ -3,9 +3,6 @@ let ongo;
 let fail1,fail2;
 let check=false;
 
-
-
-
 let intro=document.querySelector('.intro');
 setTimeout(()=>
         {
@@ -57,60 +54,97 @@ setTimeout(()=>
 
 
 
-// function validateUserName1(field){
+function validateUserName1(field){
    
-//     if(field=='')
-//     {
-//         document.getElementById('nameErr_in').innerHTML='Invalid UserName';
-//         document.getElementById('er1_in').style.opacity='1';
-//         return false;
-//     }
-//     else if(field!='user'&&field!='admin')
-//     {
-//         document.getElementById('nameErr_in').innerHTML='Invalid UserName';
-//         document.getElementById('er1_in').style.opacity='1';
-//         return false; 
-//     }
-//     else{
-//     document.getElementById('nameErr_in').innerHTML='';
-//     document.getElementById('er1_in').style.opacity='0';
-//     ongo=field;//admin or user
-//     return true;
-//     }
-// }
+    if(field=='')
+    {
+        document.getElementById('nameErr_in').innerHTML='Invalid UserName';
+        document.getElementById('er1_in').style.opacity='1';
+        return false;
+    }
+    else 
+    {
+        document.getElementById('nameErr_in').innerHTML='';
+        document.getElementById('er1_in').style.opacity='0';
+        return true; 
+    }
+    
+    
+}
 
 
-// function validatepass1(field){
+function validatepass1(field){
    
-//     if(field=='')
-//     {
-//         document.getElementById('passErr_in').innerHTML='Invalid Password';
-//         document.getElementById('er2_in').style.opacity='1';
-//         return false;
-//     }
-//     else if(ongo=='user'&&field!='123')
-//     {
-//         document.getElementById('passErr_in').innerHTML='Invalid Password';
-//         document.getElementById('er2_in').style.opacity='1';
-//         return false; 
-//     }
-//     else if(ongo=='admin'&&field!='1234')
-//     {
-//         document.getElementById('passErr_in').innerHTML='Invalid Password';
-//         document.getElementById('er2_in').style.opacity='1';
-//         return false; 
-//     }
-//     else{
-//     document.getElementById('passErr_in').innerHTML='';
-//     document.getElementById('er2_in').style.opacity='0';
-//     return true;
-//     }
-// }
+    if(field=='')
+    {
+        document.getElementById('passErr_in').innerHTML='Invalid Password';
+        document.getElementById('er2_in').style.opacity='1';
+        return false;
+    }
+    else{
+    document.getElementById('passErr_in').innerHTML='';
+    document.getElementById('er2_in').style.opacity='0';
+    return true;
+    }
+}
+
+    function forget()
+    {
+        document.getElementById("myForm1").style.display="none"
+        document.getElementById("myForm2").style.display="block";
+    }
+    function signin()
+    {
+        document.getElementById("myForm2").style.display="none";
+        document.getElementById("myForm1").style.display="block";
+        document.getElementById("myForm1").style.paddingTop="40%";
+        
+    }
+
+$(document).ready(function () {
+    $('#myForm1').submit(function (event) {
+      event.preventDefault(); // Prevent form submission
+
+      const username = $('#username_in').val();
+      const pass=$('#password_in').val();
+      fail1=validateUserName1(username);
+      fail2=validatepass1(pass);
+      if(fail1&&fail2)
+        {
+            console.log("tamam");
+        }
+      // Send the AJAX request to the server
+      if(fail1&&fail2)
+      {
+      $.ajax({
+        url: '/login.ejs',
+        method: 'POST',
+        data: { username_in: username,pass_in:pass,page1:"signin"},
+        success: function (response) {
+          if (response.success == "success") 
+          {
+            sessionStorage.setItem('ongo', response.Role);
+            window.location.replace("http://localhost:5000/");
+          }
+          else
+          {
+            document.getElementById('nameErr_in').innerHTML=response.error1;
+            document.getElementById('er1_in').style.opacity='1';
+            document.getElementById('passErr_in').innerHTML=response.error2;
+            document.getElementById('er2_in').style.opacity='1';
+            
+          }
 
 
-
-
-
+          //document.querySelector('h1').innerHTML=response.data1;
+        },
+        error: function (error) {
+          console.error(error); // Log any errors that occurred
+        },
+      });
+    }
+    });
+  });
 
 
 

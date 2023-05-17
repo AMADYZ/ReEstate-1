@@ -290,7 +290,10 @@ transform: translateX(5%);
    {
     font-family: 'BW Gradual Bold';
     font-size: 30px;
-
+   }
+   .spaces
+   {
+    padding-top: 60%;
    }
    .intitle
    {
@@ -311,21 +314,24 @@ transform: translateX(5%);
     }
    }
 
-   #forgetpass
+   .forgetpass
    {
     background-color: transparent;
-    font-size: 9px;
+    font-size: 10px;
     margin-left:60%;
-    margin-bottom: 5%;
-    margin-top: -4%;
+    margin-bottom: 10%;
+    margin-top:0%;
     color: #7c142c;
     border-radius: 0px;
-    border: 0px #7c142c;
+    border: 0px #000000;
     font-weight: bold;
     padding: 0px;
     letter-spacing: 0px;
     text-transform: uppercase;
-    transition: transform 0.8s ease-in;
+   }
+   .bbt12
+   {
+    font-size: 10px;
    }
 
 

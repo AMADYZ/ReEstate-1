@@ -9,11 +9,13 @@ app.use(express.static('public'));
 require('./database/');
 const user = require('./database/schemas/user');
 const { render } = require('ejs');
+const { send } = require('process');
 app.use(express.urlencoded());
 app.use(cookieparser());
 app.use(session({ secret: 'Your_Secret_Key' }));
 const server=require('http').createServer(app);
 const io=require('socket.io')(server,{cors:{origin:"*"}});
+var nodemailer = require('nodemailer');
 
 
 let Users=[];
@@ -37,24 +39,45 @@ app.get('/login.ejs', async(req,res)=>
     const user1=await user.find({});
     Users=Array.from(user1);
     res.render('login');
-
+    
 });
 
 app.post('/login.ejs',async(req,res)=>
 {
-    let {username,email,phone,pass,Role}=req.body;
-    let{username_in,password_in}=req.body;
-    
-    if(username===undefined)//sign in
+    let{username,email,phone,pass,cpass,Role,page}=req.body;
+    let{username_in,pass_in,page1}=req.body;
+    let{Email,page2}=req.body;
+    if(page=="signup")
     {
-        if(before)
+        let user1=await user.find().where('username').equals(username).where("email").equals(email);
+        if(user1.length==0)
         {
-            res.redirect('/');
+            user.create({username,email,phone,pass,Role});
+            res.send("success");
+
+        }
+        else
+        {
+            res.send({error1:"Username is already taken",error2:"Email is already taken"});
+        }
+        user1=undefined; 
+    }
+    else if(page1=="singin")
+    {
+        let user1=await user.find().where('username').equals(username_in).where("pass").equals(pass_in);
+        if(user1.length==0)
+        {
+            //console.log("da5alnaaa");
+            res.send({error1:"Username is incorrect",error2:"Password is incorrect"});
+        }
+        else
+        {
+            res.send({success:"success",Role:user1[0].Role})
         }
     }
-    else{//sign up
-        if(before)
-        res.redirect('/');
+    else
+    {
+          
     }
 })
 
@@ -68,74 +91,74 @@ server.listen(5000,()=>
 
 
 
-io.on("connection",(socket)=>
-{
-   console.log("user connected"+socket.id);
+// io.on("connection",(socket)=>
+// {
+//    console.log("user connected"+socket.id);
    
-    socket.on("message",(data1,data2,data3,data4,page,Role)=>//2
-    {
-        if(page==="signin")
-        {
-        for(let i=0;i<Users.length;i++)
-        {
-            if(Users[i].username===data1&&Users[i].pass===data2)
-            {
-                index=i;
-                global=true;
-                break;
-            }   
-        }
-        if(global==false)
-        {
-            socket.emit("message",global,"Anything",page);//3.1
-        }
-        else{
-            socket.emit("message",global,Users[index].Role,page);//3.1
+//     socket.on("message",(data1,data2,data3,data4,page,Role)=>//2
+//     {
+//         if(page==="signin")
+//         {
+//         for(let i=0;i<Users.length;i++)
+//         
+//             if(Users[i].username===data1&&Users[i].pass===data2)
+//             {
+//                 index=i;
+//                 global=true;
+//                 break;
+//             }   
+//         }
+//         if(global==false)
+//         {
+//             socket.emit("message",global,"Anything",page);//3.1
+//         }
+//         else{
+//             socket.emit("message",global,Users[index].Role,page);//3.1
 
-        }
+//         }
       
-       before=global;
-       global=false;
-       }
+//        before=global;
+//        global=false;
+//        }
 
-       else{
+//        else{
         
-        for(let i=0;i<Users.length;i++)
-        {
-            if(Users[i].username===data1&&Users[i].email===data2)
-            {
-                userdb=true;
-                break;
-            }   
-        }
+//         for(let i=0;i<Users.length;i++)
+//         {
+//             if(Users[i].username===data1&&Users[i].email===data2)
+//             {
+//                 userdb=true;
+//                 break;
+//             }   
+//         }
        
-        if(userdb)
-        {
-            console.log("mesh hansagel")
-            socket.emit("message",false,"anything",page);//3.2
-            before=false;
-            userdb=false;
-        }
-        else
-        {
-            console.log("hansagel")
-             if(Role)
-             Role='admin'
-             else
-             Role='user'
-             username=data1;
-             email=data2;
-             phone=data3;
-             pass=data4;
-             user.create({username,email,phone,pass,Role});
-             before=true;
-             userdb=false;
-        }
-       }
-    })
+//         if(userdb)
+//         {
+//             console.log("mesh hansagel")
+//             socket.emit("message",false,"anything",page);//3.2
+//             before=false;
+//             userdb=false;
+//         }
+//         else
+//         {
+//             console.log("hansagel")
+//              if(Role)
+//              Role='admin'
+//              else
+//              Role='user'
+//              username=data1;
+//              email=data2;
+//              phone=data3;
+//              pass=data4;
+//              user.create({username,email,phone,pass,Role});
+//              before=true;
+//              userdb=false;
+//         }
+//        }
+//     })
     
 
-});
+// });
 
 
 
