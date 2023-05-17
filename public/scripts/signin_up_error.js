@@ -12,17 +12,16 @@ $(document).ready(function () {
         method: 'POST',
         data: {Email:email,page2:"emailsend"},
         success: function (response) {
-          if (response == "success") 
+          if (response.success == "success") 
           {
-
+            document.getElementById("myForm2").style.display="none";
+            document.getElementById("myForm3").style.display="block";
           }
           else
           {
-
+            document.getElementById('Emailerr').innerHTML='Check your email.';
+            document.getElementById('err1').style.opacity='1';
           }
-
-
-          //document.querySelector('h1').innerHTML=response.data1;
         },
         error: function (error) {
           console.error(error); // Log any errors that occurred
