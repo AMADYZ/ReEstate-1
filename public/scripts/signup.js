@@ -141,7 +141,7 @@ $(document).ready(function () {
       if(fail)
         {
          ongo=adorus();
-        sessionStorage.setItem('ongo', ongo.valueOf());
+         sessionStorage.setItem('ongo', ongo.valueOf());
         }
       // Send the AJAX request to the server
       if(fail)
@@ -156,10 +156,10 @@ $(document).ready(function () {
           }
           else
           {
-            document.getElementById('nameErr_in').innerHTML=response.error1;
-            document.getElementById('er1_in').style.opacity='1';
-            document.getElementById('emailErr_in').innerHTML=response.error2;
-            document.getElementById('er2_in').style.opacity='1';
+            document.getElementById('nameErr').innerHTML=response.error1;
+            document.getElementById('er1').style.opacity='1';
+            document.getElementById('emailErr').innerHTML=response.error2;
+            document.getElementById('er2').style.opacity='1';
           }
 
 

@@ -47,14 +47,15 @@ app.post('/login.ejs',async(req,res)=>
     let{username,email,phone,pass,cpass,Role,page}=req.body;
     let{username_in,pass_in,page1}=req.body;
     let{Email,page2}=req.body;
+    let{newpass,confpass,Email1}=req.body;
     if(page=="signup")
     {
         let user1=await user.find().where('username').equals(username).where("email").equals(email);
         if(user1.length==0)
         {
+            console.log("hansagel")
             user.create({username,email,phone,pass,Role});
             res.send("success");
-
         }
         else
         {
@@ -62,7 +63,7 @@ app.post('/login.ejs',async(req,res)=>
         }
         user1=undefined; 
     }
-    else if(page1=="singin")
+    else if(page1=="signin")
     {
         let user1=await user.find().where('username').equals(username_in).where("pass").equals(pass_in);
         if(user1.length==0)
@@ -109,6 +110,16 @@ app.post('/login.ejs',async(req,res)=>
           });
           res.send({success:"success",number:number,email:Email});
       }
+   }
+   else
+   {
+        let user1=await user.findOneAndUpdate(
+        {email:Email1},
+        {pass:newpass} 
+        );
+        res.send({success:"success"});
+
+
    }
 })
 
