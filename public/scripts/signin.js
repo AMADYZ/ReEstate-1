@@ -99,6 +99,12 @@ function validatepass1(field){
         document.getElementById("myForm1").style.display="block";
         document.getElementById("myForm1").style.paddingTop="40%";
     }
+    function Email()
+    {
+        document.getElementById("myForm3").style.display="none";
+        document.getElementById("myForm2").style.display="block";
+    }
+    
 
 $(document).ready(function () {
     $('#myForm1').submit(function (event) {

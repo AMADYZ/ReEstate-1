@@ -1,22 +1,18 @@
 
 $(document).ready(function () {
-    $('#myForm2').submit(function (event) {
+    $('#myForm3').submit(function (event) {
       event.preventDefault(); // Prevent form submission
-      let check="";
-      const email = $('#Email').val();
-      check=validateEmail(email);
-      if(check)
-      {
+      console.log("we are here");
+      
       $.ajax({
         url: '/login.ejs',
         method: 'POST',
-        data: {Email:email,page2:"emailsend"},
+        data: "mario",
         success: function (response) {
           if (response.success == "success") 
           {
             document.getElementById("myForm2").style.display="none";
             document.getElementById("myForm3").style.display="block";
-            sessionStorage.setItem('code',response.number);
           }
           else
           {
@@ -29,7 +25,7 @@ $(document).ready(function () {
         },
       });
     }
-    }
+    
     );
   });
   function validateEmail(input) {

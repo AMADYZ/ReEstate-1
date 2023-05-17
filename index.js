@@ -75,33 +75,33 @@ app.post('/login.ejs',async(req,res)=>
             res.send({success:"success",Role:user1[0].Role});
         }
     }
-    else
+    else if(page2=='emailsend')
     {
         const min = 1000; // Minimum value (inclusive)
         const max = 9999; // Maximum value (inclusive)
         const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
         let number=randomNumber;
 
-        // var transporter = nodemailer.createTransport({
-        //     service: 'gmail',
-        //     auth: {
-        //       user: 'mario2100022@miuegypt.edu.eg',
-        //       pass: 'mario5*9*2003'
-        //     }
-        //   });
-        //   var mailOptions = {
-        //     from: 'mario2100022@miuegypt.edu.eg',
-        //     to: Email,
-        //     subject: 'Sending Email using Node.js',
-        //     text:`the number is ${number}`, 
-        //         };
-        //   transporter.sendMail(mailOptions, function(error, info){
-        //     if (error) {
-        //       console.log(error);
-        //     } else {
-        //       console.log('Email sent: ' + info.response);
-        //     }
-        //   });
+        var transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'mario2100022@miuegypt.edu.eg',
+              pass: 'mario5*9*2003'
+            }
+          });
+          var mailOptions = {
+            from: 'mario2100022@miuegypt.edu.eg',
+            to: Email,
+            subject: 'Sending Email using Node.js',
+            text:`the number is ${number}`, 
+                };
+          transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+          });
           res.send({success:"success",number:number});
 
     }

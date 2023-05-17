@@ -472,13 +472,17 @@ transform: translateX(5%);
 
 
 
-  
+
+#myForm3
+{
+  margin-top: -2%;
+}
 
   .heading {
     position: relative;
     text-align: center;
     color: black;
-    margin-top: -20%;
+    padding-top: 50%;
     font-weight: bold;
   }
   
@@ -523,6 +527,9 @@ transform: translateX(5%);
   .btn1 {
    margin-top: 40%;
    font-size: 14px;
+   width:60%;
+   display: block;
+   margin-left: 19.5%;
     
     
   }
