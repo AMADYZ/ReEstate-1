@@ -12,6 +12,7 @@ signinButton.addEventListener('click',()=>{
 
 
  function validateUserName(field){
+    
      if(field=='')
      {
         document.getElementById('nameErr').innerHTML='You Must Enter a UserName.';
@@ -24,10 +25,10 @@ signinButton.addEventListener('click',()=>{
     return true;
     }
 }
-function validateEmail(input) {
 
+function validateEmail1(input) {
     const validRegex = /^(.+)@(.+)$/;
-  
+
     if (!validRegex.test(input) ) {
         document.getElementById('emailErr').innerHTML='Check your email.';
         document.getElementById('er2').style.opacity='1';
@@ -39,6 +40,7 @@ function validateEmail(input) {
     return true;
     }
 }
+
 function validatePhone(input) {
     const phoneno = /^\d{11}$/;
     if(!phoneno.test(input))
@@ -135,7 +137,7 @@ $(document).ready(function () {
       let ongo="";
       let fail=true;
       fail&=validateUserName(username);
-      fail&=validateEmail(email);
+      fail&=validateEmail1(email);
       fail&=validatePhone(phone);
       fail&=validatepass(pass,cpass);
       if(fail)
