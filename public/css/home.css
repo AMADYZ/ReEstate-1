@@ -97,17 +97,18 @@
             overflow: hidden;
             transition: max-height 0.5s;
             opacity: 95%;
-            margin-top: -65%;
-            
-            
-    
-    
+            margin-top: -60%;
+            margin-right: 2%;
+    }
+    .headofhead{
+        font-family: 'BW Gradual Bold';
+        font-size: 20px;
     }
     .submenuwrap.open-menu{
         max-height: 600px;
     }
     .submenu{
-        background-color:gray;
+        background-color:white;
         margin: 10%;
         border-radius: 2%;
         
