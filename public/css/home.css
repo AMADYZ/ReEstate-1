@@ -70,6 +70,131 @@
 
     }
 
+
+
+
+
+
+    
+    .user-pic{
+        width: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: transparent;
+        margin-left: 92.5%;
+        margin-top: -59%;
+        position:absolute;
+        
+        
+    }
+    
+    .submenuwrap{
+            position: absolute;
+            top:130%;
+            right: 0%;
+            width: 320px;
+            max-height: 0px;
+            overflow: hidden;
+            transition: max-height 0.5s;
+            opacity: 95%;
+            margin-top: -65%;
+            
+            
+    
+    
+    }
+    .submenuwrap.open-menu{
+        max-height: 600px;
+    }
+    .submenu{
+        background-color:gray;
+        margin: 10%;
+        border-radius: 2%;
+        
+    }     
+    .userinfo{
+        display: flex;
+        align-items: center;
+    }
+    .userinfo h3{
+        font-weight: 500;
+        color: black;
+    
+    }
+    .userinfo img{
+        width: 60px;
+        border-radius: 50%;
+        margin-right: 15px;
+    
+    
+    }
+    .submenu hr{
+        border: 0;
+        height: 1px;
+        width: 100%;
+        background-color: black;
+        margin: 15px 0 10px;
+    }
+    .submenulink{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        margin: 20px 0;
+    }
+    .submenulink p{
+        width: 100%;
+    }
+    .submenulink img{
+        width:40px;
+        background-color: grey;
+        border-radius: 50%;
+        margin: 5px;
+    
+    }
+    .submenulink span{
+        font-size: 22px;
+        transition: transform 0.5s;
+    
+    }
+    .submenulink:hover span{
+        transform: translateX(5px);
+    
+    }
+    .submenulink:hover p{
+        font-weight: 600;
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .intro
     {
         position: fixed;

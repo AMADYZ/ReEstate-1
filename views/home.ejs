@@ -51,6 +51,36 @@
                 <a id="admin-dash" href="dashboard.html">Admin</a>
               </div>
               </div>
+              <img src="./images/user-pic1.png" class="user-pic" onclick="toggleMenu()">
+              <div class="submenuwrap" id="subMenu">
+                  <div class="submenu">
+                      <div class="userinfo">
+                          <img src="images/user-pic.png">
+                          <h3>Youssef Ehab</h3>
+                      </div>
+                      <hr>
+          <a href="#" class="submenulink">
+              <img src="images/user-pic.png">
+              <p>Edit Profile</p>
+              <span></span>
+          </a>
+          <a href="#" class="submenulink">
+              <img src="images/settings.png">
+              <p>Privacy & Settings</p>
+              <span></span>
+          </a>
+          <a href="#" class="submenulink">
+              <img src="images/help.png">
+              <p>Help & Support</p>
+              <span></span>
+          </a>
+          <a href="#" class="submenulink">
+              <img src="images/logout.png">
+              <p>Logout</p>
+              <span></span>
+          </a>
+           </div>
+           </div>
             </nav>
         </div>
 
@@ -294,6 +324,10 @@
 </html>
 
 <script>
+    let subMenu=document.getElementById("subMenu");
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
     const cursor = new MouseFollower({
       el: null,
       container: document.body,
