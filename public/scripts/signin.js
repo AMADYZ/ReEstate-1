@@ -114,6 +114,7 @@ $(document).ready(function () {
       const pass=$('#password_in').val();
       fail1=validateUserName1(username);
       fail2=validatepass1(pass);
+      let toget=false;
       if(fail1&&fail2)
         {
             console.log("tamam");
@@ -129,7 +130,9 @@ $(document).ready(function () {
           if (response.success == "success") 
           {
             sessionStorage.setItem('ongo', response.Role);
-            window.location.replace("http://localhost:5000/");
+            sessionStorage.setItem('username',response.UserName);
+            window.location.replace("http://localhost:5000/"); 
+           
           }
           else
           {
@@ -148,6 +151,10 @@ $(document).ready(function () {
         },
       });
     }
+
+
+
+
     });
   });
 

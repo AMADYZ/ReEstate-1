@@ -51,15 +51,16 @@
                 <a id="admin-dash" href="dashboard.html">Admin</a>
               </div>
               </div>
-              <img src="./images/user-pic1.png" class="user-pic" onclick="toggleMenu()">
+
+              <img src="./images/user-pic1.png" class="user-pic" id="user-pic" onclick="toggleMenu()">
               <div class="submenuwrap" id="subMenu">
                   <div class="submenu">
                       <div class="userinfo">
                           <img class="piccc" src="./images/user-pic1 - Copy.png">
-                          <h3 class="headofhead">Youssef Ehab</h3>
+                          <h3 class="headofhead" id="nameofuser"></h3>
                       </div>
                       <hr class="lines">
-          <a href="#" class="submenulink">
+          <a href="./personalinfo" class="submenulink">
               <!-- <img src="./images/myprofile.png"> -->
               <p class="indownbar">MY Profile</p>
               <!-- <span></span> -->
@@ -318,15 +319,14 @@
 
 <script src="./scripts/background.js"></script>
 <script src="./scripts/aboutus.js"></script>
+<script src="./scripts/profilebutton.js"></script>
 </body>
 
 </html>
 
+
+
 <script>
-    let subMenu=document.getElementById("subMenu");
-        function toggleMenu(){
-            subMenu.classList.toggle("open-menu");
-        }
     const cursor = new MouseFollower({
       el: null,
       container: document.body,

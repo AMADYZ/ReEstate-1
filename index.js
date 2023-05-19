@@ -31,6 +31,13 @@ let userdb=false;
 
 app.get('/',(req, res) =>{
     res.render('home');
+    console.log(req.query.username)
+    
+
+})
+app.get('/personalinfo',(req,res)=>
+{
+    res.render('personalinfo');
 })
 
 app.get('/login.ejs', async(req,res)=>
@@ -52,7 +59,7 @@ app.post('/login.ejs',async(req,res)=>
         let user1=await user.find().where('username').equals(username).where("email").equals(email);
         if(user1.length==0)
         {
-            console.log("hansagel")
+            
             user.create({username,email,phone,pass,Role});
             res.send("success");
         }
@@ -67,12 +74,11 @@ app.post('/login.ejs',async(req,res)=>
         let user1=await user.find().where('username').equals(username_in).where("pass").equals(pass_in);
         if(user1.length==0)
         {
-            //console.log("da5alnaaa");
             res.send({error1:"Username is incorrect",error2:"Password is incorrect"});
         }
         else
         {
-            res.send({success:"success",Role:user1[0].Role});
+             res.send({success:"success",Role:user1[0].Role,UserName:user1[0].username});
         }
     }
     else if(page2=='emailsend')
