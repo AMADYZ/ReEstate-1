@@ -12,3 +12,14 @@ closeBtn.addEventListener('click', () =>
 })
 
 // ---------------------- BASIC JS -----------------------
+let progressCircle1 = document.querySelector(".progress-circle")
+let progressCircle2 = document.querySelector(".progress-circle")
+let radius = progressCircle1.r.baseVal.value;
+let circumference = radius * 2 * Math.PI
+progressCircle1.style.strokeDasharray = circumference
+
+setProgress(85);
+
+function setProgress(percent){
+    progressCircle1.style.strokeDashoffset =  circumference - (percent / 100) * circumference
+}

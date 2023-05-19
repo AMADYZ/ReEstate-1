@@ -315,19 +315,10 @@ main .insights svg circle{
 }
 
 main .insights .sales svg circle{
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
-
-main .insights .expenses svg circle{
+    stroke-dasharray: 230;
     stroke-dashoffset: 20;
-    stroke-dasharray: 80;
 }
 
-main .insights .income svg circle{
-    stroke-dashoffset: 35;
-    stroke-dasharray: 110;
-}
 
 main .insights .progress .number{
     position: absolute;
@@ -510,6 +501,10 @@ main .recent-orders a{
 /* ------------- MEDIA QUERIES/BREAKPOINTS --------------- */
 
 @media screen and (max-width: 1200px) {
+
+    .top{
+        margin-right: 10%;
+    }
     .container{
         width: 94%;
         grid-template-columns: 7rem auto 23rem;

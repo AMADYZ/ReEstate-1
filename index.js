@@ -34,7 +34,7 @@ app.get('/',(req, res) =>{
     console.log(req.session.user);
 })
 
-app.get('/login.ejs', async(req,res)=>
+app.get('/login(.ejs)?', async(req,res)=>
 {
     const user1=await user.find({});
     Users=Array.from(user1);
@@ -42,7 +42,7 @@ app.get('/login.ejs', async(req,res)=>
     
 });
 
-app.post('/login.ejs',async(req,res)=>
+app.post('/login(.ejs)?',async(req,res)=>
 {
     let{username,email,phone,pass,cpass,Role,page}=req.body;
     let{username_in,pass_in,page1}=req.body;
@@ -123,7 +123,20 @@ app.post('/login.ejs',async(req,res)=>
    }
 })
 
+//DashBoard Requests
+app.get('/dashboard(.ejs)',(req, res) =>{
+    res.render('dashboard');
+})
 
+
+
+app.get('/customers(.ejs)?', (req, res) =>{
+    res.render('customers')
+})
+
+app.get('/orders(.ejs)?', (req, res) =>{
+    res.render('orders')
+})
 
 
 server.listen(5000,()=>
