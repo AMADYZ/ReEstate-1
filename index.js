@@ -31,7 +31,6 @@ let userdb=false;
 
 app.get('/',(req, res) =>{
     res.render('home');
-    console.log(req.session.user);
 })
 
 app.get('/login.ejs', async(req,res)=>
