@@ -91,7 +91,7 @@ app.post('/login.ejs',async(req,res)=>
             service: 'gmail',
             auth: {
               user: 'mario2100022@miuegypt.edu.eg',
-              pass: 'mario5*9*2003'
+              pass: 'mario'
             }
           });
           var mailOptions = {
