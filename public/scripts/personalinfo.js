@@ -55,28 +55,27 @@ setTimeout(()=>
               {
                 console.log("27na tamam")
                 let Olduser=sessionStorage.getItem('username');
+                let Oldemail=sessionStorage.getItem('Email');
               // Send the AJAX request to the server
               $.ajax({
                 url: '/personalinfo',
                 method: 'POST',
-                data: { newusername: username,newemail:email,newphone:phone,olduser:Olduser},
+                data: { newusername: username,newemail:email,newphone:phone,olduser:Olduser,oldemail:Oldemail},
                 success: function (response) {
-                  if (response.success == "success") 
+                  if (response.result == "success") 
                   {
-                    sessionStorage.setItem('ongo', response.Role);
-                    sessionStorage.setItem('username',response.UserName);
-                    sessionStorage.setItem('Email',response.Email1);
-                    sessionStorage.setItem('Phone',response.Phone);
+                    sessionStorage.setItem('username',response.new1);
+                    sessionStorage.setItem('Email',response.new2);
+                    sessionStorage.setItem('Phone',response.new3);
                     window.location.replace("http://localhost:5000/"); 
-                   
+                  }
+                  else if(response.result=="failU")
+                  {
+                    document.getElementById('nameErr').innerHTML=response.err; 
                   }
                   else
                   {
-                    document.getElementById('nameErr_in').innerHTML=response.error1;
-                    document.getElementById('er1_in').style.opacity='1';
-                    document.getElementById('passErr_in').innerHTML=response.error2;
-                    document.getElementById('er2_in').style.opacity='1';
-                    
+                    document.getElementById('emailErr').innerHTML=response.err1;
                   }
         
         
