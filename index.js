@@ -33,16 +33,16 @@ app.get('/',(req, res) =>{
     res.render('home');
     console.log(req.query.username)
 })
-app.post('/personalinfo',(req,res)=>
-{
 
-
-
-   
-})
 app.get('/personalinfo',(req,res)=>
 {
     res.render('personalinfo');
+})
+app.post('/personalinfo',(req,res)=>
+{
+    let{newusername,newemail,newphone}=req.body;
+    console.log(newusername);
+   
 })
 
 app.get('/login.ejs', async(req,res)=>

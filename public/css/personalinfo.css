@@ -187,3 +187,17 @@ h3{
 .footer__logo__top{
 text-decoration: none;
 }
+
+
+
+.error-icon{
+  opacity: 0;
+   color: #7c142c;
+   margin-left:113%;
+   transform: translateY(-50px);
+  }
+  .err{
+      color: #7c142c;
+      font-size: smaller;
+      padding: 0;
+  }

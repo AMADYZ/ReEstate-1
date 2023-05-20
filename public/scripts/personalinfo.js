@@ -47,13 +47,19 @@ setTimeout(()=>
               const username = $('#username').val();
               const email=$('#email').val();
               const phone=$('#phone').val();
-
+              let fail=true;
+              fail&=validateUserName(username);
+              fail&=validateEmail1(email);
+              fail&=validatePhone(phone);
+              if(fail)
+              {
+                console.log("27na tamam")
+                let Olduser=sessionStorage.getItem('username');
               // Send the AJAX request to the server
-              
               $.ajax({
-                url: '/login.ejs',
+                url: '/personalinfo',
                 method: 'POST',
-                data: { username_in: username,pass_in:pass,page1:"signin"},
+                data: { newusername: username,newemail:email,newphone:phone,olduser:Olduser},
                 success: function (response) {
                   if (response.success == "success") 
                   {
@@ -80,6 +86,7 @@ setTimeout(()=>
                   console.error(error); // Log any errors that occurred
                 },
               });
+            }
             
         
         
@@ -89,5 +96,54 @@ setTimeout(()=>
           });
           
 
+
+
+
+          function validatePhone(input) {
+            const phoneno = /^\d{11}$/;
+            if(!phoneno.test(input))
+            {
+                document.getElementById('phoneerr').innerHTML='Check your Phone number.';
+                document.getElementById('er3').style.opacity='1';
+                return false;
+            }
+            else{
+                document.getElementById('phoneerr').innerHTML='';
+                document.getElementById('er3').style.opacity='0';
+                return true;
+                }
+        }
+
+
+        function validateEmail1(input) {
+          const validRegex = /^(.+)@(.+)$/;
+      
+          if (!validRegex.test(input) ) {
+              document.getElementById('emailErr').innerHTML='Check your email.';
+              document.getElementById('er2').style.opacity='1';
+              return false;
+          }
+          else{
+          document.getElementById('emailErr').innerHTML='';
+          document.getElementById('er2').style.opacity='0';
+          return true;
+          }
+      }
+
+
+      function validateUserName(field){
+    
+        if(field=='')
+        {
+           document.getElementById('nameErr').innerHTML='You Must Enter a UserName.';
+           document.getElementById('er1').style.opacity='1';
+           return false;
+       }
+       else{
+       document.getElementById('nameErr').innerHTML='';
+       document.getElementById('er1').style.opacity='0';
+       return true;
+       }
+   }
 
         

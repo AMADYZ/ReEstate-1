@@ -107,16 +107,22 @@
             <h2>UserName</h2>
             <input type="text" id="username" value="" value="Initial value" readonly>
             <input type="button" value="Edit UserName" class="changeuser" onclick="enableEditing(this)">
+            <div id='nameErr' class='err'></div>
+            <i class="error-icon fas fa-exclamation-circle" id="er1"></i>
             <br>
             <br>
             <h2>Email</h2>
             <input type="text" id="email" value="" value="Initial value" readonly>
             <input type="button" value="Edit Email" class="changeuser" onclick="enableEditing(this)">
+            <div id='emailErr' class='err'></div>
+            <i class="error-icon fas fa-exclamation-circle" id="er2"></i>
             <br>
             <br>
             <h2>Phone</h2>
             <input type="text" id="phone" value="" value="Initial value" readonly>
             <input type="button" value="Edit Phone" class="changeuser" onclick="enableEditing(this)">
+            <div id='phoneerr' class='err'></div>
+            <i class="error-icon fas fa-exclamation-circle" id="er3"></i>
             <br>
             <button id="changebutton" type="submit">Submit Changes</button>
             
