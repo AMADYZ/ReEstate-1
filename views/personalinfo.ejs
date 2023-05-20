@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/fonts.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <title>Setting Page UI Design</title>
     <!-- Font Awesome -->
     <link
@@ -101,19 +103,45 @@
       <div class="rightbox">
         <div class="profile">
           <h1>Personal Info</h1>
-          <h2>Full Name</h2>
-          <p>Youssef Ehab <button class="btn">update</button></p>
-          <h2>Birthday</h2>
-          <p>April 8</p>
-          <h2>Gender</h2>
-          <p>Male</p>
+          <form id="myForm" action="/personalinfo" method="post">
+            <h2>UserName</h2>
+            <input type="text" id="username" value="" value="Initial value" readonly>
+            <input type="button" value="Edit UserName" class="changeuser" onclick="enableEditing(this)">
+            <br>
+            <br>
+            <h2>Email</h2>
+            <input type="text" id="email" value="" value="Initial value" readonly>
+            <input type="button" value="Edit Email" class="changeuser" onclick="enableEditing(this)">
+            <br>
+            <br>
+            <h2>Phone</h2>
+            <input type="text" id="phone" value="" value="Initial value" readonly>
+            <input type="button" value="Edit Phone" class="changeuser" onclick="enableEditing(this)">
+            <br>
+            <button id="changebutton" type="submit">Change</button>
+            
+          </form>
+
+          <!--
+          
           <h2>Email</h2>
-          <p>example@example.com <button class="btn">update</button></p>
-          <h2>Password</h2>
-          <p>******** <button class="btn">Change</button></p>
+          <p id="email"><button class="btn">update</button></p>
+          <br>
+          <h2>Phone</h2>
+          <p id="phone">01210769800</p>
+          <br>
+          <h2>Role</h2>
+          <p id="role">User</p> -->
         </div>
       </div>
     </div>
   </body>
 </html>
-<script src="./scripts/personalinfo.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	          <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		        integrity=
+		        "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		        crossorigin="anonymous">
+	          </script>
+            <script src="./scripts/personalinfo.js"></script>

@@ -131,6 +131,8 @@ $(document).ready(function () {
           {
             sessionStorage.setItem('ongo', response.Role);
             sessionStorage.setItem('username',response.UserName);
+            sessionStorage.setItem('Email',response.Email1);
+            sessionStorage.setItem('Phone',response.Phone);
             window.location.replace("http://localhost:5000/"); 
            
           }

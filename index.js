@@ -35,6 +35,10 @@ app.get('/',(req, res) =>{
     
 
 })
+app.post('/personalinfo',(req,res)=>
+{
+   
+})
 app.get('/personalinfo',(req,res)=>
 {
     res.render('personalinfo');
@@ -78,7 +82,8 @@ app.post('/login.ejs',async(req,res)=>
         }
         else
         {
-             res.send({success:"success",Role:user1[0].Role,UserName:user1[0].username});
+             res.send({success:"success",Role:user1[0].Role,UserName:user1[0].username,
+             Email1:user1[0].email,Phone:user1[0].phone});
         }
     }
     else if(page2=='emailsend')
