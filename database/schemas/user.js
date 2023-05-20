@@ -21,6 +21,17 @@ const UserSchema= new mongoos.Schema({
         type:mongoos.SchemaTypes.String,
         required:true
     }
+    ,Pending:
+    {
+        type:mongoos.SchemaTypes.String,
+        required:true
+    }
 });
 
 module.exports=mongoos.model('users',UserSchema);
+
+
+
+
+
+

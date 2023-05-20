@@ -135,6 +135,7 @@ $(document).ready(function () {
       const pass=$('#pass').val();
       const cpass=$('#cpass').val();
       let ongo="";
+      let pending="";
       let fail=true;
       fail&=validateUserName(username);
       fail&=validateEmail1(email);
@@ -143,7 +144,16 @@ $(document).ready(function () {
       if(fail)
         {
          ongo=adorus();
-         sessionStorage.setItem('ongo', ongo.valueOf());
+         if(ongo=="admin")
+         {
+            pending="waiting";
+         }
+         else
+         {
+            pending="true";
+           
+         }
+        
         }
       // Send the AJAX request to the server
       if(fail)
@@ -151,10 +161,29 @@ $(document).ready(function () {
       $.ajax({
         url: '/login.ejs',
         method: 'POST',
-        data: { username: username,email:email,phone:phone,pass:pass,cpass:cpass,Role:ongo,page:"signup"},
+        data: { username: username,email:email,phone:phone,pass:pass,cpass:cpass,Role:ongo,page:"signup"
+        ,Pending:pending},
+
         success: function (response) {
-          if (response == "success") {
-            window.location.replace("http://localhost:5000/");
+          if (response.result == "success") {
+            if(response.pending1==="waiting")
+            {
+               document.getElementById('container').style.display="none";
+               document.getElementById('outcontainer').style.display="block"
+
+            }
+            else if(response.pending1==="true")
+            {
+                window.location.replace("http://localhost:5000/");
+                sessionStorage.setItem('ongo', response.Role);
+                sessionStorage.setItem('username',response.UserName);
+                sessionStorage.setItem('Email',response.Email);
+                sessionStorage.setItem('Phone',response.Phone);
+            }
+            else
+            {
+                console.log("not accepted by admin")
+            }
           }
           else
           {

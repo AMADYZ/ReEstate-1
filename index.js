@@ -32,8 +32,6 @@ let userdb=false;
 app.get('/',(req, res) =>{
     res.render('home');
     console.log(req.query.username)
-    
-
 })
 app.post('/personalinfo',(req,res)=>
 {
@@ -54,18 +52,20 @@ app.get('/login.ejs', async(req,res)=>
 
 app.post('/login.ejs',async(req,res)=>
 {
-    let{username,email,phone,pass,cpass,Role,page}=req.body;
+    let{username,email,phone,pass,cpass,Role,page,Pending}=req.body;
     let{username_in,pass_in,page1}=req.body;
     let{Email,page2}=req.body;
     let{newpass,confpass,Email1}=req.body;
     if(page=="signup")
     {
-        let user1=await user.find().where('username').equals(username).where("email").equals(email);
-        if(user1.length==0)
+        let user1=await user.find().where('username').equals(username);
+        let user2=await user.find().where("email").equals(email);
+        if(user1.length==0&&user2.length==0)
         {
             
-            user.create({username,email,phone,pass,Role});
-            res.send("success");
+            user.create({username,email,phone,pass,Role,Pending});
+            res.send({result:"success",pending1:Pending,UserName:username,Email:email,
+        Phone:phone,Role:Role});
         }
         else
         {
