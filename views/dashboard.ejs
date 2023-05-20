@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,12 +13,14 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <aside>
             <div class="top">
                 <div class="logo">
-                    <svg width="25" height="30" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--text-color-light);">
+                    <svg width="25" height="30" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="color: var(--text-color-light);">
                         <g clip-path="url(#clip0)">
                             <path
                                 d="M17.6056 8.59195C19.4697 6.72793 21.2813 5.51209 21.6437 5.87442C22.01 6.24079 20.7942 8.04845 18.9261 9.91247C17.0621 11.7765 15.2504 12.9923 14.8881 12.63C14.5258 12.2677 15.7416 10.456 17.6056 8.59195Z"
@@ -71,20 +74,16 @@
 
             <div class="sidebar">
                 <a class="active" href="dashboard.ejs">
-                    <i class='bx bxs-grid-alt' ></i>
+                    <i class='bx bxs-grid-alt'></i>
                     <h3>Dashboard</h3>
                 </a>
                 <a href="customers.ejs">
-                    <i class='bx bxs-user-account' ></i>
+                    <i class='bx bxs-user-account'></i>
                     <h3>Customers</h3>
                 </a>
                 <a href="orders.ejs">
                     <i class='bx bxs-package'></i>
                     <h3>Orders</h3>
-                </a>
-                <a href="#">
-                    <i class='bx bxs-right-top-arrow-circle'></i>
-                    <h3>Analytics</h3>
                 </a>
                 <a href="#">
                     <i class='bx bxs-chat'></i>
@@ -100,14 +99,10 @@
                     <h3>Reports</h3>
                 </a>
                 <a href="#">
-                    <i class='bx bxs-cog' ></i>
-                    <h3>Settings</h3>
-                </a>
-                <a href="#">
                     <i class='bx bx-plus'></i>
                     <h3>Add Product</h3>
                 </a>
-                <a href="#">
+                <a href="login.ejs">
                     <i class='bx bxs-log-out'></i>
                     <h3>Logout</h3>
                 </a>
@@ -125,14 +120,14 @@
                     <div class="middle">
                         <div class="left">
                             <h3>Avg. Property Prices</h3>
-                            <h1>$25,024</h1>
+                            <h1><%= data.avgPrice %></h1>
                         </div>
                         <div class="progress">
                             <svg>
-                                <circle cx = '38' cy = '38' r = '36' class="progress-circle"></circle>
+                                <circle cx='38' cy='38' r='36' class="propertycircle"></circle>
                             </svg>
-                            <div class="number">
-                                <p>81%</p>
+                            <div class="number-p">
+                                <p class="percentp"><%= data.percentp %>%</p>
                             </div>
                         </div>
                     </div>
@@ -140,20 +135,20 @@
                         Last 24 Hours
                     </small>
                 </div>
-                 <!-- ---------------------- END OF SALES --------------------- -->
-                 <div class="expenses">
+                <!-- ---------------------- END OF SALES --------------------- -->
+                <div class="expenses">
                     <i class='bx bxs-bar-chart-alt-2'></i>
                     <div class="middle">
                         <div class="left">
                             <h3>Users</h3>
-                            <h1>14,160</h1>
+                            <h1><%= data.noOfUsers %></h1>
                         </div>
                         <div class="progress">
                             <svg>
-                                <circle cx = '38' cy = '38' r = '36' class=""></circle>
+                                <circle cx='38' cy='38' r='36' class="userscircle"></circle>
                             </svg>
-                            <div class="number">
-                                <p>62%</p>
+                            <div class="number-u">
+                                <p class="percentu"><%= data.percentu %> %</p>
                             </div>
                         </div>
                     </div>
@@ -161,31 +156,34 @@
                         Last 24 Hours
                     </small>
                 </div>
-                 <!-- ---------------------- END OF EXPENSES --------------------- -->
-                 <div class="income">
+                <!-- ---------------------- END OF EXPENSES --------------------- -->
+                <div class="income">
                     <i class='bx bx-line-chart'></i>
                     <div class="middle">
-                        <div class="middle">
+                        <div class="left">
                             <h3>Most Posted Places</h3>
-                            <h3>1) <%= %> </h3>
-                            <h3>2) <%= %> </h3>
-                            <h3>3) <%= %> </h3>
+                            <h3>1) <%= %>
+                            </h3>
+                            <h3>2) <%= %>
+                            </h3>
+                            <h3>3) <%= %>
+                            </h3>
                         </div>
                     </div>
                     <small class="text-muted">
                         Last 24 Hours
                     </small>
                 </div>
-                 <!-- ---------------------- END OF INCOME --------------------- -->
+                <!-- ---------------------- END OF INCOME --------------------- -->
             </div>
             <!-- -------------------- END OF INSIGHTS -------------------- -->
             <div class="recent-orders">
-                <h2>Recent Orders</h2>
+                <h2>Recent Purchases</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Product Name</th>
-                            <th>Product Number</th>
+                            <th>Property Type</th>
+                            <th>Property No.</th>
                             <th>Payment</th>
                             <th>Status</th>
                         </tr>
@@ -290,7 +288,7 @@
                     </div>
                     <div class="right">
                         <div class="info">
-                            <h3>ONLINE ORDERS</h3>
+                            <h4>PROPERTIES SOLD ONLINE</h4>
                             <small class="text-muted">Last 24 Hours</small>
                         </div>
                         <h5 class="success">+39%</h5>
@@ -303,7 +301,7 @@
                     </div>
                     <div class="right">
                         <div class="info">
-                            <h3>OFFLINE ORDERS</h3>
+                            <h4>PROPERTIES SOLD OFFLINE</h4>
                             <small class="text-muted">Last 24 Hours</small>
                         </div>
                         <h5 class="danger">-17%</h5>
@@ -316,17 +314,11 @@
                     </div>
                     <div class="right">
                         <div class="info">
-                            <h3>NEW CUSTOMERS</h3>
+                            <h4>NEW AGENTS/CLIENTS</h4>
                             <small class="text-muted">Last 24 Hours</small>
                         </div>
                         <h5 class="success">+25%</h5>
                         <h3>849</h3>
-                    </div>
-                </div>
-                <div class="item add-product">
-                    <div>
-                        <i class='bx bx-plus'></i>
-                        <h3>Add Product</h3>
                     </div>
                 </div>
             </div>
@@ -335,4 +327,5 @@
 
     <script src="./scripts/admin.js"></script>
 </body>
+
 </html>

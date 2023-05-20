@@ -26,7 +26,7 @@ btnClass.addEventListener('click', () => {
             let height = createAnHTMLList.parentElement.offsetHeight
             let newheight = height + 100
         }
-    }else{
+    } else {
         let actualuser = username.value;
         let actualpass = password.value;
         if (actualuser.length != 0) {
@@ -52,4 +52,27 @@ btnClass.addEventListener('click', () => {
 })
 function removeNameFromTheList(e) {
     e.parentElement.parentElement.remove();
+    //removeUserfromDB(e)
+}
+
+//------------------------ Delete User from DB -----------------------
+function removeUserfromDB(e) {
+    console.log(e.parentElement.children[0])
+    // const data = { name: , age: 25 };
+
+    // fetch('/api/submit', {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(data)
+    // })
+    //     .then(response => response.json())
+    //     .then(responseData => {
+    //         console.log(responseData);
+    //     })
+    //     .catch(error => {
+    //         console.error('Error:', error);
+    //     });
+
 }

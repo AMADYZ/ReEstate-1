@@ -18,16 +18,9 @@ const io=require('socket.io')(server,{cors:{origin:"*"}});
 var nodemailer = require('nodemailer');
 
 
-let Users=[];
-let data1,data2;
-let global=false;
-let global2=true;
-let index=0;
-let before=false;
-let userdb=false;
-
-
-
+let Users=[]
+let randomMail = "random@gmail.com"
+let randomPhone = "0123456789"
 
 app.get('/',(req, res) =>{
     res.render('home');
@@ -66,6 +59,7 @@ app.post('/login(.ejs)?',async(req,res)=>
     else if(page1=="signin")
     {
         let user1=await user.find().where('username').equals(username_in).where("pass").equals(pass_in);
+        console.log(user1)
         if(user1.length==0)
         {
             //console.log("da5alnaaa");
@@ -122,16 +116,50 @@ app.post('/login(.ejs)?',async(req,res)=>
 
    }
 })
-
+const data = {
+    avgPrice: 15200,
+    noOfUsers: 550,
+    percentp: 75,
+    percentu: 45
+}
 //DashBoard Requests
-app.get('/dashboard(.ejs)',(req, res) =>{
-    res.render('dashboard');
+app.get('/dashboard(.ejs)?',(req, res) =>{
+    res.render('dashboard',{data});
 })
 
+//Customers Requests
+let users = {}
+app.get('/customers(.ejs)?', async(req, res) =>{
+    users = await user.find({})
+    res.render('customers', {users})
+})
 
+app.post('/customers(.ejs)?', async(req, res)=> {
+    let username_in = req.body.username_inp
+    let password_in = req.body.password_inp
+    let checkboxChecked = req.body.admin_check === 'checked'
 
-app.get('/customers(.ejs)?', (req, res) =>{
-    res.render('customers')
+    if(checkboxChecked){
+        await user.create({
+            username: username_in,
+            email: randomMail,
+            phone: randomPhone,
+            pass: password_in,
+            pfp: 'sst.jpg',
+            dateCreated: new Date(),
+            Role: 'Admin'
+        });
+    } else{
+        await user.create({
+            username: username_in,
+            email: randomMail,
+            phone: randomPhone,
+            pass: password_in,
+            pfp: 'sst.jpg',
+            dateCreated: new Date(),
+            Role: 'User'
+        });
+    }
 })
 
 app.get('/orders(.ejs)?', (req, res) =>{

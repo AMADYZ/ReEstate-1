@@ -86,10 +86,6 @@
                     <h3>Orders</h3>
                 </a>
                 <a href="#">
-                    <i class='bx bxs-right-top-arrow-circle'></i>
-                    <h3>Analytics</h3>
-                </a>
-                <a href="#">
                     <i class='bx bxs-chat'></i>
                     <h3>Messages</h3>
                     <span class="message-count">26</span>
@@ -101,10 +97,6 @@
                 <a href="#">
                     <i class='bx bx-error-circle'></i>
                     <h3>Reports</h3>
-                </a>
-                <a href="#">
-                    <i class='bx bxs-cog'></i>
-                    <h3>Settings</h3>
                 </a>
                 <a href="#">
                     <i class='bx bx-plus'></i>
@@ -120,190 +112,52 @@
         <main>
             <div class="updates" id="update-list">
                 <h2>Customers</h2>
-                <div class="update">
-                    <div class="profile">
-                        <div class="profile-photo">
-                            <img src="./images/profile-2.jpg" alt="">
-                        </div>
-                        <div class="message">
-                            <p><b> Username: Mike Tyson</b> <br> Password: 1234</p>
-                            <small class="text-muted">2 Minutes Ago</small>
-                        </div>
-                    </div>
-                    <div class="add-delete">
-                        <button class="remove" onclick="removeNameFromTheList(this)"><i class='bx bx-minus'></i></button>
-                    </div>
-                </div>
-                <div class="update">
-                    <div class="profile">
-                        <div class="profile-photo">
-                            <img src="./images/profile-3.jpg" alt="">
-                        </div>
-                        <div class="message">
-                            <p><b> Username: Mike Tyson</b> <br> Password: 1234</p>
-                            <small class="text-muted">2 Minutes Ago</small>
-                        </div>
-                    </div>
-                    <div class="add-delete">
-                        <button class="remove" onclick="removeNameFromTheList(this)"><i class='bx bx-minus'></i></button>
-                    </div>
-                </div>
-                <div class="update">
-                    <div class="profile">
-                        <div class="profile-photo">
-                            <img src="./images/profile-4.jpg" alt="">
-                        </div>
-                        <div class="message">
-                            <p><b> Username: Mike Tyson</b> <br> Password: 1234</p>
-                            <small class="text-muted">2 Minutes Ago</small>
-                        </div>
-                    </div>
-                    <div class="add-delete">
-                        <button class="remove" onclick="removeNameFromTheList(this)"><i class='bx bx-minus'></i></button>
-                    </div>
-                </div>
-            </div>
-            <!--<div class="date">
-                <input type="date">
-            </div>
-            <div class="insights">
-                <div class="sales">
-                    <i class='bx bx-list-check'></i>
-                    <div class="middle">
-                        <div class="left">
-                            <h3>Total Sales</h3>
-                            <h1>$25,024</h1>
-                        </div>
-                        <div class="progress">
-                            <svg>
-                                <circle cx = '38' cy = '38' r = '36'></circle>
-                            </svg>
-                            <div class="number">
-                                <p>81%</p>
+                <% users.forEach(function(user) { %>
+                    <div class="update">
+                        <form action="/customers.ejs" method="POST" id="myForm">
+                            <div class="profile">
+                                <div class="profile-photo">
+                                    <img src="./images/profile-3.jpg" alt="">
+                                </div>
+                                <div class="message">
+                                    <p><b> Username: <%= user.username %></b> <br>
+                                        <%= user.pass %>
+                                    </p>
+                                    <small class="text-muted">2 Minutes Ago</small>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <small class="text-muted">
-                        Last 24 Hours
-                    </small>
-                </div>
-                 ---------------------- END OF SALES ---------------------
-                 <div class="expenses">
-                    <i class='bx bxs-bar-chart-alt-2'></i>
-                    <div class="middle">
-                        <div class="left">
-                            <h3>Total Expenses</h3>
-                            <h1>$14,160</h1>
-                        </div>
-                        <div class="progress">
-                            <svg>
-                                <circle cx = '38' cy = '38' r = '36'></circle>
-                            </svg>
-                            <div class="number">
-                                <p>62%</p>
+                            <div class="add-delete">
+                                <button class="remove" onclick="removeNameFromTheList(this)"><i class='bx bx-minus'></i></button>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                    <small class="text-muted">
-                        Last 24 Hours
-                    </small>
-                </div>
-                  ---------------------- END OF EXPENSES ---------------------
-                 <div class="income">
-                    <i class='bx bx-line-chart'></i>
-                    <div class="middle">
-                        <div class="left">
-                            <h3>Total Income</h3>
-                            <h1>$10,864</h1>
-                        </div>
-                        <div class="progress">
-                            <svg>
-                                <circle cx = '38' cy = '38' r = '36'></circle>
-                            </svg>
-                            <div class="number">
-                                <p>44%</p>
-                            </div>
-                        </div>
-                    </div>
-                    <small class="text-muted">
-                        Last 24 Hours
-                    </small>
-                </div>
-                  ---------------------- END OF INCOME --------------------- 
+                <% }); %>
             </div>
-             -------------------- END OF INSIGHTS -------------------- -->
-            <!-- <div class="recent-orders">
-                <h2>Recent Orders</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Product Number</th>
-                            <th>Payment</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Foldable Mini Drone</td>
-                            <td>85631</td>
-                            <td>Due</td>
-                            <td class="warning">Pending</td>
-                            <td class="primary">Details</td>
-                        </tr>
-                        <tr>
-                            <td>Foldable Mini Drone</td>
-                            <td>85631</td>
-                            <td>Due</td>
-                            <td class="warning">Pending</td>
-                            <td class="primary">Details</td>
-                        </tr>
-                        <tr>
-                            <td>Foldable Mini Drone</td>
-                            <td>85631</td>
-                            <td>Due</td>
-                            <td class="warning">Pending</td>
-                            <td class="primary">Details</td>
-                        </tr>
-                        <tr>
-                            <td>Foldable Mini Drone</td>
-                            <td>85631</td>
-                            <td>Due</td>
-                            <td class="warning">Pending</td>
-                            <td class="primary">Details</td>
-                        </tr>
-                        <tr>
-                            <td>Foldable Mini Drone</td>
-                            <td>85631</td>
-                            <td>Due</td>
-                            <td class="warning">Pending</td>
-                            <td class="primary">Details</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <a href="#">Show All</a>
-            </div> -->
             <div class="add-user">
                 <div class="user-info">
                     <h2>Add User</h2>
-                    <div class="user-add">
-                        <div class="username">
-                            <input type="text" class="form__input" id="name" placeholder="Username" required="" />
-                            <label for="username" class="form__label">Username</label>
+                    <form id="myForm1" action="/customers.ejs" method="POST">
+                        <div class="user-add">
+                            <div class="username">
+                                <input type="text" class="form__input" name="username_inp" placeholder="Username"
+                                    required="" />
+                                <label for="username" class="form__label">Username</label>
+                            </div>
+                            <div class="password">
+                                <input type="password" class="form__input" name="password_inp" placeholder="Password"
+                                    required="" />
+                                <label for="password" class="form__label">Password</label>
+                            </div>
                         </div>
-                        <div class="password">
-                            <input type="password" class="form__input" id="pass" placeholder="Password" required="" />
-                            <label for="password" class="form__label">Password</label>
+                        <div class="add-choose">
+                            <div class="checkbox-wrapper-19">
+                                <h5>admin</h5>
+                                <input type="checkbox" id="cbtest-19" name="admin_check" />
+                                <label for="cbtest-19" class="check-box">
+                            </div>
+                            <button type="submit" class="add-btn" id="addUserButton"><i class='bx bx-plus'></i></button>
                         </div>
-                    </div>
-                    <div class="add-choose">
-                        <button class="add-btn" id="addUserButton"><i class='bx bx-plus'></i></button>
-                        <div class="checkbox-wrapper-19">
-                            <h5>admin</h5>
-                            <input type="checkbox" id="cbtest-19" />
-                            <label for="cbtest-19" class="check-box">
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </main>
@@ -397,12 +251,6 @@
                         </div>
                         <h5 class="success">+25%</h5>
                         <h3>849</h3>
-                    </div>
-                </div>
-                <div class="item add-product">
-                    <div>
-                        <i class='bx bx-plus'></i>
-                        <h3>Add Product</h3>
                     </div>
                 </div>
             </div>

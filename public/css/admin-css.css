@@ -313,14 +313,24 @@ main .insights svg circle{
     stroke-linecap: round;
     transform: translate(5px, 5px);
 }
-
+/* 
 main .insights .sales svg circle{
     stroke-dasharray: 230;
     stroke-dashoffset: 20;
+} */
+
+
+main .insights .progress .number-p{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-
-main .insights .progress .number{
+main .insights .progress .number-u{
     position: absolute;
     top: 0;
     left: 0;
