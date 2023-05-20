@@ -1,0 +1,424 @@
+@font-face {
+    font-family: 'BW Gradual';
+    src: url(fonts/BwGradualDEMO-Light.ttf);
+}
+
+@font-face {
+    font-family: 'BW Gradual Bold';
+    src: url(fonts/BwGradualDEMO-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Degular';
+    src: url(fonts/Degular-Light.ttf);
+}
+
+body {
+    font-family: 'BW Gradual';
+    background: white;
+    font-size: large;
+}
+.section-p1{
+    padding: 40px 80px;
+    
+}
+
+
+* {
+    font-family: 'BW Gradual';
+color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.intro
+    {
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #171717;
+        transition: 1s;
+    }
+    
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+
+section {
+    padding: 2rem 9%;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3.5rem;
+    border-radius: .5rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background-color:  #7c142c;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    font-size: 1.5rem;
+}
+
+.left-side{
+    padding-left: 223px;
+    padding-top: 39px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.rightside{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 204px;
+}
+.navbar{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding-top: 82px;
+}
+li{
+    margin-right: 60px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Degular';
+    color: #FCFCFC;
+}
+.logo{
+    padding-left: 14px;
+    padding-bottom: 2px;
+    color: black;
+} 
+#details .spi{
+width: 40%;
+margin-right: 50px;
+
+}
+.spi img{
+    border-radius: 10px;
+}
+.small-img-col img{
+    border-radius: 10px
+
+}
+
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+#details{
+     display: flex;
+     margin-top: 20px;
+     margin-left: 15px;
+}
+#details .spd{
+width: 50%;
+padding-top: 30px;
+}
+#details .spd h4{
+    padding: 40px 0 20px 0;
+}
+#details .spd h2{
+    font-size: 26px;
+
+}
+#details .spd span{
+line-height: 25px;
+}
+#details{
+    color:  black;
+}
+#product{
+    text-align: center;
+    margin-top: 105px;
+}
+#product .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin: 15px 0px;
+transition: 0.2s ease;
+position: relative;
+}
+#product h2{
+   font-family:'BW Gradual Bold';
+}
+
+#product .pro img{
+    width: 100%;
+    border-radius: 1rem;
+    
+
+}
+#product .pro .des{
+text-align: start;
+padding: 10px 0;
+}
+#product .pro .des span{
+font-size: 12px;
+}
+#product .pro .des h5{
+padding-top: 7px ;
+
+    font-size: 14px;
+    }
+    #product .pro .des i{
+        font-size: 12px;
+        color: black;
+        }
+        #product .pro .des h4{
+            padding-top:7px;
+            font: size 15px;
+            font-weight: 700;
+            }
+            #product .pro .des .cart{
+                width:40px;
+                height: 40px;
+                line-height: 40px;
+                border-radius: 50px;
+                font-weight: 500;
+               
+                }
+                #product .pro-container{
+                    display: flex;
+                    justify-content: space-between;
+                    padding-top: 20px;
+                    flex-wrap: wrap;
+                }
+                section-m1{
+                    margin :40px 0;
+                }
+                #banner{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center ;
+                    text-align: center;
+                    width: 100%;
+                    height: 40vh;
+                    background-size: cover;
+                    background-position: center;
+                    margin-top: 30px;
+                }
+                #banner h4{
+                    color: #fff;
+                    font-size: 16px;
+                }
+                #banner h2{
+                    color: #fff;
+                    font-size: 30px;
+                    padding: 10px 0;
+                }
+              
+                .container{
+                    width: 1000px;
+                    margin: auto;
+                    transition: 0.5s;
+                }
+                .cart{
+                    display: grid;
+                    grid-template-columns:1fr;
+                    margin-top: 100px;
+
+                }
+                .cart .shopping{
+                    position: relative;
+                    text-align: right;
+                  
+                }
+                .cart .shopping img{
+                    width: 40px;
+                }
+                .cart .shopping span{
+                    background:  black;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color:  white;
+                    position: absolute;
+                    top: -5px;
+                    left: 100%;
+                    padding: 3px 10px;
+                    font-size: 14px;
+                }
+                .card{
+                    position:absolute;
+                    top:0;
+                    left: 100%;
+                    width: 500px;
+                    background-color:rgb(36, 36, 36,0.9);
+                    height: 100vh;
+                    transition: 0.5s;
+                    border-radius: 1.75%;
+                }
+                .active .card{
+                    left: calc(100% - 500px);
+                }
+                .active .container{
+                   transform: translateX(-50x);
+                }
+                .card h1{
+                    color:  #fff;
+                    font-weight: 100;
+                    margin: 0;
+                    padding: 0 20px;
+                    height: 80px;
+                    display: flex;
+                    align-items: center;
+                }
+                .card .checkOut{
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                
+                }
+                .card .checkOut div{
+                    background-color: #7c142c;
+                    width: 100%;
+                    height: 70px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-weight: bold;
+                    cursor: pointer;
+                    color: white;
+                }
+                .card .checkOut div:nth-child(2){
+                    background-color:white;
+                    color: black;
+                }
+                .line-1 {
+                    height: 1px;
+                    background: rgb(186, 185, 185);
+                    margin-bottom: 8px;
+                  }
+                  .line-2 {
+                    height: 1px;
+                    background: rgb(186, 185, 185);
+                    margin-top: 8px;
+                  }
+                .listCard li{
+                    display: grid;
+                    grid-template-columns:  200px repeat(1, 1fr);
+                    color: black;
+                }
+                .listCard li img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .listCard .info{
+                    display: block;
+                }
+                .listCard .product{
+                    display: inline-block;  
+                    padding: 10px 5px;
+                    white-space: nowrap;
+                    font-size: 20px;
+                    color: white;
+                    font-family: 'BW Gradual Bold';
+
+                }
+                .listCard .price{
+                    display: inline-block;
+                    padding: 30px 10px;
+                    white-space: nowrap;
+                    font-size: 20px;
+                    color: white;
+                    font-family: 'BW Gradual Bold';
+                }
+                 @media screen and (max-width: 1023px){
+                     #product .pro-container{
+                        display: flex;
+                        justify-content: center;
+                        padding-top: 20px;
+                        flex-wrap:wrap;
+                    }
+                    #product .pro{
+                       
+                        margin: 15px ;
+                    } 
+                    #banner {
+                        
+                        height: 35vh;
+                       
+                    }
+                    
+                    #details{
+                        display: flex;
+                        flex-direction: column;
+                    }    
+                    #details .spi{
+                        width: 100%;
+                        margin-right: 0px;
+                    }
+                    #details .spd{
+                        width: 100%;
+                      
+                    }
+                    }
+                
+.pro:hover{
+box-shadow: black;
+}
+ @media screen and (max-width: 1040px){
+    #product .pro-container{
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+        flex-wrap:wrap;
+    }
+    #product .pro{
+       
+        margin: 15px ;
+    } 
+    #banner {
+        
+        height: 35vh;
+       
+    }
+    
+    #details{
+        display: flex;
+        flex-direction: column;
+    }    
+    #details .spi{
+        width: 100%;
+        margin-right: 0px;
+    }
+    #details .spd{
+        width: 100%;
+      
+    }
+
+} 
