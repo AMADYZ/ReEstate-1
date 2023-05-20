@@ -35,6 +35,9 @@ app.get('/',(req, res) =>{
 })
 app.post('/personalinfo',(req,res)=>
 {
+
+
+
    
 })
 app.get('/personalinfo',(req,res)=>
@@ -102,7 +105,7 @@ app.post('/login.ejs',async(req,res)=>
             service: 'gmail',
             auth: {
               user: 'mario2100022@miuegypt.edu.eg',
-              pass: 'mario'
+              pass: 'mario5*9*2003'
             }
           });
           var mailOptions = {
