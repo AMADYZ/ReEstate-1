@@ -17,14 +17,14 @@ const UserSchema= new mongoos.Schema({
         type: mongoos.SchemaTypes.String,
         required: true
     },
-    pfp: {
-        type: mongoose.SchemaTypes.String,
-        required: true
-    },
-    dateCreated: {
-        type: mongoose.SchemaTypes.Date,
-        required: true
-    },
+    // pfp: {
+    //     type: mongoose.SchemaTypes.String,
+    //     required: true
+    // },
+    // dateCreated: {
+    //     type: mongoose.SchemaTypes.Date,
+    //     required: true
+    // },
     Role:
     {
         type: mongoos.SchemaTypes.String,
