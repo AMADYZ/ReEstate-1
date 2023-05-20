@@ -51,6 +51,36 @@
                 <a id="admin-dash" href="dashboard.ejs">Admin</a>
               </div>
               </div>
+
+              <img src="./images/user-pic1.png" class="user-pic" id="user-pic" onclick="toggleMenu()">
+              <div class="submenuwrap" id="subMenu">
+                  <div class="submenu">
+                      <div class="userinfo">
+                          <img class="piccc" src="./images/user-pic1 - Copy.png">
+                          <h3 class="headofhead" id="nameofuser"></h3>
+                      </div>
+                      <hr class="lines">
+          <a href="./personalinfo" class="submenulink">
+              <!-- <img src="./images/myprofile.png"> -->
+              <p class="indownbar">MY Profile</p>
+              <!-- <span></span> -->
+          </a>
+          <!-- <a href="#" class="submenulink">
+              <img src="images/settings.png">
+              <p>Privacy & Settings</p>
+              <span></span>
+          </a> -->
+          <a href="#" class="submenulink">
+              <!-- <img src="images/help.png"> -->
+              <p class="indownbar marginss">Help & Support</p>
+          </a>
+          <a href="#" class="submenulink">
+              <!-- <img src="images/logout.png"> -->
+              <p class="indownbar marginss1">Logout</p>
+              <!-- <span></span> -->
+          </a>
+           </div>
+           </div>
             </nav>
         </div>
 
@@ -289,9 +319,12 @@
 
 <script src="./scripts/background.js"></script>
 <script src="./scripts/aboutus.js"></script>
+<script src="./scripts/profilebutton.js"></script>
 </body>
 
 </html>
+
+
 
 <script>
     const cursor = new MouseFollower({

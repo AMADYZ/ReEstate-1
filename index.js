@@ -24,7 +24,17 @@ let randomPhone = "0123456789"
 
 app.get('/',(req, res) =>{
     res.render('home');
-    console.log(req.session.user);
+    console.log(req.query.username)
+    
+
+})
+app.post('/personalinfo',(req,res)=>
+{
+   
+})
+app.get('/personalinfo',(req,res)=>
+{
+    res.render('personalinfo');
 })
 
 app.get('/login(.ejs)?', async(req,res)=>
@@ -46,7 +56,7 @@ app.post('/login(.ejs)?',async(req,res)=>
         let user1=await user.find().where('username').equals(username).where("email").equals(email);
         if(user1.length==0)
         {
-            console.log("hansagel")
+            
             user.create({username,email,phone,pass,Role});
             res.send("success");
         }
@@ -62,12 +72,12 @@ app.post('/login(.ejs)?',async(req,res)=>
         console.log(user1)
         if(user1.length==0)
         {
-            //console.log("da5alnaaa");
             res.send({error1:"Username is incorrect",error2:"Password is incorrect"});
         }
         else
         {
-            res.send({success:"success",Role:user1[0].Role});
+             res.send({success:"success",Role:user1[0].Role,UserName:user1[0].username,
+             Email1:user1[0].email,Phone:user1[0].phone});
         }
     }
     else if(page2=='emailsend')
@@ -86,7 +96,7 @@ app.post('/login(.ejs)?',async(req,res)=>
             service: 'gmail',
             auth: {
               user: 'mario2100022@miuegypt.edu.eg',
-              pass: 'mario5*9*2003'
+              pass: 'mario'
             }
           });
           var mailOptions = {
