@@ -1,19 +1,10 @@
 const property = require('../database/schemas/property')
-const {client} = require('../database/index')
-function getAvgPrices(){
-    const db = client.db('RealEstate')
-    const collection = db.collection('properties')
-    const propertyArr = collection.find({}).toArray((err, docs)=>{
-        if(err){
-            console.log('Error occured while retrieving data')
-            process.exit(0)
-        }
-    })
-    const totalPrice = propertyArr.reduce((sum,property)=> {
-        sum + property.price,0
-    })
-    const avgPrice = totalPrice/propertyArr.length
-    return avgPrice
+const allProp = []
+async function getAvgPrice (){
+    const props =await property.find({});
+    allProp = Array.from(props);
+    const totalPrice = allProp.reduce((sum , item) => sum + item.price, 0)
+    console.log(totalPrice/allProp.length)
+    return totalPrice/allProp.length
 }
-
-module.exports = getAvgPrices
+module.exports = getAvgPrice

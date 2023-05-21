@@ -40,3 +40,5 @@ const propertySchema = new Schema({
     // }
 
 })
+
+module.exports=mongoose.model('property',propertySchema);
