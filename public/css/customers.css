@@ -125,7 +125,7 @@ main .updates .add-delete .remove:active{
 
 main .add-user{
   flex: 1;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-left: 5rem;
 }
 
@@ -134,13 +134,16 @@ main .add-user h2{
 }
 
 main .add-user .user-info{
-    margin-top: 2rem;
+    margin-top: 0.2rem;
     background: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
     padding: 10rem;
+}
+main .add-user .user-info h2{
+  text-align: center;
 }
 
 main .add-user .user-info:hover{
@@ -152,10 +155,10 @@ main .add-user .user-info .user-add{
     flex-direction: column;
 }
 
-main .add-user .user-info .user-add .username , main .add-user .user-info .user-add .password{
+main .add-user .user-info .user-add .username , main .add-user .user-info .user-add .password,main .add-user .user-info .user-add .email,main .add-user .user-info .user-add .phone{
     margin-bottom: 2rem;
 }
-main .add-user .user-info .user-add .username input , main .add-user .user-info .user-add .password input{
+main .add-user .user-info .user-add .username input, main .add-user .user-info .user-add .password input,main .add-user .user-info .user-add .email input,main .add-user .user-info .user-add .phone input{
     border: 1px solid var(--color-dark);
     border-radius: 10px;
     padding-left: .6rem;
