@@ -81,10 +81,6 @@
                     <i class='bx bxs-user-account'></i>
                     <h3>Customers</h3>
                 </a>
-                <a href="orders.ejs">
-                    <i class='bx bxs-package'></i>
-                    <h3>Orders</h3>
-                </a>
                 <a href="#">
                     <i class='bx bxs-chat'></i>
                     <h3>Messages</h3>
@@ -96,21 +92,21 @@
                 </a>
                 <a href="#">
                     <i class='bx bx-error-circle'></i>
-                    <h3>Reports</h3>
+                    <h3>Accept Pending Admins</h3>
                 </a>
                 <a href="#">
                     <i class='bx bx-plus'></i>
-                    <h3>Add Product</h3>
+                    <h3>Add Property</h3>
                 </a>
-                <a href="#">
+                <a href="/home">
                     <i class='bx bxs-log-out'></i>
-                    <h3>Logout</h3>
+                    <h3>Exit</h3>
                 </a>
             </div>
         </aside>
         <!--=================== END OF ASIDE ===================-->
         <main>
-            <div class="updates" id="update-list">
+            <!-- <div class="updates" id="update-list">
                 <h2>Customers</h2>
                 <% users.forEach(function(user) { %>
                     <div class="update">
@@ -132,7 +128,7 @@
                         </form>
                     </div>
                 <% }); %>
-            </div>
+            </div> -->
             <div class="add-user">
                 <div class="user-info">
                     <h2>Add User</h2>
@@ -140,12 +136,22 @@
                         <div class="user-add">
                             <div class="username">
                                 <input type="text" class="form__input" name="username_inp" placeholder="Username"
-                                    required="" />
+                                    required />
                                 <label for="username" class="form__label">Username</label>
+                            </div>
+                            <div class="email">
+                                <input type="text" class="form__input" name="email_inp" placeholder="Email"
+                                    required />
+                                <label for="username" class="form__label">Email</label>
+                            </div>
+                            <div class="phone">
+                                <input type="text" class="form__input" name="phone_inp" placeholder="Phone"
+                                    required />
+                                <label for="username" class="form__label">Phone</label>
                             </div>
                             <div class="password">
                                 <input type="password" class="form__input" name="password_inp" placeholder="Password"
-                                    required="" />
+                                    required />
                                 <label for="password" class="form__label">Password</label>
                             </div>
                         </div>

@@ -19,13 +19,10 @@ var nodemailer = require('nodemailer');
 
 
 let Users=[]
-let randomMail = "random@gmail.com"
-let randomPhone = "0123456789"
 
 app.get('/',(req, res) =>{
     res.render('home');
     console.log(req.query.username)
-    
 
 })
 app.post('/personalinfo',(req,res)=>
@@ -147,13 +144,15 @@ app.get('/customers(.ejs)?', async(req, res) =>{
 app.post('/customers(.ejs)?', async(req, res)=> {
     let username_in = req.body.username_inp
     let password_in = req.body.password_inp
+    let email_in = req.body.email_inp
+    let phone_in = req.body.phone_inp
     let checkboxChecked = req.body.admin_check === 'checked'
 
     if(checkboxChecked){
         await user.create({
             username: username_in,
-            email: randomMail,
-            phone: randomPhone,
+            email: email_in,
+            phone: phone_in,
             pass: password_in,
             pfp: 'sst.jpg',
             dateCreated: new Date(),
@@ -162,8 +161,8 @@ app.post('/customers(.ejs)?', async(req, res)=> {
     } else{
         await user.create({
             username: username_in,
-            email: randomMail,
-            phone: randomPhone,
+            email: email_in,
+            phone: phone_in,
             pass: password_in,
             pfp: 'sst.jpg',
             dateCreated: new Date(),
