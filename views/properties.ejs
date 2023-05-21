@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/swup@3"></script>
+    <script defer src="./scripts/admin.js"></script>
     <title>Admin Dashboard</title>
-
-    <link rel="stylesheet" href="./css/customers.css">
-    <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/admin-css.css">
+    <link rel="stylesheet" href="./css/fonts.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -77,7 +77,7 @@
                     <i class='bx bxs-grid-alt'></i>
                     <h3>Dashboard</h3>
                 </a>
-                <a class="active" href="customers.ejs">
+                <a href="customers.ejs">
                     <i class='bx bxs-user-account'></i>
                     <h3>Customers</h3>
                 </a>
@@ -86,7 +86,7 @@
                     <h3>Messages</h3>
                     <span class="message-count">26</span>
                 </a>
-                <a href="properties.ejs">
+                <a class="active" href="properties.ejs">
                     <i class='bx bx-list-ol'></i>
                     <h3>Properties</h3>
                 </a>
@@ -98,73 +98,63 @@
                     <i class='bx bx-plus'></i>
                     <h3>Add Property</h3>
                 </a>
-                <a href="/home">
+                <a href="login.ejs">
                     <i class='bx bxs-log-out'></i>
-                    <h3>Exit</h3>
+                    <h3>Logout</h3>
                 </a>
             </div>
         </aside>
         <!--=================== END OF ASIDE ===================-->
-        <main>
-            <!-- <div class="updates" id="update-list">
-                <h2>Customers</h2>
-                <% users.forEach(function(user) { %>
-                    <div class="update">
-                        <form action="/customers.ejs" method="POST" id="myForm">
-                            <div class="profile">
-                                <div class="profile-photo">
-                                    <img src="./images/profile-3.jpg" alt="">
-                                </div>
-                                <div class="message">
-                                    <p><b> Username: <%= user.username %></b> <br>
-                                        <%= user.pass %>
-                                    </p>
-                                    <small class="text-muted">2 Minutes Ago</small>
-                                </div>
-                            </div>
-                            <div class="add-delete">
-                                <button class="remove" onclick="removeNameFromTheList(this)"><i class='bx bx-minus'></i></button>
-                            </div>
-                        </form>
-                    </div>
-                <% }); %>
-            </div> -->
-            <div class="add-user">
-                <div class="user-info">
-                    <h2>Add User</h2>
-                    <form id="myForm1" action="/customers.ejs" method="POST">
-                        <div class="user-add">
-                            <div class="username">
-                                <input type="text" class="form__input" name="username_inp" placeholder="Username"
-                                    required />
-                                <label for="username" class="form__label">Username</label>
-                            </div>
-                            <div class="email">
-                                <input type="text" class="form__input" name="email_inp" placeholder="Email"
-                                    required />
-                                <label for="username" class="form__label">Email</label>
-                            </div>
-                            <div class="phone">
-                                <input type="text" class="form__input" name="phone_inp" placeholder="Phone"
-                                    required />
-                                <label for="username" class="form__label">Phone</label>
-                            </div>
-                            <div class="password">
-                                <input type="password" class="form__input" name="password_inp" placeholder="Password"
-                                    required />
-                                <label for="password" class="form__label">Password</label>
-                            </div>
-                        </div>
-                        <div class="add-choose">
-                            <div class="checkbox-wrapper-19">
-                                <h5>admin</h5>
-                                <input type="checkbox" id="cbtest-19" name="admin_check" />
-                                <label for="cbtest-19" class="check-box">
-                            </div>
-                            <button type="submit" class="add-btn" id="addUserButton"><i class='bx bx-plus'></i></button>
-                        </div>
-                    </form>
-                </div>
+            <div class="recent-orders">
+                <h2>Recent Purchases</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Property Type</th>
+                            <th>Property No.</th>
+                            <th>Payment</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>House</td>
+                            <td>85631</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>Villa</td>
+                            <td>85631</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>Mansion</td>
+                            <td>85631</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>Building</td>
+                            <td>85631</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                        <tr>
+                            <td>Skyscraper</td>
+                            <td>85631</td>
+                            <td>Due</td>
+                            <td class="warning">Pending</td>
+                            <td class="primary">Details</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#">Show All</a>
             </div>
         </main>
         <!-- ----------------------- END OF MAIN -------------------- -->
@@ -193,7 +183,7 @@
                             <img src="./images/profile-2.jpg" alt="">
                         </div>
                         <div class="message">
-                            <p><b>Mike Tyson</b> received his order of Night lion tech GPS drone.</p>
+                            <p><b>Mike Tyson</b> received the keys to his mansion</p>
                             <small class="text-muted">2 Minutes Ago</small>
                         </div>
                     </div>
@@ -202,16 +192,16 @@
                             <img src="./images/profile-3.jpg" alt="">
                         </div>
                         <div class="message">
-                            <p><b>Mike Tyson</b> received his order of Night lion tech GPS drone.</p>
+                            <p><b>Maria Avil</b> received her order of a house</p>
                             <small class="text-muted">2 Minutes Ago</small>
                         </div>
                     </div>
                     <div class="update">
                         <div class="profile-photo">
-                            <img src="./images/profile-4.jpg" alt="">
+                            <img src="./images/profile-1.jpg" alt="">
                         </div>
                         <div class="message">
-                            <p><b>Mike Tyson</b> received his order of Night lion tech GPS drone.</p>
+                            <p><b>Kyle Mason</b> received his house of 2</p>
                             <small class="text-muted">2 Minutes Ago</small>
                         </div>
                     </div>
@@ -226,7 +216,7 @@
                     </div>
                     <div class="right">
                         <div class="info">
-                            <h3>ONLINE ORDERS</h3>
+                            <h4>PROPERTIES SOLD ONLINE</h4>
                             <small class="text-muted">Last 24 Hours</small>
                         </div>
                         <h5 class="success">+39%</h5>
@@ -239,7 +229,7 @@
                     </div>
                     <div class="right">
                         <div class="info">
-                            <h3>OFFLINE ORDERS</h3>
+                            <h4>PROPERTIES SOLD OFFLINE</h4>
                             <small class="text-muted">Last 24 Hours</small>
                         </div>
                         <h5 class="danger">-17%</h5>
@@ -252,7 +242,7 @@
                     </div>
                     <div class="right">
                         <div class="info">
-                            <h3>NEW CUSTOMERS</h3>
+                            <h4>NEW AGENTS/CLIENTS</h4>
                             <small class="text-muted">Last 24 Hours</small>
                         </div>
                         <h5 class="success">+25%</h5>
@@ -264,7 +254,6 @@
     </div>
 
     <script src="./scripts/admin.js"></script>
-    <script src="./scripts/customers.js"></script>
 </body>
 
 </html>

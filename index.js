@@ -192,8 +192,8 @@ app.post('/customers(.ejs)?', async(req, res)=> {
     }
 })
 
-app.get('/orders(.ejs)?', (req, res) =>{
-    res.render('orders')
+app.get('/properties(.ejs)?', (req, res) =>{
+    res.render('properties')
 })
 
 
