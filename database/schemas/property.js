@@ -38,7 +38,7 @@ const propertySchema = new Schema({
     // images: {
     //     type: [String]
     // }
-
+    
 })
 
 module.exports=mongoose.model('property',propertySchema);

@@ -135,16 +135,15 @@ app.get('/dashboard(.ejs)?',async (req, res) =>{
     allUsers = Array.from(users)
     const totalPrice = allProp.reduce((accumulator, item) => {
         return accumulator + item.price;
-      }, 0);
-      const locationCounts = allProp.reduce((countMap, obj) => {
+    }, 0);
+    const locationCounts = allProp.reduce((countMap, obj) => {
         const location = obj.location;
         countMap[location] = (countMap[location] || 0) + 1;
         return countMap;
-      }, {});
-      const sortedLocations = Object.keys(locationCounts).sort((a, b) => locationCounts[b] - locationCounts[a]);
-      const top3Locations = sortedLocations.slice(0, 3);
-      const top3Objects = allProp.filter(obj => top3Locations.includes(obj.location)).slice(0 , 3).map(obj => obj.location)
-      console.log(top3Objects.length)
+    }, {});
+    const sortedLocations = Object.keys(locationCounts).sort((a, b) => locationCounts[b] - locationCounts[a]);
+    const top3Locations = sortedLocations.slice(0, 3);
+    const top3Objects = allProp.filter(obj => top3Locations.includes(obj.location)).slice(0 , 3).map(obj => obj.location)
     const data = {
         avgPrice: `${Math.ceil(totalPrice/allProp.length)} EGP`,
         noOfUsers: users.length,
@@ -175,8 +174,6 @@ app.post('/customers(.ejs)?', async(req, res)=> {
             email: email_in,
             phone: phone_in,
             pass: password_in,
-            pfp: 'sst.jpg',
-            dateCreated: new Date(),
             Role: 'Admin'
         });
     } else{
@@ -185,15 +182,13 @@ app.post('/customers(.ejs)?', async(req, res)=> {
             email: email_in,
             phone: phone_in,
             pass: password_in,
-            pfp: 'sst.jpg',
-            dateCreated: new Date(),
             Role: 'User'
         });
     }
 })
 
-app.get('/properties(.ejs)?', (req, res) =>{
-    res.render('properties')
+app.get('/users(.ejs)?', (req, res) =>{
+    res.render('users')
 })
 
 
@@ -272,6 +267,4 @@ server.listen(5000,()=>
     
 
 // });
-
-
 
