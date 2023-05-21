@@ -2,11 +2,11 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const propertySchema = new Schema({
-    type: {
+    title: {
         type: String,
         required: true
     },
-    address: {
+    description: {
         type: String,
         required: true
     },
@@ -14,27 +14,29 @@ const propertySchema = new Schema({
         type: Number,
         required: true
     },
-    propertySize: {
+    location: {
+        type: String,
+        required: true
+    },
+    bedrooms: {
         type: Number,
         required: true
     },
-    propertyDescription: {
-        type: String
-    },
-    agent: {
-        type: String
-    },
-    listingDate: {
-        type: Date,
-        default: Date.now
-    },
-    status: {
+    bathrooms: {
         type: String,
-        enum: ['Available', 'Pending', 'Sold'],
-        default: 'Available'
+        required: true
     },
-    images: {
-        type: [String]
-    }
+    area: {
+        type: Number,
+        required: true
+    },
+    // status: {
+    //     type: String,
+    //     enum: ['Available', 'Pending', 'Sold'],
+    //     default: 'Available'
+    // },
+    // images: {
+    //     type: [String]
+    // }
 
 })

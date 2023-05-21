@@ -10,6 +10,7 @@ require('./database/');
 const user = require('./database/schemas/user');
 const { render } = require('ejs');
 const { send } = require('process');
+const avgPriceCalc = require('./controllers/avg.property')
 app.use(express.urlencoded());
 app.use(cookieparser());
 app.use(session({ secret: 'Your_Secret_Key' }));
@@ -124,7 +125,7 @@ app.post('/login(.ejs)?',async(req,res)=>
    }
 })
 const data = {
-    avgPrice: 15200,
+    avgPrice: avgPriceCalc,
     noOfUsers: 550,
     percentp: 75,
     percentu: 45
