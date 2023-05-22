@@ -4,7 +4,6 @@ const app = express();
 const session = require('express-session');
 const users = require('./models/users');
 const bodyParser = require('body-parser');
-
 app.use(bodyParser.urlencoded({ extended: false })); // Parse URL-encoded bodies
 app.use(express.static('public'));
 const port = 3000;
@@ -26,11 +25,17 @@ app.get('/filter', async (req, res) => {
     .map(function (key) {
       return filteredData[key];
     });
-
+  const itemsPerPage = 8;
+  const currentPage = parseInt(req.query.page) || 1;
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const slicedItems = array.slice(startIndex, endIndex);
+  const totalPages = Math.ceil(array.length / itemsPerPage);
   res.render('filter', {
-data:array
+    location,
+    data: slicedItems,
+    currentPage,
+    totalPages,
+
   });
 });
-
-
-
