@@ -13,7 +13,11 @@ const { render } = require('ejs');
 const { send } = require('process');
 app.use(express.urlencoded());
 app.use(cookieparser());
-app.use(session({ secret: 'Your_Secret_Key' }));
+app.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: false
+  }));
 const server=require('http').createServer(app);
 const io=require('socket.io')(server,{cors:{origin:"*"}});
 var nodemailer = require('nodemailer');
@@ -98,7 +102,8 @@ app.post('/login.ejs',async(req,res)=>
     let{username,email,phone,pass1,cpass,Role,page,Pending}=req.body;
     let{username_in,pass_in,page1}=req.body;
     let{Email,page2}=req.body;
-    let{newpass,confpass,Email1}=req.body;
+    let{val1,val2,val3,val4,page3}=req.body;
+    let{newpass}=req.body;
     if(page=="signup")
     {
         let user1=await user.find().where('username').equals(username);
@@ -164,11 +169,31 @@ app.post('/login.ejs',async(req,res)=>
               console.log('Email sent: ' + info.response);
             }
           });
-          res.send({success:"success",number:number,email:Email});
+          req.session.passcode = number;
+          req.session.email=Email
+          res.send({success:"success"});
+      }
+   }
+   else if(page3==="codepage")
+   {
+      let num=req.session.passcode
+      let thousands = Math.floor(num / 1000);
+      let hundreds = Math.floor((num % 1000) / 100);
+      let tens = Math.floor((num % 100) / 10);
+      let ones = num % 10;
+      
+      if(val1==thousands&&val2==hundreds&&val3==tens&&val4==ones)
+      {
+        res.send({success:"success"});
+      }
+      else
+      {
+        res.send({success:"fail"});
       }
    }
    else
      {
+        let Email1=req.session.email;
         const pass= await bcrypt.hash(newpass, 10);
         let user1=await user.findOneAndUpdate(
             {email:Email1},

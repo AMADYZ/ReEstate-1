@@ -16,8 +16,6 @@ $(document).ready(function () {
           {
             document.getElementById("myForm2").style.display="none";
             document.getElementById("myForm3").style.display="block";
-            sessionStorage.setItem('code',response.number);
-            sessionStorage.setItem('Email',response.email);
           }
           else
           {

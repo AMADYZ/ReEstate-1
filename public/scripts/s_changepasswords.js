@@ -5,7 +5,6 @@ $(document).ready(function () {
       let check="";
       const newpass = $('#newpass').val();
       const confpass = $('#confpass').val();
-      const email=sessionStorage.getItem("Email");
       
       check=validatePass(newpass,confpass);
       if(check)
@@ -13,7 +12,7 @@ $(document).ready(function () {
       $.ajax({
         url: '/login.ejs',
         method: 'POST',
-        data: {newpass:newpass,confpass:confpass,Email1:email},
+        data: {newpass:newpass},
         success: function (response) {
           if (response.success == "success") 
           {

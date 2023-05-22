@@ -8,7 +8,7 @@ setTimeout(()=>
         {
             setTimeout(() => {
                 intro.style.left='-230vh';
-                
+                sessionStorage.clear();
             }, 600);
         })
 
