@@ -28,6 +28,10 @@ app.get('/about',(req,res)=>
 {
     res.render('about')
 })
+app.get('/design',(req,res)=>
+{
+    res.render('design')
+})
 app.get('/',(req, res) =>{
     res.render('home');
 })
@@ -84,10 +88,7 @@ app.post('/personalinfo',async(req,res)=>
 
 app.get('/login', async(req,res)=>
 {
-    const user1=await user.find({});
-    Users=Array.from(user1);
     res.render('login');
-    
 });
 
 app.post('/login',async(req,res)=>
