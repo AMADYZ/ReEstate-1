@@ -17,6 +17,7 @@ app.use(session({ secret: 'Your_Secret_Key' }));
 const server=require('http').createServer(app);
 const io=require('socket.io')(server,{cors:{origin:"*"}});
 var nodemailer = require('nodemailer');
+const bcrypt = require('bcrypt');
 
 
 let Users=[];
@@ -32,7 +33,6 @@ let userdb=false;
 
 app.get('/',(req, res) =>{
     res.render('home');
-    console.log(req.query.username)
 })
 
 app.get('/personalinfo',(req,res)=>
@@ -66,7 +66,6 @@ app.post('/personalinfo',async(req,res)=>
             {username:newusername},
             {phone:newphone},
         );
-        console.log("hanwadi")
         res.send({result:'success',new1:newusername,new2:newemail,new3:newphone});
     
     }
@@ -96,7 +95,7 @@ app.get('/login.ejs', async(req,res)=>
 
 app.post('/login.ejs',async(req,res)=>
 {
-    let{username,email,phone,pass,cpass,Role,page,Pending}=req.body;
+    let{username,email,phone,pass1,cpass,Role,page,Pending}=req.body;
     let{username_in,pass_in,page1}=req.body;
     let{Email,page2}=req.body;
     let{newpass,confpass,Email1}=req.body;
@@ -106,10 +105,10 @@ app.post('/login.ejs',async(req,res)=>
         let user2=await user.find().where("email").equals(email);
         if(user1.length==0&&user2.length==0)
         {
-            
+            const pass= await bcrypt.hash(pass1, 10)
             user.create({username,email,phone,pass,Role,Pending});
             res.send({result:"success",pending1:Pending,UserName:username,Email:email,
-        Phone:phone,Role:Role});
+            Phone:phone,Role:Role});
         }
         else
         {

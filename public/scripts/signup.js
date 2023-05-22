@@ -161,7 +161,7 @@ $(document).ready(function () {
       $.ajax({
         url: '/login.ejs',
         method: 'POST',
-        data: { username: username,email:email,phone:phone,pass:pass,cpass:cpass,Role:ongo,page:"signup"
+        data: { username: username,email:email,phone:phone,pass1:pass,cpass:cpass,Role:ongo,page:"signup"
         ,Pending:pending},
 
         success: function (response) {

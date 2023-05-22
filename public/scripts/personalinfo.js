@@ -53,7 +53,6 @@ setTimeout(()=>
               fail&=validatePhone(phone);
               if(fail)
               {
-                console.log("27na tamam")
                 let Olduser=sessionStorage.getItem('username');
                 let Oldemail=sessionStorage.getItem('Email');
               // Send the AJAX request to the server
