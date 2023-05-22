@@ -32,7 +32,7 @@ $(document).ready(function () {
       else
       {
       $.ajax({
-        url: '/login.ejs',
+        url: '/login',
         method: 'POST',
         data: {val1:num1,val2:num2,val3:num3,val4:num4,page3:"codepage"},
         success: function (response) {

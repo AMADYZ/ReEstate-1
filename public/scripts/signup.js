@@ -159,7 +159,7 @@ $(document).ready(function () {
       if(fail)
       {
       $.ajax({
-        url: '/login.ejs',
+        url: '/login',
         method: 'POST',
         data: { username: username,email:email,phone:phone,pass1:pass,cpass:cpass,Role:ongo,page:"signup"
         ,Pending:pending},

@@ -8,7 +8,7 @@ $(document).ready(function () {
       if(check)
       {
       $.ajax({
-        url: '/login.ejs',
+        url: '/login',
         method: 'POST',
         data: {Email:email,page2:"emailsend"},
         success: function (response) {

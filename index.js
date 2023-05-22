@@ -24,6 +24,10 @@ var nodemailer = require('nodemailer');
 const bcrypt = require('bcrypt');
 
 
+app.get('/about',(req,res)=>
+{
+    res.render('about')
+})
 app.get('/',(req, res) =>{
     res.render('home');
 })
@@ -78,7 +82,7 @@ app.post('/personalinfo',async(req,res)=>
    
 })
 
-app.get('/login.ejs', async(req,res)=>
+app.get('/login', async(req,res)=>
 {
     const user1=await user.find({});
     Users=Array.from(user1);
@@ -86,7 +90,7 @@ app.get('/login.ejs', async(req,res)=>
     
 });
 
-app.post('/login.ejs',async(req,res)=>
+app.post('/login',async(req,res)=>
 {
     let{username,email,phone,pass1,cpass,Role,page,Pending}=req.body;
     let{username_in,pass_in,page1}=req.body;
@@ -113,7 +117,11 @@ app.post('/login.ejs',async(req,res)=>
     else if(page1=="signin")
     {
         let user1=await user.find().where('username').equals(username_in);
-        let result=await bcrypt.compare(pass_in, user1[0].pass);
+        let result=false;
+        if(user1.length>0)
+        {
+         result=await bcrypt.compare(pass_in, user1[0].pass);
+        }
       
         
         if(user1.length==0||!result)

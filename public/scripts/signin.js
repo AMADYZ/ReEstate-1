@@ -123,7 +123,7 @@ $(document).ready(function () {
       if(fail1&&fail2)
       {
       $.ajax({
-        url: '/login.ejs',
+        url: '/login',
         method: 'POST',
         data: { username_in: username,pass_in:pass,page1:"signin"},
         success: function (response) {

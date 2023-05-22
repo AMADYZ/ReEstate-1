@@ -10,7 +10,7 @@ $(document).ready(function () {
       if(check)
       {
       $.ajax({
-        url: '/login.ejs',
+        url: '/login',
         method: 'POST',
         data: {newpass:newpass},
         success: function (response) {
