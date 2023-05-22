@@ -24,17 +24,6 @@ var nodemailer = require('nodemailer');
 const bcrypt = require('bcrypt');
 
 
-let Users=[];
-let data1,data2;
-let global=false;
-let global2=true;
-let index=0;
-let before=false;
-let userdb=false;
-
-
-
-
 app.get('/',(req, res) =>{
     res.render('home');
 })
