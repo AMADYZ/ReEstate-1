@@ -174,11 +174,12 @@ $(document).ready(function () {
             }
             else if(response.pending1==="true")
             {
-                window.location.replace("http://localhost:5000/");
                 sessionStorage.setItem('ongo', response.Role);
                 sessionStorage.setItem('username',response.UserName);
                 sessionStorage.setItem('Email',response.Email);
                 sessionStorage.setItem('Phone',response.Phone);
+                window.location.replace("http://localhost:5000/");
+                
             }
             else
             {

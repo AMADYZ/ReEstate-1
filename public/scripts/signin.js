@@ -129,11 +129,20 @@ $(document).ready(function () {
         success: function (response) {
           if (response.success == "success") 
           {
-            sessionStorage.setItem('ongo', response.Role);
-            sessionStorage.setItem('username',response.UserName);
-            sessionStorage.setItem('Email',response.Email1);
-            sessionStorage.setItem('Phone',response.Phone);
-            window.location.replace("http://localhost:5000/"); 
+            if(response.Pending==="true")
+            {
+              sessionStorage.setItem('ongo', response.Role);
+              sessionStorage.setItem('username',response.UserName);
+              sessionStorage.setItem('Email',response.Email1);
+              sessionStorage.setItem('Phone',response.Phone);
+              window.location.replace("http://localhost:5000/"); 
+            }
+            else if(response.Pending==="waiting")
+            {
+              document.getElementById('container').style.display="none";
+              document.getElementById('outcontainer').style.display="block"
+            }
+           
            
           }
           else
