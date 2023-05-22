@@ -8,6 +8,7 @@ app.set('view engine','ejs');
 app.use(express.static('public'));
 require('./database/');
 const user = require('./database/schemas/user');
+const properties1=require('./database/schemas/properties1');
 const { render } = require('ejs');
 const { send } = require('process');
 app.use(express.urlencoded());
@@ -178,82 +179,9 @@ app.post('/login.ejs',async(req,res)=>
 
 
 
-
 server.listen(5000,()=>
 {
     console.log("Server is running....."); 
 });
-
-
-
-// io.on("connection",(socket)=>
-// {
-//    console.log("user connected"+socket.id);
-   
-//     socket.on("message",(data1,data2,data3,data4,page,Role)=>//2
-//     {
-//         if(page==="signin")
-//         {
-//         for(let i=0;i<Users.length;i++)
-//         
-//             if(Users[i].username===data1&&Users[i].pass===data2)
-//             {
-//                 index=i;
-//                 global=true;
-//                 break;
-//             }   
-//         }
-//         if(global==false)
-//         {
-//             socket.emit("message",global,"Anything",page);//3.1
-//         }
-//         else{
-//             socket.emit("message",global,Users[index].Role,page);//3.1
-
-//         }
-      
-//        before=global;
-//        global=false;
-//        }
-
-//        else{
-        
-//         for(let i=0;i<Users.length;i++)
-//         {
-//             if(Users[i].username===data1&&Users[i].email===data2)
-//             {
-//                 userdb=true;
-//                 break;
-//             }   
-//         }
-       
-//         if(userdb)
-//         {
-//             console.log("mesh hansagel")
-//             socket.emit("message",false,"anything",page);//3.2
-//             before=false;
-//             userdb=false;
-//         }
-//         else
-//         {
-//             console.log("hansagel")
-//              if(Role)
-//              Role='admin'
-//              else
-//              Role='user'
-//              username=data1;
-//              email=data2;
-//              phone=data3;
-//              pass=data4;
-//              user.create({username,email,phone,pass,Role});
-//              before=true;
-//              userdb=false;
-//         }
-//        }
-//     })
-    
-
-// });
-
 
 
