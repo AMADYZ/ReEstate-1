@@ -105,7 +105,7 @@ app.post('/login.ejs',async(req,res)=>
         let user2=await user.find().where("email").equals(email);
         if(user1.length==0&&user2.length==0)
         {
-            const pass= await bcrypt.hash(pass1, 10)
+            const pass= await bcrypt.hash(pass1, 10);
             user.create({username,email,phone,pass,Role,Pending});
             res.send({result:"success",pending1:Pending,UserName:username,Email:email,
             Phone:phone,Role:Role});
@@ -118,8 +118,11 @@ app.post('/login.ejs',async(req,res)=>
     }
     else if(page1=="signin")
     {
-        let user1=await user.find().where('username').equals(username_in).where("pass").equals(pass_in);
-        if(user1.length==0)
+        let user1=await user.find().where('username').equals(username_in);
+        let result=await bcrypt.compare(pass_in, user1[0].pass);
+      
+        
+        if(user1.length==0||!result)
         {
             res.send({error1:"Username is incorrect",error2:"Password is incorrect"});
         }
@@ -165,15 +168,14 @@ app.post('/login.ejs',async(req,res)=>
       }
    }
    else
-   {
+     {
+        const pass= await bcrypt.hash(newpass, 10);
         let user1=await user.findOneAndUpdate(
-        {email:Email1},
-        {pass:newpass} 
+            {email:Email1},
+            {pass:pass} 
         );
         res.send({success:"success"});
-
-
-   }
+     }
 })
 
 

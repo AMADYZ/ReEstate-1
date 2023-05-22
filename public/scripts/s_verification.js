@@ -24,10 +24,8 @@ $(document).ready(function () {
         document.getElementById('err12').style.opacity='1';
         
       }
-
-
-
-
+      if(false)
+      {
       $.ajax({
         url: '/login.ejs',
         method: 'POST',
@@ -40,21 +38,23 @@ $(document).ready(function () {
         },
       });
     }
+    }
     
     );
   });
-  function validateEmail(input) {
 
-    const validRegex = /^(.+)@(.+)$/;
+//   function validateEmail(input) {
+
+//     const validRegex = /^(.+)@(.+)$/;
   
-    if (!validRegex.test(input) ) {
-        document.getElementById('Emailerr').innerHTML='Check your email.';
-        document.getElementById('err1').style.opacity='1';
-        return false;
-    }
-    else{
-    document.getElementById('Emailerr').innerHTML='';
-    document.getElementById('err1').style.opacity='0';
-    return true;
-    }
-}
+//     if (!validRegex.test(input) ) {
+//         document.getElementById('Emailerr').innerHTML='Check your email.';
+//         document.getElementById('err1').style.opacity='1';
+//         return false;
+//     }
+//     else{
+//     document.getElementById('Emailerr').innerHTML='';
+//     document.getElementById('err1').style.opacity='0';
+//     return true;
+//     }
+// }
