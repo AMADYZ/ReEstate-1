@@ -145,20 +145,6 @@ h3{
     0%;
   border-top: 0;
 }
-#changebutton
-{
-  display: none;
-  border-radius: 20px;
-  border: 1px #7c142c;
-  background: #7c142c;
-  font-family: 'BW Gradual Bold';
-  color: white;
-  font-size: 25px;
-  width: 300px;
-  height: 50px;
-  margin-top: 5%;
-  margin-left: 25%;
-}
 .changeuser
 {
   font-family: 'BW Gradual Bold';
@@ -207,3 +193,28 @@ text-decoration: none;
   {
     font-family: 'BW Gradual Bold';
   }
+
+  
+#changebutton
+{
+  display: none;
+  border-radius: 20px;
+  border: 1px #7c142c;
+  background: #7c142c;
+  font-family: 'BW Gradual Bold';
+  color: white;
+  font-size: 25px;
+  width: 300px;
+  height: 50px;
+  margin-top: 5%;
+  margin-left: 25%;
+}
+
+#donechange{
+  font-size: 25px;
+  margin-top: 5%;
+  margin-left: 28%;
+  font-family: 'BW Gradual Bold';
+  color: rgb(17, 120, 29);
+  display: none;
+}

@@ -67,7 +67,11 @@ setTimeout(()=>
                     sessionStorage.setItem('username',response.new1);
                     sessionStorage.setItem('Email',response.new2);
                     sessionStorage.setItem('Phone',response.new3);
-                    window.location.replace("http://localhost:5000/"); 
+                    document.getElementById('changebutton').style.display="none";
+                    document.getElementById('donechange').style.display='block';
+                    setTimeout(() => {
+                      window.location.replace("http://localhost:5000/"); 
+                    }, 1000);
                   }
                   else if(response.result=="failU")
                   {
