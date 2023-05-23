@@ -46,12 +46,20 @@ app.get('/', (request, response) => {
 });
 
 app.get('/filter', async (req, res) => {
+  const bathroom = req.query.bathroom;
+  const bedroom = req.query.bedroom;
   const location = req.query.location;
   const filter = {}; 
   if (location) {
     filter.location = location;
   }
-
+  if (bathroom) {
+    filter.bathrooms = bathroom;
+  }
+  if (bedroom) {
+    filter.bedrooms = bedroom;
+  }
+ 
   const filteredData = await Property.find(filter);
   var array = Object.keys(filteredData)
     .map(function (key) {
