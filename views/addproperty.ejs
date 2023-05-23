@@ -87,7 +87,7 @@
                     <h3>Messages</h3>
                     <span class="message-count">26</span>
                 </a> -->
-                <a class="active" href="users.ejs">
+                <a href="users.ejs">
                     <i class='bx bx-list-ol'></i>
                     <h3>Users</h3>
                 </a>
@@ -96,7 +96,7 @@
                     <h3>Pending Admins</h3>
                     <span class="message-count">26</span>
                 </a>
-                <a href="addproperty.ejs">
+                <a class="active" href="#">
                     <i class='bx bx-plus'></i>
                     <h3>Add Property</h3>
                 </a>
@@ -107,55 +107,8 @@
             </div>
         </aside>
         <!--=================== END OF ASIDE ===================-->
-        <div class="updates" id="update-list">
-            <h2>Customers</h2>
-            <% allUsers.forEach((user) => { %>
-            <div class="update">
-                <div class="profile">
-                    <div class="profile-photo">
-                        <img src="./images/profile-2.jpg" alt="">
-                    </div>
-                    <div class="message">
-                        <p style="font-size: 1.1rem;"><b> Username: <%= user.username %></b> <br> Password:<%= user.pass %></p>
-                        <small class="text-muted">2 Minutes Ago</small>
-                    </div>
-                </div>
-                <div class="add-delete">
-                    <button class="remove" onclick="removeNameFromTheList(this)"><i class='bx bx-minus'></i></button>
-                    <button class="dropdown"><i class='bx bxs-down-arrow'></i></button>
-                </div>
-            </div>
-            <% }) %>
-            <!-- <div class="update">
-                <div class="profile">
-                    <div class="profile-photo">
-                        <img src="./images/profile-3.jpg" alt="">
-                    </div>
-                    <div class="message">
-                        <p style="font-size: 1.2rem;"><b> Username: Mike Tyson</b> <br> Password: 1234</p>
-                        <small class="text-muted">2 Minutes Ago</small>
-                    </div>
-                </div>
-                <div class="add-delete">
-                    <button class="remove" onclick="removeNameFromTheList(this)"><i class='bx bx-minus'></i></button>
-                    <button class="dropdown"><i class='bx bxs-down-arrow'></i></button>
-                </div>
-            </div>
-            <div class="update">
-                <div class="profile">
-                    <div class="profile-photo">
-                        <img src="./images/profile-4.jpg" alt="">
-                    </div>
-                    <div class="message">
-                        <p style="font-size: 1.2rem;"><b> Username: Mike Tyson</b> <br> Password: 1234</p>
-                        <small class="text-muted">2 Minutes Ago</small>
-                    </div>
-                </div>
-                <div class="add-delete">
-                    <button class="remove" onclick="removeNameFromTheList(this)"><i class='bx bx-minus'></i></button>
-                    <button class="dropdown"><i class='bx bxs-down-arrow'></i></button>
-                </div>
-            </div> -->
+        <div class="form-prop">
+            <%- include('./partials/Form') %>
         </div>
         <!-- ----------------------- END OF MAIN -------------------- -->
 

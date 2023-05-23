@@ -187,8 +187,13 @@ app.post('/customers(.ejs)?', async(req, res)=> {
     }
 })
 
-app.get('/users(.ejs)?', (req, res) =>{
-    res.render('users')
+app.get('/users(.ejs)?', async (req, res) =>{
+    users = await user.find({})
+    allUsers = Array.from(users)
+    res.render('users', {allUsers: allUsers})
+})
+app.get('/addproperty(.ejs)?',(req, res) =>{
+    res.render('addproperty')
 })
 
 

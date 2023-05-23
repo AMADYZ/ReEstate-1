@@ -89,6 +89,12 @@ function validate(form){
     fail&=validatename(form.Name.value);
     fail&=validatephone(form.Phone.value);
     
+
+
+
+
+
+
     if(fail)
         return true;
     else{

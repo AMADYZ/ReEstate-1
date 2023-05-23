@@ -32,3 +32,5 @@ setPropertyProgress(document.querySelector('.insights .sales .middle .progress .
 setUserProgress(document.querySelector('.insights .expenses .middle .progress .number-u .percentu').innerHTML.slice(0, 2))
 
 // ---------------------- Add Property -----------------------
+
+// ---------------------- Dropdown Users -----------------------
