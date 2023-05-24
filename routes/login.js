@@ -14,9 +14,6 @@ router.use(session({
     saveUninitialized: false
   }));
 
-
-
-
 router.get('/', async(req,res)=>
 {
     res.render('login');
