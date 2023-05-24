@@ -1,5 +1,6 @@
 const { default: mongoose } = require('mongoose');
 const mongoos=require('mongoose');
+const bcrypt = require('bcrypt');
 const UserSchema= new mongoos.Schema({
     username:{
         type: mongoos.SchemaTypes.String,

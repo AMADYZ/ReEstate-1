@@ -149,12 +149,39 @@ $(document).ready(function () {
       if(fail)
       {
       $.ajax({
-        url: '/login.ejs',
+        url: '/login',
         method: 'POST',
+<<<<<<< HEAD
         data: { username: username,email:email,phone:phone,pass:pass,cpass:cpass,Role:ongo,page:"signup"},
         success: function (response) {
           if (response == "success") {
             window.location.replace("http://localhost:5000/");
+=======
+        data: { username: username,email:email,phone:phone,pass1:pass,cpass:cpass,Role:ongo,page:"signup"
+        ,Pending:pending},
+
+        success: function (response) {
+          if (response.result == "success") {
+            if(response.pending1==="waiting")
+            {
+               document.getElementById('container').style.display="none";
+               document.getElementById('outcontainer').style.display="block"
+
+            }
+            else if(response.pending1==="true")
+            {
+                sessionStorage.setItem('ongo', response.Role);
+                sessionStorage.setItem('username',response.UserName);
+                sessionStorage.setItem('Email',response.Email);
+                sessionStorage.setItem('Phone',response.Phone);
+                window.location.replace("http://localhost:5000/");
+                
+            }
+            else
+            {
+                console.log("not accepted by admin")
+            }
+>>>>>>> 7063dc2e4548c1ebd839614235d1bbbc02bb1a0f
           }
           else
           {

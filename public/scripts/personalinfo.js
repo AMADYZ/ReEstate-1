@@ -47,7 +47,18 @@ setTimeout(()=>
               const username = $('#username').val();
               const email=$('#email').val();
               const phone=$('#phone').val();
+<<<<<<< HEAD
 
+=======
+              let fail=true;
+              fail&=validateUserName(username);
+              fail&=validateEmail1(email);
+              fail&=validatePhone(phone);
+              if(fail)
+              {
+                let Olduser=sessionStorage.getItem('username');
+                let Oldemail=sessionStorage.getItem('Email');
+>>>>>>> 7063dc2e4548c1ebd839614235d1bbbc02bb1a0f
               // Send the AJAX request to the server
               
               $.ajax({
@@ -57,12 +68,27 @@ setTimeout(()=>
                 success: function (response) {
                   if (response.success == "success") 
                   {
+<<<<<<< HEAD
                     sessionStorage.setItem('ongo', response.Role);
                     sessionStorage.setItem('username',response.UserName);
                     sessionStorage.setItem('Email',response.Email1);
                     sessionStorage.setItem('Phone',response.Phone);
                     window.location.replace("http://localhost:5000/"); 
                    
+=======
+                    sessionStorage.setItem('username',response.new1);
+                    sessionStorage.setItem('Email',response.new2);
+                    sessionStorage.setItem('Phone',response.new3);
+                    document.getElementById('changebutton').style.display="none";
+                    document.getElementById('donechange').style.display='block';
+                    setTimeout(() => {
+                      window.location.replace("http://localhost:5000/"); 
+                    }, 1000);
+                  }
+                  else if(response.result=="failU")
+                  {
+                    document.getElementById('nameErr').innerHTML=response.err; 
+>>>>>>> 7063dc2e4548c1ebd839614235d1bbbc02bb1a0f
                   }
                   else
                   {
