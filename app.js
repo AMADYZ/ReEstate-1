@@ -49,6 +49,8 @@ app.get('/filter', async (req, res) => {
   const bathroom = req.query.bathroom;
   const bedroom = req.query.bedroom;
   const location = req.query.location;
+  const minArea=parseInt(req.query['Min-Area']);
+  const maxArea=parseInt(req.query['Max-Area']);
   const filter = {}; 
   if (location) {
     filter.location = location;
@@ -59,7 +61,14 @@ app.get('/filter', async (req, res) => {
   if (bedroom) {
     filter.bedrooms = bedroom;
   }
- 
+  if (minArea && !isNaN(minArea) && maxArea && !isNaN(maxArea)) {
+    filter.area = { $gte: minArea, $lte: maxArea };
+  } else if (minArea && !isNaN(minArea)) {
+    filter.area = { $gte: minArea };
+  } else if (maxArea && !isNaN(maxArea)) {
+    filter.area = { $lte: maxArea };
+  }
+
   const filteredData = await Property.find(filter);
   var array = Object.keys(filteredData)
     .map(function (key) {
