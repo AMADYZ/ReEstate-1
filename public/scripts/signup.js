@@ -135,6 +135,7 @@ $(document).ready(function () {
       const pass=$('#pass').val();
       const cpass=$('#cpass').val();
       let ongo="";
+      let pending="";
       let fail=true;
       fail&=validateUserName(username);
       fail&=validateEmail1(email);
@@ -143,7 +144,16 @@ $(document).ready(function () {
       if(fail)
         {
          ongo=adorus();
-         sessionStorage.setItem('ongo', ongo.valueOf());
+         if(ongo=="admin")
+         {
+            pending="waiting";
+         }
+         else
+         {
+            pending="true";
+           
+         }
+        
         }
       // Send the AJAX request to the server
       if(fail)
@@ -151,12 +161,6 @@ $(document).ready(function () {
       $.ajax({
         url: '/login',
         method: 'POST',
-<<<<<<< HEAD
-        data: { username: username,email:email,phone:phone,pass:pass,cpass:cpass,Role:ongo,page:"signup"},
-        success: function (response) {
-          if (response == "success") {
-            window.location.replace("http://localhost:5000/");
-=======
         data: { username: username,email:email,phone:phone,pass1:pass,cpass:cpass,Role:ongo,page:"signup"
         ,Pending:pending},
 
@@ -181,7 +185,6 @@ $(document).ready(function () {
             {
                 console.log("not accepted by admin")
             }
->>>>>>> 7063dc2e4548c1ebd839614235d1bbbc02bb1a0f
           }
           else
           {

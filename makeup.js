@@ -1,29 +1,3 @@
-const express = require('express');   
-const cookieparser=require('cookie-parser');
-const app = express();
-app.set('view engine','ejs');
-app.use(express.static('public'));
-const properties1=require('./database/schemas/properties1');
-app.use(cookieparser());
-const server=require('http').createServer(app);
-const dotenv=require('dotenv');
-dotenv.config();
-
-
-
-//Routes Import
-const home = require('./routes/home.js');
-const login = require('./routes/login.js');
-const personalinfo = require('./routes/personalinfo.js');
-
-
-
-//Routes setup
-app.use('/', home);
-app.use('/login', login);
-app.use('/personalinfo', personalinfo);
-
-
 let users = {}
 let props = {}
 //DashBoard Requests
@@ -94,10 +68,3 @@ app.get('/users(.ejs)?', async (req, res) =>{
 app.get('/addproperty(.ejs)?',(req, res) =>{
     res.render('addproperty')
 })
-
-server.listen(process.env.PORT,()=>
-{
-    console.log("Server is running....."); 
-});
-
-

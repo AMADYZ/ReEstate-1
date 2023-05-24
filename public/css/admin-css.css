@@ -103,12 +103,6 @@ small{
     font-size: 0.75rem;
 }
 .profile-photo{
-    width: 3.8rem;
-    height: 3.8rem;
-    border-radius: 50%;
-    overflow: hidden;
-}
-.recent-updates .profile-photo{
     width: 2.8rem;
     height: 2.8rem;
     border-radius: 50%;
@@ -319,24 +313,23 @@ main .insights svg circle{
     stroke-linecap: round;
     transform: translate(5px, 5px);
 }
-/* 
+
 main .insights .sales svg circle{
-    stroke-dasharray: 230;
-    stroke-dashoffset: 20;
-} */
-
-
-main .insights .progress .number-p{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
 }
-main .insights .progress .number-u{
+
+main .insights .expenses svg circle{
+    stroke-dashoffset: 20;
+    stroke-dasharray: 80;
+}
+
+main .insights .income svg circle{
+    stroke-dashoffset: 35;
+    stroke-dasharray: 110;
+}
+
+main .insights .progress .number{
     position: absolute;
     top: 0;
     left: 0;
@@ -355,7 +348,7 @@ main .insights small{
 /* ---------------- RECENT ORDERS ------------------ */
 
 main .recent-orders{
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 main .recent-orders h2{
@@ -517,10 +510,6 @@ main .recent-orders a{
 /* ------------- MEDIA QUERIES/BREAKPOINTS --------------- */
 
 @media screen and (max-width: 1200px) {
-
-    .top{
-        margin-right: 10%;
-    }
     .container{
         width: 94%;
         grid-template-columns: 7rem auto 23rem;
