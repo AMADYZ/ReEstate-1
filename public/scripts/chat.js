@@ -5,6 +5,7 @@ const socket=io('http://localhost:3000')
 socket.on('connection')
 socket.on('message',(data)=>//4
 {
+    console.log(data);
     getHardResponse(data);
 })
 
@@ -121,6 +122,27 @@ $("#textInput").keypress(function (e) {
         getResponse();
     }
 });
+
+function check_for_result()
+{
+    if(userText&&check)
+    {
+    userText= $("#textInput").val();
+
+    //not to respond if the user didn't enter anything 
+    if (userText == "") {
+        return;
+    }
+    sendmessage(userText);
+
+    //el btb3t el message fel chat
+    let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
+
+    $("#textInput").val("");
+    $("#chatbox").append(userHtml);
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+}
+}
 
 
 
