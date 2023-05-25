@@ -96,5 +96,10 @@ app.get('/filter', async (req, res) => {
 
   });
 });
+app.get('/details', async (req, res) => {
+  const id = req.query.id;
+  const search =await Property.findById(id)
+      res.render('details', { search });
+});
 
 
