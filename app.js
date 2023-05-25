@@ -49,6 +49,8 @@ app.get('/filter', async (req, res) => {
   const bathroom = req.query.bathroom;
   const bedroom = req.query.bedroom;
   const location = req.query.location;
+  const maxPrice = parseInt(req.query['Max-Price']);
+  const minPrice = parseInt(req.query['Min-Price']);
   const minArea=parseInt(req.query['Min-Area']);
   const maxArea=parseInt(req.query['Max-Area']);
   const filter = {}; 
@@ -68,7 +70,13 @@ app.get('/filter', async (req, res) => {
   } else if (maxArea && !isNaN(maxArea)) {
     filter.area = { $lte: maxArea };
   }
-
+  if (minPrice && !isNaN(minPrice) && maxPrice && !isNaN(maxPrice)) {
+    filter.price = { $gte: minPrice, $lte: maxPrice };
+  } else if (minPrice && !isNaN(minPrice)) {
+    filter.price = { $gte: minPrice };
+  } else if (maxPrice && !isNaN(maxPrice)) {
+    filter.price = { $lte: maxPrice };
+  }
   const filteredData = await Property.find(filter);
   var array = Object.keys(filteredData)
     .map(function (key) {
@@ -88,6 +96,5 @@ app.get('/filter', async (req, res) => {
 
   });
 });
-
 
 
