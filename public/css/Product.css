@@ -26,7 +26,7 @@ body {
 
 * {
     font-family: 'BW Gradual';
-color: black;
+    color: black;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -111,6 +111,43 @@ li{
     padding-bottom: 2px;
     color: black;
 } 
+#MainImg{
+    width: 100%;
+}
+.DetailedInfo{
+    display: flex;
+    flex-direction: column;
+}
+.PInfo{
+ padding-top: 20px;
+display: flex;
+flex-direction: row;
+align-items: center;
+column-gap: 10px;
+
+}
+.offer{
+    padding-top: 25px;
+    font-size: 15px;
+}
+.bed{
+    width: 50px;
+    height: 50px;
+}
+.bath{
+    width:50px;
+    height:50px;
+}
+.Description{
+    padding-top: 20px;
+    font-size: 12px;
+    word-wrap: break-word;
+}
+.channel{
+    border-radius: 25px;
+    width: 45px;
+    height: 50px;
+}
 #details .spi{
 width: 40%;
 margin-right: 50px;
@@ -126,20 +163,18 @@ margin-right: 50px;
 
 .small-img-group{
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
+    width: 108%;
+    margin-left: -2%;
 }
 .small-img-col{
     flex-basis: 24%;
     cursor: pointer;
 }
-#details{
-     display: flex;
-     margin-top: 20px;
-     margin-left: 15px;
-}
 #details .spd{
-width: 50%;
+width: 85%;
 padding-top: 30px;
+
 }
 #details .spd h4{
     padding: 40px 0 20px 0;
@@ -151,9 +186,7 @@ padding-top: 30px;
 #details .spd span{
 line-height: 25px;
 }
-#details{
-    color:  black;
-}
+
 #product{
     text-align: center;
     margin-top: 105px;
@@ -357,6 +390,19 @@ padding-top: 7px ;
                     color: white;
                     font-family: 'BW Gradual Bold';
                 }
+                #details{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 100px;
+                    padding-left: 0;
+                    padding-right: 0;
+                }    
+                #details .spi{
+                    width: 100%;
+                    margin-right: 0px;
+                    margin-left: 0px;
+                }
+
                  @media screen and (max-width: 1023px){
                      #product .pro-container{
                         display: flex;
@@ -377,6 +423,7 @@ padding-top: 7px ;
                     #details{
                         display: flex;
                         flex-direction: column;
+                        
                     }    
                     #details .spi{
                         width: 100%;
@@ -407,7 +454,6 @@ box-shadow: black;
         height: 35vh;
        
     }
-    
     #details{
         display: flex;
         flex-direction: column;
