@@ -9,6 +9,10 @@ app.get('/',(req,res)=>
 {
     res.render('support');
 })
+app.post('/',(req,res)=>
+{
+    console.log("entered");
+})
 
 server.listen(3000);
 io.on('connection',(socket)=>
