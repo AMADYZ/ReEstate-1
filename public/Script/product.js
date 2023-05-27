@@ -21,21 +21,6 @@ small_img[3].onclick = function () {
     MainImg.src = small_img[3].src;
     small_img[3].src = x;
 }
-let openShopping = document.querySelector('.shopping');
-let closeShopping = document.querySelector('.closeShopping');
-let body = document.querySelector('body');
-openShopping.addEventListener('click', ()=>{
-    body.classList.add('active');
-})
-closeShopping.addEventListener('click', ()=>{
-    body.classList.remove('active');
-})
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    if (document.body.scrollTop > 200){
-        body.classList.remove('active');
-    }
-}
 let ongo = sessionStorage.getItem('ongo');
 
 if(ongo == 'admin'){
@@ -47,11 +32,4 @@ else if(ongo =='user')
     document.getElementById("searchnav").style="display:inline";
     document.getElementById("Signupnav").style="display:none";
 }
-let intro=document.querySelector('.intro');
-setTimeout(()=>
-        {
-            setTimeout(() => {
-                intro.style.top='-100vh';
-                
-            }, 600);
-        })
+

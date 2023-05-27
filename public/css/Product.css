@@ -114,6 +114,36 @@ li{
 #MainImg{
     width: 100%;
 }
+.container2{
+    display: flex;
+    flex-direction: row;
+    width: 120%;
+}
+.box1 {
+        width: 100%; /* Adjust the width to 100% for responsive behavior */
+        max-width: 600px; /* Set a maximum width for the box */
+        height: 300px;
+        border-radius: 50px;
+        background: #3c3c3c;
+        box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        margin-left: 50px;
+    }
+      
+.box1 h1{
+ font-family:'BW Gradual Bold' ;
+ font-size: 50px;
+ margin-left: 26%;
+ margin-top: 5%;
+ color: white;
+ position: relative;
+ transform: translateY(-300px);
+}
+.vl {
+    border-left: 2px solid white;
+    height: 300px;
+    margin-left: 50px;
+    position: relative;
+  }
 .DetailedInfo{
     display: flex;
     flex-direction: column;
@@ -130,17 +160,38 @@ column-gap: 10px;
     padding-top: 25px;
     font-size: 15px;
 }
-.bed{
+.perk-img{
     width: 50px;
     height: 50px;
 }
-.bath{
-    width:50px;
-    height:50px;
+.perk-img1{
+    width: 70px;
+    height: 70px;
+}
+.perks-details{
+    display: flex;
+    grid-template-columns: 1fr 25px;
+    flex-direction: row;
+    column-gap: 0.5rem;
+    align-items: center;
+}
+.perks-details1{
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+    align-items: center;
+    padding-bottom: 12px;
+    
+}
+.perks{
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
 }
 .Description{
     padding-top: 20px;
-    font-size: 12px;
+    font-size: 15px;
+    width: 485px;
     word-wrap: break-word;
 }
 .channel{
@@ -189,7 +240,7 @@ line-height: 25px;
 
 #product{
     text-align: center;
-    margin-top: 105px;
+    margin-top: 25px;
 }
 #product .pro{
     width: 23%;
@@ -424,20 +475,14 @@ padding-top: 7px ;
                         display: flex;
                         flex-direction: column;
                         
-                    }    
-                    #details .spi{
-                        width: 100%;
-                        margin-right: 0px;
+                    } 
+                    .pro:hover{
+                        box-shadow: black;
+                        }   
                     }
-                    #details .spd{
-                        width: 100%;
-                      
-                    }
-                    }
+                    
                 
-.pro:hover{
-box-shadow: black;
-}
+
  @media screen and (max-width: 1040px){
     #product .pro-container{
         display: flex;
