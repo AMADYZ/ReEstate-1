@@ -32,65 +32,88 @@
             <a id="Signupnav" href="reg.html">SignUp</a>
             <a id="admin-dash" href="dashboard.html">Admin</a>
           </div>
-          </div>
         </nav>
     </div>
-    <div class="container">
-        <section id="details" class="section-p1">
-          <div class="spi">
-            <img src="/img/img-1.jpg" alt="image" id="MainImg">
-            <br>
-            <br>
-            <div class="small-img-group">
-              <div class="small-img-col">
-                <img src="/img/img-2.jpg" alt="image" width="85%" class="small-img">
-              </div>
-              <div class="small-img-col">
-                <img src="/img/img-3.jpg" alt="image" width="85%" class="small-img">
-              </div>
-              <div class="small-img-col">
-                <img src="/img/img-4.jpg" alt="image" width="85%" class="small-img">
-              </div>
-              <div class="small-img-col">
-                <img src="/img/img-5.jpg" alt="image" width="85%" class="small-img">
-              </div>
-            </div>
-          </div>
-          <div class="spd">
-            <div class="container2">
-                <div class="DetailedInfo">
+            <section id="details" class="section-p1">
+                <div class="spi">
+                    <div id="slider">
+                        <img src="/img/img-1.jpg" alt="image" id="MainImg">
+                        <div class="small-img-group">
+                            <div class="small-img-col">
+                                <img src="/img/img-2.jpg" alt="image" class="small-img">
+                            </div>
+                            <div class="small-img-col">
+                                <img src="/img/img-3.jpg" alt="image" class="small-img">
+                            </div>
+                            <div class="small-img-col">
+                                <img src="/img/img-4.jpg" alt="image" class="small-img">
+                            </div>
+                            <div class="small-img-col">
+                                <img src="/img/img-5.jpg" alt="image" class="small-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="spd">
+                    <div class="block-wrap">
+                        <div class="block-title-wrap">
+                            <h2>Overview</h2>
+                        </div>
+                        <div class="offer">
+                            <ul>
+                                <li>
+                                    <strong>Apartment</strong>
+                                </li>
+                                <li>
+                                    Property Type
+                                </li>
+                            </ul> 
+                                <div class="perks-details">
+                                    <ul>
+                                        <li class="Property-view"><img class="perk-img" src="/Images/bedrooms.png" alt="bedrooms"><div class="number"><%=search.bedrooms%></div>
+                                       Bedrooms</li>
+                                    </ul>
+                                </div>
+                                <div class="perks-details">
+                                    <ul>
+                                        <li><img class="perk-img" src="/Images/bathrooms.png" alt="bathrooms"></li>
+                                       <li><div class="number"><%=search.bathrooms%> Bathrooms</div></li> 
+                                    </ul>
+                                </div>
+                                <div class="perks-details">
+                                    <ul>
+                                        <li><img class="perk-img1" src="/Images/area.jpg" alt="area"></li>
+                                        <li><div class="number"><%=search.area%> M<sup>2</sup></div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="block-wrap">
+                        <div class="block-title-wrap">
+                            <h2>Description</h2>
+                        </div>
+                        <div>
+                            <p class="Description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                 Soluta iusto ea debitis eos esse, saepe molestiae id,
+                                  est aspernatur qui nemo. Reprehenderit ratione ipsam doloremque pariatur,
+                                  aut alias impedit iste?</p>
+                        </div>
+                    </div>
+
+                    <div class="DetailedInfo">
                         <h1 class="Title"><%=search.location %></h1>
+                        <div class="line"></div>
                         <span class="location"><%=search.location%></span>
-                    <div class="Description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                         Soluta iusto ea debitis eos esse,
-                          saepe molestiae id, est aspernatur qui nemo.
-                           Reprehenderit ratione ipsam doloremque pariatur, aut alias impedit iste?</div>
-                           <span class="Price"><%=search.price%> LE</span>
-                <div class="offer">
-          <h1>What this place offer</h1>
-          <div class="perks">
-            <div class="perks-details"><img class="perk-img" src="/Images/bedrooms.png">
-                <div class="number"><%=search.bedrooms%> Bedrooms</div>
-            </div>
-            <div class="perks-details">
-                <img class="perk-img" src="/Images/bathrooms.png">
-                <div class="number"><%=search.bathrooms%> Bathrooms</div>
-            </div>
-            <div class="perks-details1">
-                <img class="perk-img1" src="/Images/area.jpg">
-                <div class="number"><%=search.area%> M<sup>2</div>
+                        <div class="line"></div>
+                        
+                        <span class="Price"><%=search.price%> LE</span>
+                        <div class="PInfo">
+                            <img src="/Images/channel-1.jpeg" class="channel" alt="channel">
+                            <span class="host">Apartment Posted by Adam</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-          </div>
-          <div class="PInfo">
-            <img src="/Images/channel-1.jpeg" class="channel">
-            <span class="host"> Apartement Posted BY Adam</span>
-        </div> 
-                </div>
-                  </div>
-          </div>
-        </section>
-    </div>
+            </section>
     <section id="product" class="section-p1">
         <h2>Featured Projects</h2>
         <div class="pro-container">
@@ -215,17 +238,13 @@
                 <button class="btn" style="position: absolute; bottom: 20px; right: 10px;">Details</button>
             </div>
     </section>
-
-    
     <section id="banner" class="section-m1" style="background-image:url(/img/img-7.jpg);">
         <h4>Repair Service</h4>
         <h2>Explore Move Now Pay Later Projects</h2>
         <button class="btn">Explore More </button>
     </section>
-    </div>
 </body>
 <script src="/Script/product.js"></script>
-</html>
 <script>
     const cursor = new MouseFollower({
       el: null,
