@@ -189,14 +189,24 @@ border-radius: 10px;
 }
 ul {
     list-style-type: none;
+    padding-left: 10px;
+
   }
   li{
-    padding-top: 5px;
+    padding-top: 7px;
   }
 .offer {
         margin-top: 30px;
         display: flex;
         flex-direction: row;
+    }
+    .Property-view{
+      display: flex;
+      flex-direction: row;
+    font-size: 16px;
+    gap: 10px;
+    color: #555;
+    align-items: center;
     }
     .offer h2 {
         font-size: 24px;
@@ -208,12 +218,18 @@ ul {
         display: flex;
         flex-direction: row;
     }
-.perk-img,
-.perk-img1 {
-    width: 30px;
-    height: 30px;
+.perk-img
+ {
+    width: 20px;
+    height: 20px;
 }
-
+.detail-wrap {
+    background-color: rgba(217,217,217,0.1);
+    border-color: #d6d6d6;
+}
+.detail-wrap-li{
+    
+}
 .Description {
     font-size: 16px;
     color: #555;
@@ -224,16 +240,14 @@ ul {
     height: 50px;
     border-radius: 50%;
 }
-.number {
-    font-size: 16px;
-    color: #555;
-}
+
 .host {
     font-size: 18px;
     font-weight: bold;
     color: #333;
     margin-left: 10px;
 }
+
 
 .spi img{
     border-radius: 10px;
