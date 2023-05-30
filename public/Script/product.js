@@ -1,25 +1,28 @@
-let MainImg = document.getElementById('MainImg');
-let small_img = document.getElementsByClassName("small-img")
-let x;
-small_img[0].onclick = function () {
-    x = MainImg.src;
-    MainImg.src = small_img[0].src;
-    small_img[0].src = x;
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
 }
-small_img[1].onclick = function () {
-    x = MainImg.src;
-    MainImg.src = small_img[1].src;
-    small_img[1].src = x;
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
 }
-small_img[2].onclick = function () {
-    x = MainImg.src;
-    MainImg.src = small_img[2].src;
-    small_img[2].src = x;
-}
-small_img[3].onclick = function () {
-    x = MainImg.src;
-    MainImg.src = small_img[3].src;
-    small_img[3].src = x;
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
 }
 let ongo = sessionStorage.getItem('ongo');
 
