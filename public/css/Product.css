@@ -503,3 +503,8 @@ padding-top: 7px ;
     border-radius: 5px;
     height: 120px; /* Adjust the height as needed */
   }
+  #map {
+    height: 500px;
+    width: 95%;
+    margin-left: 3%;
+  }
