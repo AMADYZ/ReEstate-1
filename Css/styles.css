@@ -1,6 +1,10 @@
 body{
     background-color:silver;
   }
+  section{
+    padding-top: 13px;
+    margin-left: -180px;
+  }
   .class1{
       display: -webkit-box;
       display: -ms-flexbox;
@@ -31,10 +35,10 @@ body{
       margin-right: auto;
       -webkit-transition: max-width .25s ease-in;
       transition: max-width .25s ease-in;
-      width: 100%;
+      width: 50%;
   } 
   .class8{
-      border-radius: 20px;
+      border-radius: 30px;
       border: 1px  black;
       padding-bottom: 1.6rem;
       background-color:#f3f0f0;
@@ -139,53 +143,7 @@ body{
       margin-top: .2rem;
   
   }
-  .desc {
-    font-size: .8rem;
-    font-weight: 700;
-  }
-  .typeo{
-    
-      position: relative;
   
-      
-  
-  }
-  .typeo2 {
-    color: #7c142c;
-    font-size: 1.596rem;
-    margin-left: 1.2rem;
-    width: 100%;
-    height: 100%;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    cursor: pointer;
-  }
-  .radio{
-    margin-top:.4rem;
-  
-  }
-  .radio2{
-    border-radius: 20px;
-      border: .1rem solid #0d0d0d;
-      line-height: 1.6rem;
-      display: -webkit-inline-box;
-      display: -ms-inline-flexbox;
-      display:inline-flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      color: #002f34;
-      cursor: pointer;
-      -webkit-transition: background-color .1s,color .1s;
-      transition: background-color .1s,color .1s;
-      padding: .8rem 1.6rem;
-      min-width: 6.4rem;
-      margin-right: .8rem;
-      margin-bottom: .8rem;
-  }
   .imgbox{
   height: 50px;
   width:50px;
@@ -200,48 +158,6 @@ body{
     }
   
   
-  input[type=radio]
-  {
-      border: .1rem solid #0d0d0d;
-      border-radius: 100%;
-      width: 1.2rem;
-      height: 1.2rem;
-      margin-right: .2rem;
-  
-  
-  }
-  
-  .description2{
-      height: 144px;
-      position: relative;
-  
-  }
-  textarea{
-    height: 100px;
-     position:relative; 
-     width:600px;
-     
-  }
-  .coloring{
-    color: #7c142c;
-  }
-  .pricefont{
-  font-size: 1.988rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  
-  }
-  .EGP{
-      padding: 0 1.2rem;
-      margin: 1.2rem 0;
-      display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  
-  }
   
   .continue-application {
     --color: #fff;
@@ -272,7 +188,8 @@ body{
     transition: background 0.3s;
     color: var(--color);
     background: var(--bg, var(--background));
-    margin-left: 550px;
+    margin-left: 500px;
+    width: 10%;
   }
   
   .continue-application > div {
@@ -441,61 +358,7 @@ body{
     --pex: -24px;
   }
   
-  
-  
-  
-  /* .btn-conteiner {
-    display: flex;
-    justify-content: center;
-    --color-text: #ffffff;
-    --color-background: #7c142c;
-    --color-outline: #ff145b80;
-    --color-shadow: #00000080;
-    margin-left: 490px;
-  }
-  
-  .btn-content {
-    display: flex;
-    align-items: center;
-    padding: 5px 30px;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 30px;
-    color: var(--color-text);
-    background: var(--color-background);
-    transition: 1s;
-    border-radius: 100px;
-    box-shadow: 0 0 0.2em 0 var(--color-background);
-  }
-  
-  .btn-content:hover, .btn-content:focus {
-    transition: 0.5s;
-    -webkit-animation: btn-content 1s;
-    animation: btn-content 1s;
-    outline: 0.1em solid transparent;
-    outline-offset: 0.2em;
-    box-shadow: 0 0 0.4em 0 var(--color-background);
-  }
-  
-  .btn-content .icon-arrow {
-    transition: 0.5s;
-    margin-right: 0px;
-    transform: scale(0.6);
-  }
-  
-  .btn-content:hover .icon-arrow {
-    transition: 0.5s;
-    margin-right: 25px;
-  }
-  
-  .icon-arrow {
-    width: 20px;
-    margin-left: 15px;
-    position: relative;
-    top: 6%;
-  }
-    
+
   /* SVG */
   #arrow-icon-one {
     transition: 0.4s;
@@ -564,113 +427,13 @@ body{
     margin-left: -5.2rem;
   
   }
-  input[type="file"] {
-    display: none;
-  }
-  .fio {
-    display: block;
-    position: relative;
-    background-color: #7c142c;
-    color: #ffffff;
-    font-size: 1.12em;
-    font-weight: 500;
-    text-align: center;
-    width: 18.75em;
-    padding: 1.12em 0;
-    margin: auto;
-    border-radius: 0.31em;
-    cursor: pointer;
-  }
-  #num-of-files {
-    font-weight: 400;
-    text-align: center;
-    margin: 1.25em 0 1.87em 0;
-  }
-  ul {
-    list-style-type: none;
-  }
-  .container li {
-    font-weight: 500;
-    background-color: silver;
-    color: #7c142c;
-    margin-bottom: 1em;
-    padding: 1.1em 1em;
-    border-radius: 0.3em;
-    display: flex;
-    justify-content: space-between;
-  }
   .err{
     color: #7c142c;
     font-weight: 300;
     margin-top: -20px;
     margin-left: 90px;
   }
-  .radio-input {
-    display: flex;
-    flex-direction: row;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    padding-left: 60px;
-  }
-  
-  .radio-input input[type="radio"] {
-    display: none;
-  }
-  
-  .radio-input label {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border: 1px solid #f4ecec;
-    background-color: #fff;
-    border-radius: 5px;
-    margin-right: 12px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .radio-input label:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .radio-input input[type="radio"]:checked + label:before {
-    background-color: silver;
-    top: 0;
-  }
-  
-  .radio-input input[type="radio"]:checked + label {
-    background-color: #7c142c;
-    color: #fff;
-    border-color: silver;
-    animation: radio-translate 0.5s ease-in-out;
-  }
-  
-  @keyframes radio-translate {
-    0% {
-      transform: translateX(0);
-    }
-  
-    50% {
-      transform: translateY(-10px);
-    }
-  
-    100% {
-      transform: translateX(0);
-    }
-  }
+ 
   
   
   
