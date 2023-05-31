@@ -35,4 +35,3 @@ else if(ongo =='user')
     document.getElementById("searchnav").style="display:inline";
     document.getElementById("Signupnav").style="display:none";
 }
-

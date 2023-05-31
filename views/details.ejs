@@ -37,11 +37,11 @@
     </div>
             <section id="details" class="section-p1">
                 <div class="w3-content w3-display-container" style="max-width:800px">
-                    <img class="mySlides" src="/img/img-1.jpg"  style="width:115%">
-                    <img class="mySlides" src="/img/img-5.jpg" style="width:115%">
-                    <img class="mySlides" src="/img/img-4.jpg" style="width:115%">
-                    <img class="mySlides" src="/img/img-3.jpg" style="width:115%">
-                    <img class="mySlides" src="/img/img-2.jpg" style="width:115%">
+                    <img class="mySlides" src="/img/img-1.jpg"  style="width:110%;padding-left:90px;">
+                    <img class="mySlides" src="/img/img-5.jpg" style="width:110%;padding-left:90px;">
+                    <img class="mySlides" src="/img/img-4.jpg" style="width:110%;padding-left:80px;">
+                    <img class="mySlides" src="/img/img-3.jpg" style="width:110%;padding-left:90px;">
+                    <img class="mySlides" src="/img/img-2.jpg" style="width:110%;padding-left:90px;">
                     <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
                       <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
                       <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
@@ -87,7 +87,7 @@
                                 <div class="perks-details">
                                     <ul>
                                         <li class="Property-view"><img class="perk-img" src="/Images/calendar.png" alt="area"><div>2023</div></li>
-                                        <li>Year Built</li>
+                                        <li>Year Posted</li>
                                     </ul>
                                 </div>
                             </div>
@@ -104,8 +104,9 @@
                         </div>
                     </div>
                     <div class="block-wrap">
-                        <div class="block-title-wrap">
+                        <div class="block-title-wrap-host">
                             <h2>More Detials</h2>
+                            <button class="btn-list">+ Add To WishList</button>
                         </div>
                         <div class="detail-wrap-table">
                             <div class="rowData">
@@ -388,6 +389,7 @@
       searchPlace();
     }
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGJ_yAToa0xfxBh1EhqoOe5MnZCLebbIQ&callback=initMap" async defer></script>
 <script>
     const cursor = new MouseFollower({
       el: null,

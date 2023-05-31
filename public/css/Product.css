@@ -19,7 +19,7 @@ body {
     font-size: large;
 }
 .section-p1{
-    padding: 40px 80px;
+    padding: 40px 130px;
     
 }
 * {
@@ -52,12 +52,9 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 7rem;
 }
-
-
 section {
     padding: 2rem 9%;
 }
-
 .btn {
     margin-top: 1rem;
     display: inline-block;
@@ -153,7 +150,6 @@ width: 100%;
     font-weight: bold;
   text-align: center;
 }
-
 .location {
     font-family: 'BW Gradual Bold';
     font-size: 20px;
@@ -167,8 +163,6 @@ width: 100%;
     color: #333;
     margin-top: 10px;
 }
-
-
 .DetailedInfo{
     display: flex;
     flex-direction: column;
@@ -204,10 +198,6 @@ ul {
         font-weight: bold;
         color: #333;
         margin-bottom: 10px;
-    }
-    .perks{
-        display: flex;
-        flex-direction: row;
     }
 .perk-img
  {
@@ -305,7 +295,7 @@ ul {
     cursor: pointer;
 }
 #details .spd{
-width: 85%;
+width: 100%;
 }
 #details .spd h4{
     padding: 40px 0 20px 0;
@@ -429,11 +419,11 @@ padding-top: 7px ;
 }
 
 .w3-left {
-  left: 100px;
+  left: 230px;
 }
 
 .w3-right {
-  right: 280px;
+  right: 270px;
 } 
 
 .comments-section {
@@ -508,3 +498,4 @@ padding-top: 7px ;
     width: 95%;
     margin-left: 3%;
   }
+  
