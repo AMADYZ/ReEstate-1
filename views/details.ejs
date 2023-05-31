@@ -35,25 +35,22 @@
         </nav>
     </div>
             <section id="details" class="section-p1">
-                <div class="spi">
-                    <div id="slider">
-                        <img src="/img/img-1.jpg" alt="image" id="MainImg">
-                        <div class="small-img-group">
-                            <div class="small-img-col">
-                                <img src="/img/img-2.jpg" alt="image" class="small-img">
-                            </div>
-                            <div class="small-img-col">
-                                <img src="/img/img-3.jpg" alt="image" class="small-img">
-                            </div>
-                            <div class="small-img-col">
-                                <img src="/img/img-4.jpg" alt="image" class="small-img">
-                            </div>
-                            <div class="small-img-col">
-                                <img src="/img/img-5.jpg" alt="image" class="small-img">
-                            </div>
-                        </div>
+                <div class="w3-content w3-display-container" style="max-width:800px">
+                    <img class="mySlides" src="/img/img-1.jpg"  style="width:115%">
+                    <img class="mySlides" src="/img/img-5.jpg" style="width:115%">
+                    <img class="mySlides" src="/img/img-4.jpg" style="width:115%">
+                    <img class="mySlides" src="/img/img-3.jpg" style="width:115%">
+                    <img class="mySlides" src="/img/img-2.jpg" style="width:115%">
+                    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+                      <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                      <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
                     </div>
-                </div>
+                  </div>
                 <div class="spd">
                     <div class="block-wrap">
                         <div class="block-title-wrap">
@@ -107,7 +104,7 @@
                     </div>
                     <div class="block-wrap">
                         <div class="block-title-wrap">
-                            <h2>Full Detials</h2>
+                            <h2>More Detials</h2>
                         </div>
                         <div class="detail-wrap-table">
                             <div class="rowData">
@@ -139,19 +136,6 @@
                                 </div>
                                 <div>21195</div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="DetailedInfo">
-                        <h1 class="Title"><%=search.location %></h1>
-                        <div class="line"></div>
-                        <span class="location"><%=search.location%></span>
-                        <div class="line"></div>
-                        
-                        <span class="Price"><%=search.price%> LE</span>
-                        <div class="PInfo">
-                            <img src="/Images/channel-1.jpeg" class="channel" alt="channel">
-                            <span class="host">Apartment Posted by Adam</span>
                         </div>
                     </div>
                 </div>
