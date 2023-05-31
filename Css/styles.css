@@ -272,7 +272,7 @@ body{
     transition: background 0.3s;
     color: var(--color);
     background: var(--bg, var(--background));
-    margin-left: 500px;
+    margin-left: 550px;
   }
   
   .continue-application > div {
@@ -601,9 +601,9 @@ body{
   }
   .err{
     color: #7c142c;
-    font-weight: 700;
-    margin-top: -14px;
-    margin-left: -70px;
+    font-weight: 300;
+    margin-top: -20px;
+    margin-left: 90px;
   }
   .radio-input {
     display: flex;
