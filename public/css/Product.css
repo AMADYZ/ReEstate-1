@@ -264,7 +264,27 @@ ul {
     color: #333;
     margin-left: 10px;
 }
-
+.host-info{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    align-items: center;
+}
+.image-info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.contact-img{
+    width: 20px;
+    height: 20px;
+}
+.personal-details{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+    align-items: center;
+}
 .spi img{
     border-radius: 10px;
 }
