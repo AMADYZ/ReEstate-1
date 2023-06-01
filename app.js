@@ -101,5 +101,7 @@ app.get('/details', async (req, res) => {
   const search =await Property.findById(id)
       res.render('details', { search });
 });
-
+app.get('/listing', async (req, res) => {
+res.render('listing');
+});
 
