@@ -55,7 +55,8 @@ app.get('/filter', async (req, res) => {
   const maxArea=parseInt(req.query['Max-Area']);
   const filter = {}; 
   if (location) {
-    filter.location = location;
+    const regex = new RegExp(location, 'i');
+    filter.location = regex;
   }
   if (bathroom) {
     filter.bathrooms = bathroom;
