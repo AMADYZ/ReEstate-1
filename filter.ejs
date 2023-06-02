@@ -126,4 +126,63 @@
         </form>
 
         </div>
-        
+        <div class="container2">
+            <div class="list-grid">
+                <%   if(data.length>0){%>
+                    <% data.forEach(estate=> { %>
+                    <article class="popular__card">
+                    <div class="photo1">
+
+                        <a href="/details?id=<%= estate._id %>"><img src="/img-search/popular5.jpg" class="popular__img"></a>
+
+                        <div class="img1text">Click for information</div>
+                        <span class="condition">For Rent</span>
+
+                    </div>
+                    <div class="popular__data">
+                        <h3 class="popular__title" style="
+                        font-family: 'BW Gradual';
+                        ">
+                            Aliva Private Garden
+                        </h3>
+                        <h2 class="popular_price" style="
+                        font-family: 'Degular';
+                        ">
+                            <bold><%=estate.price%></bold>
+                        </h2>
+                        <p class="popular__description">
+                            <%=estate.title%>
+                        </p>
+                    </div>
+                    <div class="line"></div>
+                    <div class="inner-details">
+                        <div class="bed-details"><img class="bed" src="/Images/bedrooms.png">
+                            <div class="number"><%=estate.bedrooms%> Bedrooms</div>
+                        </div>
+                        <div class="bath-details">
+                            <img class="bath" src="/Images/bathrooms.png">
+                            <div class="number"><%=estate.bathrooms%> Bathrooms</div>
+                        </div>
+                        <div class="vl"></div>
+                        <p id="meter"><%=estate.area%> m<sup>2</sup></p>
+                    </div>
+                    <div class="line"></div>
+                    <div>
+                        <h3 class="info">
+                            <bold>Relator</bold>
+                        </h3>
+                        <div class="relator">
+                            <img class="channel" src="/Images/channel-1.jpeg" alt="">
+                            <div class="relator-info">
+                                <p class="author">Adam perice</p>
+                                <p>(555) 555-4321</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                    <%})%>    
+                <% } else { %>
+                    <p class="errmsg">There are no Data to display...</p>
+                    <% } %>
+            </div>
+            
