@@ -225,3 +225,135 @@ button {
     display: none;
   }
 }
+.scroll-header {
+  background-color: var(--body-color);
+  box-shadow: 0 1px 4px hsla(228, 4%, 15%, .1);
+}
+.scroll-header .nav__logo {
+  color: var(--first-color);
+}
+.active-link {
+  background: linear-gradient(101deg, hsl(228, 66%, 53%), hsl(228, 66%, 47%));
+  color: #fff;
+  box-shadow: 0 4px 8px hsla(228, 66%, 45%, .25);
+}
+
+.container2{
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  margin-top: 5%;
+  margin-left: 8%;
+  
+}
+.list-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 450px 450px 450px;
+  width: 100%;
+}
+.filter-search {
+  display: block;
+  width:73%;
+  height: 130px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 5px 5px;
+  margin-left: 11%;
+  margin-top: -10%;
+  margin-right: 1%;
+  box-shadow: 0 1px 4px hsla(228, 4%, 15%,.3);
+  background-color: whitesmoke;
+}
+.filter-search div,
+.filter-search select {
+  margin-bottom: .25rem;
+  border-radius: 20px;
+  border-color: white;
+  color: white;
+}
+
+.filter-search select {
+  border-radius: .25rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: row;
+  border-color: black;
+  color: white;
+}
+
+.input-values{
+  width: 230px;
+  max-height: 20%;
+  color: rgb(102, 102, 102);
+  border-radius: 10px;
+  margin: 15px;
+  margin-left:17px ;
+  padding: 10px;
+  display: flex;
+  flex-direction:column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.inputcont{
+  display: flex;
+  flex-direction: row;
+}
+.area-price{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.num-buttons{
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  gap: 8px;
+}
+.btns{
+  width: 35px;
+  height: 35px;
+  border-radius: 30px;
+  font-size: 12px;
+  background: transparent;
+}
+.btns:hover{
+  color:  #7c142c;
+  border: 1px solid  #7c142c;
+  cursor: pointer;
+}
+.btns:focus{
+  background-color:#7c142c;
+  color: white; 
+}
+.btnsB{
+  width: 35px;
+  height: 35px;
+  border-radius: 30px;
+  font-size: 12px;
+  background: transparent;
+}
+.btnsB:hover{
+  color:  #7c142c;
+  border: 1px solid  #7c142c;
+  cursor: pointer;
+}
+.btnsB:focus{
+  background-color:#7c142c;
+  color: white; 
+}
+.sub-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+
