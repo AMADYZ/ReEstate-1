@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="" type="image/x-icon">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.1.0/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/list.css">
+    <link rel="stylesheet" href="/css/filterCSS.css">
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css" />
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script src="/Script/filter.js"></script>
+    <title>List-View</title>
+</head>
+<body>
+    <div id="menuToggle">
+        <input type="checkbox">
+        <span id="span1"></span>
+        <span id="span2"></span>
+        <span id="span3"></span>
+        <nav class="nav-menu">
+            <div class="nav1">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="#">Design</a>
+                <a href="contact.html">Contact</a>
+                <a id="searchnav" href="#">Search</a>
+                <a id="Signupnav" href="reg.html">SignUp</a>
+            </div>
+        </nav>
+    </div>
+    <div class="intro"></div>
+    <div class="backimage">
+    </div>
+    <div class="__title">Residences for Sale</div>
+    <h2 class="__titleH2">Here You Can find Everything You Are Looking For</h2>
+  
+
+    <div class="filter-search">
+           
+        <form class="filter-form" action="/filter" method="get">
+            <input type="hidden" name="location" value="<%=title %>">
+            <div class="inputcont">
+            <div class="input-values">
+                <div class="dropdown">
+                    <button class="dropbtn">Property Type</button>
+                    <div class="dropdown-content">
+                    <a href="#">Appartment</a>
+                    <a href="#">Villa</a>
+                    </div>
+                </div>
+            </div>
+            <div class="input-values">
+                <div class="dropdown">
+                    <button class="dropbtn">Condition</button>
+                    <div class="dropdown-content">
+                    <a href="#">Purchase</a>
+                    <a href="#">Rental</a>
+                    </div>
+                </div>
+                </div>
+                <div class="input-values">
+                    <div class="area-price">
+                            <input type="text" class="dropbtn2" name="Min-Area" placeholder="Min.Area" autocomplete="off"
+                            list="min-area-type" >
+                        <input type="text" class="dropbtn2" name="Max-Area" placeholder="Max.Area" autocomplete="off"
+                            list="max-area-type" >
+                    </div>
+                </div>
+                <div class="input-values">
+                <div class="area-price">
+                        <input type="text" class="dropbtn2" name="Min-Price" placeholder="Min.Price" autocomplete="off"
+                        list="min-price-type" >
+                    <input type="text" class="dropbtn2" name="Max-Price" placeholder="Max.Price" autocomplete="off"
+                     list="max-price-type">
+                    
+                </div>
+            </div>
+                <div class="input-values">
+                    <div class="div-info">
+                        <div class="dropdown">
+                            <button class="dropbtn">Bedrooms</button>
+                            <div class="dropdown-content">
+                                <input type="hidden" id="selectedButton" name="bedroom" value="">
+                                <button class="btns" type="button" onclick="setButtonValue(1)">1</button>
+                                <button class="btns" type="button" onclick="setButtonValue(2)">2</button>
+                                <button class="btns" type="button" onclick="setButtonValue(3)">3</button>
+                                <button class="btns" type="button" onclick="setButtonValue(4)">4</button>
+                                <button class="btns" type="button" onclick="setButtonValue(5)">+5</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="input-values">
+                    <div class="div-info">
+                        <div class="dropdown">
+                            <button class="dropbtn">Bathrooms</button>
+                            <div class="dropdown-content">
+                                <input type="hidden" id="selectedButtonB" name="bathroom" value="">
+                                <button class="btnsB" type="button" onclick="setButtonValueB(1)">1</button>
+                                <button class="btnsB" type="button" onclick="setButtonValueB(2)">2</button>
+                                <button class="btnsB" type="button" onclick="setButtonValueB(3)">3</button>
+                                <button class="btnsB" type="button" onclick="setButtonValueB(4)">4</button>
+                                <button class="btnsB" type="button" onclick="setButtonValueB(5)">+5</button>
+                            </div>
+                    </div>
+                </div>
+                   
+                </div>
+                </div>
+                <div class="sub-button">
+                    <input type="submit" value="Filter" class="sub">
+                </div>
+                
+        </form>
+
+        </div>
+        
