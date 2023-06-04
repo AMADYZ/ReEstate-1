@@ -15,6 +15,8 @@ router.get('/', async (req, res) => {
     const regex = new RegExp(title_name, 'i');
     const limit = 6;
     const similar=await properties1.find({title: regex}).limit(limit);
+    req.session.personal=name;
+    req.session.save();
     res.render('details', { search,user1,similar});
   });
 

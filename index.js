@@ -1,6 +1,7 @@
 const express = require('express');   
 const cookieparser=require('cookie-parser');
 const app = express();
+const session = require('express-session');
 app.set('view engine','ejs');
 app.use(express.static('public'));
 require('./database/');
@@ -9,9 +10,18 @@ app.use(cookieparser());
 const server=require('http').createServer(app);
 const dotenv=require('dotenv');
 dotenv.config();
-app.use(express.urlencoded());
-
-
+app.use(express.urlencoded({ extended: true }));
+app.use(session({
+    secret: 'your-secret-key',
+    resave: true,
+    saveUninitialized: true
+  }));
+  
+  app.use(function(req, res, next) {
+    res.locals.personal = req.session.personal;
+    next();
+  });
+  
 
 //Routes Import
 const home = require('./routes/home.js');
