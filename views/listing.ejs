@@ -87,7 +87,7 @@
             <% search.forEach(info=> {%>
                 <article class="popular__card">
                     <div class="photo1">
-                        <img src="../images/uploaded/<%= info.images[1]%>" class="popular__img">
+                        <a href="/details?id=<%= info._id %>"> <img src="../images/uploaded/<%= info.images[1]%>" class="popular__img"></a>
                         <div class="img1text">Click for information</div>
                     </div>
                     <div class="popular__data">

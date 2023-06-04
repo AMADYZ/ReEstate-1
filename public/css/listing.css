@@ -139,7 +139,7 @@ margin: 10%;
   .img1text {
     color: white;
     font-family: 'Pragati Narrow', sans-serif;
-    font-size: 2em;
+    font-size: 1.8em;
     letter-spacing: 2px;
     opacity: 0;
     position: absolute;
@@ -147,6 +147,7 @@ margin: 10%;
     -webkit-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
+    padding-left: 25px;
   }
   .popular__img{
     width: 100%;
