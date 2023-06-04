@@ -362,4 +362,77 @@
 <script type="text/javascript" src="Java Script/jsfile.js"></script>
 
     </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity=
+      "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous">
+    </script>
+<script type="text/javascript" src="./scripts/addproduct.js"></script>
+
+</body>
+
+</body>
+</html>
+
+<script>
+var map;
+var marker;
+
+function initMap() {
+map = new google.maps.Map(document.getElementById('map'), {
+center: { lat: 0, lng: 0 },
+zoom: 2
+});
+
+map.addListener('click', function(event) {
+placeMarker(event.latLng);
+});
+}
+
+function searchPlace() {
+var place = document.getElementById('placeInput').value;
+if (!place) {
+return;
+}
+
+var geocoder = new google.maps.Geocoder();
+
+geocoder.geocode({ address: place }, function(results, status) {
+if (status === 'OK' && results.length > 0) {
+var location = results[0].geometry.location;
+placeMarker(location);
+map.setCenter(location);
+map.setZoom(15);
+}
+});
+}
+
+function placeMarker(location) {
+if (marker) {
+marker.setMap(null);
+}
+
+marker = new google.maps.Marker({
+position: location,
+map: map
+});
+
+getAddress(location);
+}
+
+function getAddress(location) {
+var geocoder = new google.maps.Geocoder();
+
+geocoder.geocode({ location: location }, function(results, status) {
+if (status === 'OK' && results.length > 0) {
+var address = results[0].formatted_address;
+document.getElementById('locationAddress').textContent = 'Location Address: ' + address;
+} else {
+document.getElementById('locationAddress').textContent = 'Cannot retrieve location address.';
+}
+});
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGJ_yAToa0xfxBh1EhqoOe5MnZCLebbIQ&callback=initMap" async defer></script>
 </HTML>
