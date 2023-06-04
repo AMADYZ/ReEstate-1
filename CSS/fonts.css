@@ -6,4 +6,7 @@
     font-family: 'BW Gradual Bold';
     src: url(fonts/BwGradualDEMO-Bold.ttf);
   }
-  
+  @font-face {
+    font-family: 'Degular';
+    src: url(fonts/Degular-Light.ttf);
+  }
