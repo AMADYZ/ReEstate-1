@@ -2,3 +2,8 @@
     font-family: 'BW Gradual';
     src: url(fonts/BwGradualDEMO-Light.ttf);
   }
+  @font-face {
+    font-family: 'BW Gradual Bold';
+    src: url(fonts/BwGradualDEMO-Bold.ttf);
+  }
+  
