@@ -24,7 +24,7 @@ const contact=require('./routes/contact')
 const search=require('./routes/search')
 const filter=require('./routes/filter')
 const details=require('./routes/details')
-
+const listing=require('./routes/listing')
 
 
 //Routes setup
@@ -38,9 +38,7 @@ app.use('/contact', contact);
 app.use('/search', search);
 app.use('/filter', filter);
 app.use('/details',details );
-
-
-
+app.use('/listing',listing );
 
 
 server.listen(5000,()=>
