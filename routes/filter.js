@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
     const minArea=parseInt(req.query['Min-Area']);
     const maxArea=parseInt(req.query['Max-Area']);
     const condition=req.query['condition'];
+    const type=req.query['property'];
     const filter = {}; 
     if (title) {
     const regex = new RegExp(title, 'i');
@@ -42,6 +43,10 @@ router.get('/', async (req, res) => {
     }
     if(condition){
       filter.condition=condition;
+    }
+    if(type)
+    {
+      filter.type=type;
     }
     const filteredData = await properties1.find(filter);
     var array = Object.keys(filteredData)
