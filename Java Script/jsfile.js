@@ -283,3 +283,77 @@ function validateaddressmaps(field){
         return true;
     }
 }
+$(document).ready(function () {
+    $('#myFrom21').submit(function (event) {
+      event.preventDefault(); // Prevent form submission
+  
+      const title = $('#title').val();
+      const type = $('input[name="Type"]:checked').val();
+      const condition = $('input[name="Condition"]:checked').val();
+      const description = $('#description1').val();
+      const area = $('#Area').val();
+      const price = $('#price1').val();
+      const loc = $('#loc').val();
+      const URL = $('#URL').val(); 
+      let locationgps=document.getElementById("locationAddress").innerHTML; 
+      const bathrooms = $('input[name="value-radio"]:checked').val();
+      const bedrooms = $('input[name="value2-radio"]:checked').val();
+      const username=sessionStorage.getItem('username');
+      let fail=true;
+      fail&=validatetitle(title);
+      fail&=validateType(type);
+      fail&=validatecondition(condition);
+      fail&=validatedescription(description);
+      fail&=validatearea(area);
+      fail&=validateprice(price);
+      fail&=validateloc(loc);
+      fail&=validateURL(URL);
+      fail&=validateimg(counter);
+      fail&=validateaddressmaps(locationgps);
+      
+  
+      const formData = new FormData();
+      formData.append('title', title);
+      formData.append('type', type);
+      formData.append('condition', condition);
+      formData.append('description', description);
+      formData.append('area', area);
+      formData.append('price', price);
+      formData.append('loc', loc);
+      formData.append('URL', URL);
+      formData.append('bathrooms', bathrooms);
+      formData.append('bedrooms', bedrooms);
+      formData.append('username',username);
+      formData.append('locationgps',locationgps);
+      for(let i=0;i<counter;i++)
+      {
+        formData.append('imageFile', $('#file-input')[0].files[i]);
+      }
+
+
+  
+      $.ajax({
+        url: '/addproduct',
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (response) {
+
+        },
+        error: function (error) {
+          console.error(error); // Log any errors that occurred
+        },
+      });
+    });
+  });
+  
+
+
+
+
+
+
+
+
+
