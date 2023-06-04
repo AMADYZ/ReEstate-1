@@ -101,3 +101,185 @@ function validate(form){
         return false;
     }
 }
+let fileInput = document.getElementById("file-input");
+let fileList = document.getElementById("files-list");
+let numOfFiles = document.getElementById("num-of-files");
+let number1=0;
+const arr = [];
+let counter=0;
+
+let ongo = sessionStorage.getItem('ongo');
+
+if(ongo == 'admin'){
+   document.getElementById("admin-dash").style = "display: inline";
+   document.getElementById("Signupnav").style="display:none";
+}
+else if(ongo =='user')
+{
+    document.getElementById("searchnav").style="display:inline";
+    document.getElementById("Signupnav").style="display:none";
+}
+
+
+if(sessionStorage.getItem("username")==undefined)
+{
+    window.location.replace("http://localhost:5000/login");
+}
+
+let intro=document.querySelector('.intro');
+setTimeout(()=>
+        {
+            setTimeout(() => {
+                intro.style.top='-300vh';
+                
+            }, 600);
+        })
+
+fileInput.addEventListener("change", () => {
+ 
+  for (i of fileInput.files) {
+    numOfFiles.textContent = `${fileInput.files.length} Files Selected`;
+    number1=fileInput.files.length;
+    let listItem = document.createElement("span");
+    let fileName = i.name;
+    counter++;
+    let fileSize = (i.size / 1024).toFixed(1);
+    listItem.innerHTML = `<span class="img1s">${fileName}</span><span class="filesize">${fileSize}KB</span> <div class="btnmarg"><button class="buton">Remove</button></div>`;
+    if (fileSize >= 1024) {
+      fileSize = (fileSize / 1024).toFixed(1);
+      listItem.innerHTML = `<span class="img1s">${fileName}</span><span class="filesize">${fileSize}KB</span> <div class="btnmarg"><button class="buton">Remove</button></div>`;
+      
+    }
+    fileList.appendChild(listItem);   
+  }
+  let button=document.getElementsByClassName("buton");
+  for (j of button) {
+    j.addEventListener("click", (event) => {
+      // Access the parent element (the <span> containing the file information)
+      let fileItem = event.target.parentElement.parentElement;
+      // Remove the file item from the file list
+      fileItem.remove();
+      number1--;
+      counter--;
+      if(number1==0)
+      {
+        numOfFiles.textContent = `No Files Choosen`;
+      }
+      else
+      numOfFiles.textContent = `${number1} Files Selected`;
+    });
+  }
+});
+
+
+function validatetitle(field){
+    if(field==''){
+        document.getElementById('titleErr').innerHTML='You Must Enter a title.';
+        return false;
+    }
+    else{
+        document.getElementById('titleErr').innerHTML='';
+        return true;
+    }
+}
+function validatedescription(field){
+    if(field==''){
+        document.getElementById('descriptionErr').innerHTML='You Must Enter a Description.';
+        return false;
+    }
+    else{
+        document.getElementById('descriptionErr').innerHTML='';
+        return true;
+    }
+}
+function validatearea(field){
+    var num=field.match(/\d+/g);
+    if(field==''){
+        document.getElementById('areaErr').innerHTML='You Must Enter an area.';
+        return false;
+    }
+    else{
+        document.getElementById('areaErr').innerHTML='';
+        return true;
+
+    }
+}
+function validateprice(field){
+    if(field==''){
+        document.getElementById('priceErr').innerHTML='You Must Enter a price.';
+        return false;
+    }
+    else{
+        document.getElementById('priceErr').innerHTML='';
+        return true;
+    }
+}
+
+function validateURL(field){
+    if(field==''){
+        document.getElementById('URLerr').innerHTML='You Must Enter a URL.';
+        return false;
+    }
+   
+    else{
+        document.getElementById('URLerr').innerHTML='';
+        return true;
+    }
+}
+function validateloc(field){
+    if(field==''){
+        document.getElementById('locerr').innerHTML='You Must Choose a location';
+        return false;
+    }
+   
+    else{
+        document.getElementById('locerr').innerHTML='';
+        return true;
+    }
+}
+function validateType(field){
+    if(field==undefined){
+        document.getElementById('typeerr').innerHTML='You Must Choose the Type';
+        return false;
+    }
+   
+    else{
+        document.getElementById('typeerr').innerHTML='';
+        return true;
+    }
+}
+function validatecondition(field){
+    if(field==undefined){
+        document.getElementById('conditionerr').innerHTML='You Must Choose the Condition';
+        return false;
+    }
+   
+    else{
+        document.getElementById('conditionerr').innerHTML='';
+        return true;
+    }
+}
+
+function validateimg(field){
+    if(field<3){
+        document.getElementById('imgerr').innerHTML='You must attach atleast 3 pictures!!';
+        return false;
+    }
+   
+    else{
+        document.getElementById('imgerr').innerHTML='';
+        return true;
+    }
+}
+
+function validateaddressmaps(field){
+    if(field==''){
+        document.getElementById('addressmaperr').innerHTML='You must enter and choose a place.';
+        return false;
+    }
+   
+    else{
+        document.getElementById('addressmaperr').innerHTML='';
+        return true;
+    }
+}
