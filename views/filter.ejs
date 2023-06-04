@@ -54,8 +54,9 @@
                 <div class="dropdown">
                     <button class="dropbtn">Property Type</button>
                     <div class="dropdown-content">
-                   <button class="btns2" onclick="setbuttoncondition('sale')" >Purchase</button>
-                        <button class="btns2" onclick="setbuttoncondition('Rent')">Rental</button>
+                        <input type="hidden" id="property" name="property" value="" autocomplete="off">
+                        <button class="btns2" type="button" onclick="setbuttonproperty('villa')">Villa</button>
+                        <button class="btns2" type="button" onclick="setbuttonproperty('Apartment')">Appartment</button>
                     </div>
                 </div>
             </div>
@@ -64,10 +65,10 @@
                     <button class="dropbtn">Condition</button>
                     <div class="dropdown-content">
                         <input type="hidden" id="condition" name="condition" value="" autocomplete="off">
-                        <button class="btns2" onclick="setbuttoncondition('sale')" >Purchase</button>
-                        <button class="btns2" onclick="setbuttoncondition('Rent')">Rental</button>
+                        <button class="btns2" type="button" onclick="setbuttoncondition('sale')" >Purchase</button>
+                        <button class="btns2" type="button" onclick="setbuttoncondition('Rent')">Rental</button>
                     </div>
-                </div>
+                </div> 
                 </div>
                 <div class="input-values">
                     <div class="area-price">
