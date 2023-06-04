@@ -12,7 +12,9 @@ router.get('/', async (req, res) => {
     let name =search.username;
     let title_name=search.title;
     let user1= await user.find().where("username").equals(name);
-    const similar=await properties1.find().where("title").equals(title_name);
+    const regex = new RegExp(title_name, 'i');
+    const limit = 6;
+    const similar=await properties1.find({title: regex}).limit(limit);
     res.render('details', { search,user1,similar});
   });
 
