@@ -24,6 +24,8 @@
       </style>
 </head>
 <body>
+    <div class="intro"></div>
+
 
     <div class="class1 class2 ">
         <span class="class4 class5 class6"><b> Post Your Ad Here</b></span>
@@ -32,27 +34,24 @@
     <div class="class7">
         <div class="class8">
             <div>
-             <div class="class9">
-<form action='' method='post' onsubmit='return validate(this)'>
+ <div class="class9">
+<form id="myFrom21" method='post' action='/addproduct' enctype="multipart/form-data">
    
-    <section id="addtitle">
+<section id="addtitle" class="addtitle">
 <div class="class12">
-    <div class="class13">
+     <div class="class13">
 <label for="title" class="labol"> <br>
     <img src="Images/title.png" alt="icon image" class="imgbox2">
-    <span class="spano">Ad title</span>
+    <span class="spano">Ad title *</span>
 </label>
 <div class="inputo">
-    <input id="title" name="title" spellcheck="false" class="inputo2" maxlength="70" autocomplete="nope" value>
+    <input id="title" name="title" spellcheck="false" class="inputo2" maxlength="70" autocomplete="nope" value placeholder="Enter the Place Name">
 </div>
 <div class="inputo3">
-    <span class="desc">Mention the key features of your item (e.g. brand, model, age, type)</span>
-
+    <div id='titleErr' class='err margin00'></div>
     </div>
 </div>
 </div>
-<div id='titleErr' class='err'></div>
-
     </section>
 
 
