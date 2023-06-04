@@ -244,6 +244,9 @@
 <script src="./scripts/product.js"></script>
 <script src="./scripts/details.js"></script>
 <script>
+  function redirectToPage(id) {
+    window.location.href = `/details?id=${id}`; 
+  }
      var map;
     var marker;
     function searchPlace() {
