@@ -207,130 +207,26 @@
                     </div>
                 </div>
             </section>
-    <section id="product" class="section-p1">
-        <h2>Featured Projects</h2>
-        <div class="pro-container">
-            <div class="pro">
-                <img src="../images/img-1.jpg" alt="image1">
-                <div class="des">
-                    <span>Location</span>
-                    <h5>product name</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>Price</h4>
-                </div>
-                <button class="btn" style="position: absolute; bottom: 20px; right: 10px;">Details</button>
-            </div>
-            <div class="pro">
-                <img src="../images/img-1.jpg" alt="image1">
-                <div class="des">
-                    <span>Location</span>
-                    <h5>product name</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>Price</h4>
-                </div>
-                <button class="btn" style="position: absolute; bottom: 20px; right: 10px;">Details</button>
-            </div>
-            <div class="pro">
-                <img src="../images/img-1.jpg" alt="image1">
-                <div class="des">
-                    <span>Location</span>
-                    <h5>product name</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>Price</h4>
-                </div>
-                <button class="btn" style="position: absolute; bottom: 20px; right: 10px;">Details</button>
-            </div>
-            <div class="pro">
-                <img src="../images/img-1.jpg" alt="image1">
-                <div class="des">
-                    <span>Location</span>
-                    <h5>product name</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>Price</h4>
-                </div>
-                <button class="btn" style="position: absolute; bottom: 20px; right: 10px;">Details</button>
-            </div>
-            <div class="pro">
-                <img src="../images/img-1.jpg" alt="image1">
-                <div class="des">
-                    <span>Location</span>
-                    <h5>product name</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>Price</h4>
-                </div>
-                <button class="btn" style="position: absolute; bottom: 20px; right: 10px;">Details</button>
-            </div>
-            <div class="pro">
-                <img src="../images/img-1.jpg" alt="image1">
-                <div class="des">
-                    <span>Location</span>
-                    <h5>product name</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-
-                    </div>
-                    <h4>Price</h4>
-                </div>
-                <button class="btn" style="position: absolute; bottom: 20px; right: 10px;">Details</button>
-            </div>
-            <div class="pro">
-                <img src="../images/img-1.jpg" alt="image1">
-                <div class="des">
-                    <span>Location</span>
-                    <h5>product name</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <h4>Price</h4>
-                </div>
-                <button class="btn" style="position: absolute; bottom: 20px; right: 10px;">Details</button>
-            </div>
-            <div class="pro">
-                <img src="/../images/img-1.jpg" alt="image1">
-                <div class="des">
-                    <span>Location</span>
-                    <h5>product name</h5>
-                    <div class="star">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-
-                    </div>
-                    <h4>Price</h4>
-                </div>
-                <button class="btn" style="position: absolute; bottom: 20px; right: 10px;">Details</button>
-            </div>
-    </section>
+            <h2 class="marginns">Featured Projects</h2>
+            <div class="container2"> 
+                <% similar.forEach(relate => {
+                    if (relate._id != search._id) { %>
+                      <div class="pro">
+                        <div class="image-container">
+                          <img class="inimg" src="../images/uploaded/<%= relate.images[1] %>" alt="image1">
+                        </div>
+                        <div class="des">
+                          <span><%= relate.location %></span>
+                          <h5><%= relate.title %></h5>
+                          <h4>EGP <%= relate.price %></h4>
+                          <div>
+                            <button class="btn" onclick="redirectToPage('<%= relate._id %>')">Details</button>
+                          </div> 
+                        </div>
+                      </div>
+                    <% }
+                  }) %>              
+              </div>
     <section id="banner" class="section-m1" style="background-image:url(../images/img-7.jpg);">
         <h4>Repair Service</h4>
         <h2>Explore Move Now Pay Later Projects</h2>
