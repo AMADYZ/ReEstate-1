@@ -218,7 +218,7 @@
                         <div class="des">
                           <span><%= relate.location %></span>
                           <h5><%= relate.title %></h5>
-                          <h4>EGP <%= relate.price %></h4>
+                          <h4>EGP <%= (relate.price * 1).toLocaleString() %></h4>
                           <div>
                             <button class="btn" onclick="redirectToPage('<%= relate._id %>')">Details</button>
                           </div> 
