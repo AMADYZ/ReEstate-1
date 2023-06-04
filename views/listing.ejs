@@ -11,32 +11,35 @@
 </head>
 <body>
     <div class="first-block">
+        <% user1.forEach(user => { %>
         <div class="first-block-inner">
             <div class="inner-left">
                 <img class="IMG" src="../images/icon2.jpg">
             </div>
         </div>
-        <div class="inner-right">
-            <h2 class="seller-name"><%=user1.username%></h2>
-            <div class="fake-rating">
-                <span>&#x2605;</span>
-                <span>&#x2605;</span>
-                <span>&#x2605;</span>
-                <span>&#x2605;</span>
-                <span>&#x2605;</span>
+            <div class="inner-right">
+                <h2 class="seller-name"><%= user.username %></h2> 
+                <div class="fake-rating">
+                    <span>&#x2605;</span>
+                    <span>&#x2605;</span>
+                    <span>&#x2605;</span>
+                    <span>&#x2605;</span>
+                    <span>&#x2605;</span>
+                </div>
+                <div class="seller-input">
+                    <h3 class="seller-place">Works for ReEstate</h3>
+                    <hr>
+                    <span class="seller-info">Information 1:</span>
+                    <span class="seller-info-data"><%= user.email %></span> 
+                    <br>
+                    <br>
+                    <span class="seller-info">Information 2:</span>
+                    <span class="seller-info-data"><%= user.phone %></span>
+                </div>
             </div>
-            <div class="seller-input">
-                <h3 class="seller-place">Works for ReEstate</h3>
-                <hr>
-                <span class="seller-info">Information 1:</span>
-                <span class="seller-info-data"><%=user1.email%></span>
-                <br>
-                <br>
-                <span class="seller-info">Information 2:</span>
-                <span class="seller-info-data"><%=user1.phone%></span>
-            </div>
-        </div>
+        <% }) %>
     </div>
+    
     <div class="second-block">
         <div class="flex-wrapper">
             <div class="single-chart">
@@ -81,39 +84,41 @@
     <div class="third-block">
         <h2 class="H2">Listings <span id="counter2">(<span id="counter"></span>)</span></h2>
         <div class="list-grid">
+            <% search.forEach(info=> {%>
                 <article class="popular__card">
                     <div class="photo1">
-                        <img src="../images/popular5.jpg" class="popular__img">
+                        <img src="../images/uploaded/<%= info.images[1]%>" class="popular__img">
                         <div class="img1text">Click for information</div>
                     </div>
                     <div class="popular__data">
                         <h3 class="popular__title" style="
                         font-family: 'BW Gradual';
                         ">
-                            Aliva Private Garden
+                           <%= info.title %>
                         </h3>
                         <h2 class="popular_price" style="
                         font-family: 'Degular';
                         ">
-                            <bold>$47,000</bold>
+                            <bold><%= (info.price * 1).toLocaleString() %></bold>
                         </h2>
                         <p class="popular__description">
-                            742 Evergeen Terrace
+                            <%= info.location %>
                         </p>
                     </div>
                     <div class="line"></div>
                     <div class="inner-details">
                         <div class="bed-details"><img class="bed" src="../images/bedrooms.png">
-                            <div class="number">4 Bedrooms</div>
+                            <div class="number"><%= info.bedrooms %> Bedrooms</div>
                         </div>
                         <div class="bath-details">
                             <img class="bath" src="../images/bathrooms.png">
-                            <div class="number">3 Bathrooms</div>
+                            <div class="number"> <%= info.bathrooms %> Bathrooms</div>
                         </div>
                         <div class="vl"></div>
-                        <p id="meter">242 m<sup>2</sup></p>
+                        <p id="meter"> <%= info.area %> m<sup>2</sup></p>
                     </div>     
                 </article>
+               <% }) %>
             </div>
      </div> 
     <script src="../scripts/listing.js">
