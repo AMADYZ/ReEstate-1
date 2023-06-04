@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
     const minPrice = parseInt(req.query['Min-Price']);
     const minArea=parseInt(req.query['Min-Area']);
     const maxArea=parseInt(req.query['Max-Area']);
+    const condition=req.query['condition'];
     const filter = {}; 
     if (title) {
     const regex = new RegExp(title, 'i');
@@ -38,6 +39,9 @@ router.get('/', async (req, res) => {
       filter.price = { $gte: minPrice };
     } else if (maxPrice && !isNaN(maxPrice)) {
       filter.price = { $lte: maxPrice };
+    }
+    if(condition){
+      filter.condition=condition;
     }
     const filteredData = await properties1.find(filter);
     var array = Object.keys(filteredData)
@@ -66,5 +70,5 @@ router.get('/', async (req, res) => {
 
     });
   });
-
+  
   module.exports = router;
