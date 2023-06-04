@@ -101,9 +101,7 @@ function validate(form){
         return false;
     }
 }
-let fileInput = document.getElementById("file-input");
-let fileList = document.getElementById("files-list");
-let numOfFiles = document.getElementById("num-of-files");
+
 let number1=0;
 const arr = [];
 let counter=0;
