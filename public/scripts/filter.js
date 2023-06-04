@@ -4,7 +4,14 @@ function setButtonValue(value) {
   function setButtonValueB(value) {
     document.getElementById('selectedButtonB').value = value;
   }
-  
+  function setbuttoncondition(value)
+  {
+    document.getElementById('condition').value = value;
+  }
+  function setbuttonproperty(value)
+  {
+    document.getElementById('property').value = value;
+  }
 let ongo = sessionStorage.getItem('ongo');
 
 if(ongo == 'admin'){
