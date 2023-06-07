@@ -35,7 +35,7 @@ const search=require('./routes/search')
 const filter=require('./routes/filter')
 const details=require('./routes/details')
 const listing=require('./routes/listing')
-
+const compare=require('./routes/compare')
 
 //Routes setup
 app.use('/', home);
@@ -49,7 +49,7 @@ app.use('/search', search);
 app.use('/filter', filter);
 app.use('/details',details );
 app.use('/listing',listing );
-
+app.use('/compare',compare );
 
 server.listen(5000,()=>
 {

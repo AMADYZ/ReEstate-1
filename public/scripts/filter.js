@@ -27,9 +27,6 @@ if(sessionStorage.getItem("username")==undefined)
 {
     window.location.replace("http://localhost:5000/login");
 }
-
-
-
 let intro=document.querySelector('.intro');
 setTimeout(()=>
         {

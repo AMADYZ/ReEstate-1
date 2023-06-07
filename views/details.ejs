@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,11 +42,9 @@
                     <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
                       <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
                       <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
-                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
-                      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+                      <% search.images.forEach((_, index) => { %>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv( index + 1 )"></span>
+                      <% }); %>
                     </div>
                   </div>
                 <div class="spd">
@@ -88,7 +85,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="block-wrap">
                         <div class="block-title-wrap">
                             <h2>Description</h2>
@@ -97,11 +93,13 @@
                             <p class="Description"><%=search.description%></p>
                         </div>
                     </div>
-
                     <div class="block-wrap">
-                        <div class="block-title-wrap">
-                            <h2>More Detials</h2>
-                        </div>
+                      <div class="block-title-wrap-host">
+                        <h2>More Details</h2>
+                        <input type="hidden" id="id_prop" value="<%=search._id%>">
+                          <button class="btn-list" id="but-comp" type="submit" name="compareBtn" value="first">Compare</button>
+                          <label id="myLabel" class="fade-label hidden">Add Another Property to compare</label>
+                    </div>                    
                         <div class="offer">
                             <ul>
                                 <li>
@@ -137,11 +135,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-
-
-                    
                     <div class="block-wrap">
                         <div class="block-title-wrap-host">
                             <h2>Address</h2>
@@ -173,8 +166,9 @@
                         </div>
                     </div>
                     <div class="comments-section">
-                      <h2><%= search.comment.length %> Comments</h2>
                       <ul class="comment-list" id="comments">
+                        <h2><%= search.comment.length %> Comments</h2>
+
                         <% search.comment.forEach(comment => { %>
                           <li>
                             <h3><%= comment.title %></h3>
@@ -213,7 +207,7 @@
                     if (relate._id != search._id) { %>
                       <div class="pro">
                         <div class="image-container">
-                          <img class="inimg" src="../images/uploaded/<%= relate.images[1] %>" alt="image1">
+                          <img class="inimg" src="../images/uploaded/<%=relate.images[1]%>" alt="image1">
                         </div>
                         <div class="des">
                           <span><%= relate.location %></span>
@@ -233,17 +227,15 @@
         <button class="btn">Explore More </button>
     </section>
 </body>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity=
   "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous">
 </script>
-
 <script src="./scripts/product.js"></script>
 <script src="./scripts/details.js"></script>
-<script>
+<script> 
   function redirectToPage(id) {
     window.location.href = `/details?id=${id}`; 
   }

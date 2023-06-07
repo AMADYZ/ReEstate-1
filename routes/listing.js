@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
     let info=req.session.personal;
     const search =await properties1.find().where("username").equals(info);
     const user1= await user.find().where("username").equals(info);
-    console.log(user1);
     res.render('listing',{user1,search})
 })
 module.exports = router;
