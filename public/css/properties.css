@@ -1,0 +1,279 @@
+@import "https://unpkg.com/open-props";
+
+@font-face {
+    font-family: 'BW Gradual';
+    src: url(fonts/BwGradualDEMO-Light.ttf);
+  }
+  
+  @font-face {
+    font-family: 'BW Gradual Bold';
+    src: url(fonts/BwGradualDEMO-Bold.ttf);
+  }
+  
+  @font-face {
+    font-family: 'Degular';
+    src: url(fonts/Degular-Light.ttf);
+  }
+
+.updates .cust {
+    margin-bottom: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.updates .cust h2 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.updates {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.updates:hover {
+    box-shadow: none;
+}
+
+.update {
+    display: flex;
+    flex-direction: row;
+}
+
+.updates .update {
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.updates .update .profile {
+    display: grid;
+    grid-template-columns: 3em 1fr;
+    align-items: center;
+}
+
+.updates .update .profile .message {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.updates .update .profile .profile-photo {
+    margin-right: 1rem;
+    flex: 1;
+}
+
+.updates .update .add-delete .remove-before {
+    background:#7c142c;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-family: 'BW Gradual Bold';
+    font-weight: 800;
+    min-height: 40px;
+    outline: 0;
+    padding: 7px 13px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.updates .update .add-delete .remove-before:hover,
+.updates .update .add-delete .remove-before:active {
+    background-position: 0 0;
+    color:#7c142c;
+    background-color: white;
+    transition: 0.3s ease-out all;
+}
+
+.updates .update .add-delete .remove-before:active {
+    opacity: .5;
+}
+
+.updates .update .add-delete .dropdown {
+    margin-left: 2.5rem;
+    background: lightgrey;
+    border: 1px solid rgb(160, 158, 158);
+    border-radius: 6px;
+    box-shadow: rgba(75, 73, 73, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    min-height: 40px;
+    outline: 0;
+    padding: 7px 13px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.updates .update .add-delete .dropdown:hover,
+.updates .update .add-delete .dropdown:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #555555;
+}
+
+.updates .update .add-delete .dropdown:active {
+    opacity: .5;
+}
+
+.form-prop {
+    display: inline;
+}
+
+.updates .update .add-delete .button {
+    background: #86be1e;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-family: 'BW Gradual Bold';
+    font-weight: 800;
+    min-height: 40px;
+    outline: 0;
+    padding: 7px 13px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.updates .update .add-delete .button:hover,
+.updates .update .add-delete .button:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #86be1e;
+}
+
+.updates .update .add-delete .button:active {
+    opacity: .5;
+}
+.updates .update .add-delete .button-1 {
+    background: #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-family: 'BW Gradual Bold';
+    font-weight: 800;
+    min-height: 40px;
+    outline: 0;
+    padding: 7px 13px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.updates .update .add-delete .button-1:hover,
+.updates .update .add-delete .button-1:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.updates .update .add-delete .button-1:active {
+    opacity: .5;
+}
+.admins{
+    width: 50rem;
+}
+
+.username, .password{
+    display: inline;
+}
+.popup{
+    width: 400px;
+    background: silver;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.popup img{
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 35%;
+}
+
+.popup h2 {
+    font-size: 39px;
+    font-weight: 500;
+    font-family: 'Degular';
+    color: #ffffff;
+    margin: 30px 0 10px;
+}
+
+.popup button{
+    width: 80%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: #FFFFFF;
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    border-radius: 20px;
+    font-family: 'BW Gradual Bold';
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+.popup button:hover{
+    background:#7c142c;
+    color: #fff;
+
+
+}
+
+.visually-hidden{
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}

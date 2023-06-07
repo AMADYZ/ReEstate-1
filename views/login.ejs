@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <script src="https://kit.fontawesome.com/854a317bd6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css"/>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="intro"></div>
+    <div class="back">
+        <img class="inbackimg" src="./images/The_Press_Intro_Image_4.webp">
+    </div>
+
+    <div id="menuToggle">
+        <input type="checkbox">
+        <span id="span1"></span>
+        <span id="span2"></span>
+        <span id="span3"></span>
+        <nav class="nav-menu">
+          <div class="nav1">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/design">Design</a>
+            <a href="/contact">Contact</a>
+            <a id="searchnav" href="search.html">Search</a>
+            <a id="Signupnav" href="/login">SignUp</a>
+          </div>
+          </div>
+        </nav>
+    </div>
+    
+
+
+
+
+    
+    <div class="container" id="container">
+     
+        <div class="form-container signup-form" id="incontainer">
+                <form id="myForm"  method="post" action="/login.ejs">
+                <div class="title">Sign Up</div>
+                <div class="Social-cont">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span class="intitle">or use email for registration</span>
+                <br>             
+                <input class="init" type="text" name="username" placeholder="Username" id="username">
+                <div id='nameErr' class='err'></div>
+                <i class="error-icon fas fa-exclamation-circle" id="er1"></i>
+                <input class="init" type="text" name="email" placeholder="Email" id="email"/>
+                <div id='emailErr' class='err'></div>
+                <i class="error-icon fas fa-exclamation-circle" id="er2"></i>
+                <input class="init" type="text" id="phonee" name="phone" placeholder="Phone">
+                <div id='phoneerr' class='err'></div>
+                <i class="error-icon fas fa-exclamation-circle" id="er3"></i>
+                <input class="init" type="password" name="pass" placeholder="Password" id="pass">
+                <div id='passErr' class='err'></div>
+                <i class="error-icon fas fa-exclamation-circle" id="er4"></i>
+                <input class="init" type="password" name="pass1" placeholder="Confirm-Password" id="cpass">
+                <div id='passcErr' class='err'></div>
+                <i class="error-icon fas fa-exclamation-circle" id="er5"></i>
+                <div class="checkbox-wrapper-33">
+                    <label class="checkbox">
+                      <input type="checkbox" class="checkbox__trigger visuallyhidden" id="checker" name="Role">
+                      <span class="checkbox__symbol">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 28 28" height="28px" width="28px" class="icon-checkbox" aria-hidden="true">
+                          <path d="M4 14l8 7L24 7"></path>
+                        </svg>
+                      </span>
+                      <p class="checkbox__textwrapper">Admin</p>
+                    </label>
+                  </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+
+
+
+
+        
+        <!-- ------------------------------   signin  ------------------------------------- -->
+        <div class="form-container signin-form">
+              <form id="myForm1"  method="post" action="/login.ejs">
+                <div class="title">Sign In</div>
+                <div class="Social-cont">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span class="intitle">or use your account</span>
+                <br>
+                <input class="init" name="username_in" type="text" placeholder="UserName" id="username_in">
+                <div id='nameErr_in' class='err'></div>
+                <i class="error-icon fas fa-exclamation-circle" id="er1_in"></i>
+
+                <input class="init" name="password_in" type="password" placeholder="Password" id="password_in">
+                <div id='passErr_in' class='err'></div>
+                <i class="error-icon fas fa-exclamation-circle" id="er2_in"></i>
+                <button class="forgetpass" onclick=" return forget()">Forget Password</button>
+                <button type="submit" id="signinbut"> Sign In</button>
+                
+            </form>
+
+
+
+
+            <form id="myForm2"  method="post" action="/login.ejs">
+              <div class="title spaces">Forget Password</div>
+              <div class="Social-cont">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span class="intitle">or use your account</span>
+            <br>
+
+            <input class="init" name="Email" type="text" placeholder="Email" id="Email">
+            <div id='Emailerr' class='err'></div>
+            <i class="error-icon fas fa-exclamation-circle" id="err1"></i>
+            <button type="submit"> Send Email</button>
+            <button class="bbt12" onclick="return signin()">Back</button>
+            </form>
+
+
+
+
+
+            <form class="form" id="myForm3"  method="post" action="/login.ejs">
+              <p class="heading title">Verify</p>
+              <svg class="check" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" xml:space="preserve">  <image id="image0" width="60" height="60" x="0" y="0" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAQAAACQ9RH5AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+            AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZ
+            cwAACxMAAAsTAQCanBgAAAAHdElNRQfnAg0NDzN/r+StAAACR0lEQVRYw+3Yy2sTURTH8W+bNgVf
+            aGhFaxNiAoJou3FVEUQE1yL031BEROjCnf4PLlxILZSGYncuiiC48AEKxghaNGiliAojiBWZNnNd
+            xDza3pl77jyCyPzO8ubcT85wmUkG0qT539In+MwgoxQoUqDAKDn2kSNLlp3AGi4uDt9xWOUTK3xg
+            hVU2wsIZSkxwnHHGKZOxHKfBe6rUqFGlTkPaVmKGn6iYao1ZyhK2zJfY0FZ9ldBzsbMKxZwZjn/e
+            5szGw6UsD5I0W6T+hBhjUjiF7bNInjz37Ruj3igGABjbtpIo3GIh30u4ww5wr3fwfJvNcFeznhBs
+            YgXw70TYX2bY/ulkZhWfzfBbTdtrzjPFsvFI+T/L35jhp5q2owDs51VIVvHYDM9sa/LY8XdtKy1l
+            FXfM8FVN2/X2ajctZxVXzPA5TZvHpfb6CFXxkerUWTOcY11LX9w0tc20inX2mmF4qG3upnNWrOKB
+            hIXLPu3dF1x+kRWq6ysHpkjDl+7eQjatYoOCDIZF3006U0unVSxIWTgTsI3HNP3soSJkFaflMDwL
+            3OoHrph9YsPCJJ5466DyOGUHY3Epg2rWloUxnMjsNw7aw3AhMjwVhgW4HYm9FZaFQZ/bp6QeMRQe
+            hhHehWKXGY7CAuSpW7MfKUZlAUqWdJ3DcbAAB3guZl9yKC4WYLfmT4muFtgVJwvQx7T2t0mnXK6J
+            XlGGyAQvfNkaJ5JBmxnipubJ5HKDbJJsM0eY38QucSx5tJWTVHBwqDDZOzRNmn87fwDoyM4J2hRz
+            NgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0wMi0xM1QxMzoxNTo1MCswMDowMKC8JaoAAAAldEVY
+            dGRhdGU6bW9kaWZ5ADIwMjMtMDItMTNUMTM6MTU6NTArMDA6MDDR4Z0WAAAAKHRFWHRkYXRlOnRp
+            bWVzdGFtcAAyMDIzLTAyLTEzVDEzOjE1OjUxKzAwOjAwIIO3fQAAAABJRU5ErkJggg=="></image>
+            </svg>
+              <div class="box">
+              <input class="input" id="inp1" type="text" maxlength="1">
+              <input class="input" id="inp2" type="text" maxlength="1"> 
+              <input class="input" id="inp3" type="text" maxlength="1">
+              <input class="input" id="inp4" type="text" maxlength="1">
+              </div>
+              <div id='codeerr' class='err'></div>
+              <i class="error-icon fas fa-exclamation-circle" id="err12"></i>
+              <button class="btn1" type="submit">Submit</button>
+              <button class="btn2"onclick="return Email()">Back</button>
+            </form>
+
+
+            
+
+            <form id="myForm4"  method="post" action="/login.ejs">
+              <div class="title getdown">Change Password</div>
+              <div class="Social-cont">
+                  <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                  <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <span class="intitle">or use your account</span>
+              <br>
+              <input class="init" name="newpass" type="text" placeholder="Password" id="newpass">
+              <div id='newpass_err' class='err'></div>
+              <i class="error-icon fas fa-exclamation-circle" id="err22"></i>
+
+              <input class="init" name="confpass" type="text" placeholder="Confirm-Password" id="confpass">
+              <div id='confpass_err' class='err'></div>
+              <i class="error-icon fas fa-exclamation-circle" id="err23"></i>
+              <button type="submit">Change</button>
+              
+          </form>
+
+
+
+
+
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	          <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		        integrity=
+		        "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		        crossorigin="anonymous">
+	          </script>
+            
+   
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-pannel left1">
+                    <div class="title">Welcome to ReEstate</div>
+                    <p class="intitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                         empore, at dolore
+                        ipsa atque est consequuntur temporibus!</p>
+                        <button class="press1" id="signin">Sign In</button>
+                        </div>
+                        <div class="overlay-pannel right1">
+                            <div class="title">Welcome to ReEstate</div>
+                            <p class="intitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                 empore, at dolore
+                                ipsa atque est consequuntur temporibus!</p>
+                                <button class="press1" id="signup">Sign Up</button>
+                               
+                </div>
+            </div> 
+        </div>
+       </div>
+
+      <div class="backof" id="outcontainer">
+        <div class="topof"></div>
+        <div class="titleofadmin">Thank you for your registration</div>
+        <div class="loading-bar">
+          Waiting
+           </div>
+           <div class="waitingmess">Waiting for the acceptance from the Admin</div>
+        <div class="bottomof"></div>
+      </div>
+
+      
+
+      
+        
+    
+</body>
+</html>
+<script src="/scripts/signup.js"> </script>
+<script src="/scripts/signin.js"> </script>
+<script src="/scripts/s_enteremail.js"> </script>
+<script src="/scripts/s_verification.js"> </script>
+<script src="/scripts/s_changepasswords.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  
+    const cursor = new MouseFollower({
+      el: null,
+      container: document.body,
+      className: "mf-cursor",
+      innerClassName: "mf-cursor-inner",
+      textClassName: "mf-cursor-text",
+      mediaClassName: "mf-cursor-media",
+      mediaBoxClassName: "mf-cursor-media-box",
+      iconSvgClassName: "mf-svgsprite",
+      iconSvgNamePrefix: "-",
+      iconSvgSrc: "",
+      dataAttr: "cursor",
+      hiddenState: "-hidden",
+      textState: "-text",
+      iconState: "-icon",
+      activeState: "-active",
+      mediaState: "-media",
+      stateDetection: {
+        "-pointer": "a,button",
+        "-hidden": "iframe"
+      },
+      visible: true,
+      visibleOnState: false,
+      speed: 1,
+      ease: "expo.out",
+      overwrite: true,
+      skewing: 0,
+      skewingText: 0,
+      skewingIcon: 2,
+      skewingMedia: 2,
+      skewingDelta: 0.001,
+      skewingDeltaMax: 0.15,
+      stickDelta: 0.15,
+      showTimeout: 20,
+      hideOnLeave: true,
+      hideTimeout: 300,
+      hideMediaTimeout: 300,
+    });
+  </script>
+

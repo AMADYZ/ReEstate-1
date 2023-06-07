@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./css/admin-css.css">
+    <link rel="stylesheet" href="./css/addproduct.css">
+    <link rel="stylesheet" href="./css/property-form.css">
+    <style>
+        #map {
+            height: 300px;
+            width: 550px;
+            border-radius: 2%;
+            margin-right: .85rem;
+        }
+
+        .addressmap {
+            margin-left: -5%;
+            max-width: 650px;
+        }
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="aside-bar">
+            <div class="top">
+                <div class="logo">
+                    <svg width="25" height="30" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        style="color:white;">
+                        <g clip-path="url(#clip0)">
+                            <path
+                                d="M17.6056 8.59195C19.4697 6.72793 21.2813 5.51209 21.6437 5.87442C22.01 6.24079 20.7942 8.04845 18.9261 9.91247C17.0621 11.7765 15.2504 12.9923 14.8881 12.63C14.5258 12.2677 15.7416 10.456 17.6056 8.59195Z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M14.6419 5.62436C16.5059 3.76034 18.3176 2.54449 18.68 2.91086C19.0463 3.27722 17.8305 5.08488 15.9624 6.94891C14.0984 8.81293 12.2867 10.0328 11.9244 9.66644C11.558 9.30008 12.7779 7.49241 14.6419 5.62436Z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M11.6759 2.66143C13.54 0.797407 15.3517 -0.422464 15.714 -0.0560999C16.0804 0.310264 14.8645 2.11793 12.9965 3.98195C11.1324 5.84598 9.32074 7.06585 8.95841 6.69949C8.59607 6.33312 9.81191 4.52546 11.6759 2.66143Z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M4.10305 17.4845C5.96707 19.3486 7.18694 21.1602 6.82058 21.5226C6.45422 21.8889 4.64655 20.6731 2.78253 18.8051C0.9185 16.941 -0.30137 15.1293 0.0649938 14.767C0.431357 14.4047 2.23902 15.6205 4.10305 17.4845Z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M7.06984 14.5219C8.93387 16.386 10.1537 18.1977 9.78737 18.56C9.42101 18.9264 7.61335 17.7105 5.74932 15.8425C3.8853 13.9784 2.66543 12.1667 3.03179 11.8044C3.39413 11.438 5.20582 12.6539 7.06984 14.5219Z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M10.0327 11.5548C11.8968 13.4189 13.1166 15.2306 12.7503 15.5929C12.3839 15.9593 10.5762 14.7434 8.71221 12.8754C6.84819 11.0113 5.62832 9.19965 5.99468 8.83731C6.36105 8.47498 8.16871 9.69082 10.0327 11.5548Z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M17.8361 26.717C19.7001 24.8529 21.5118 23.6371 21.8741 23.9994C22.2405 24.3658 21.0247 26.1734 19.1566 28.0375C17.2926 29.9015 15.4809 31.1173 15.1186 30.755C14.7562 30.3886 15.9721 28.581 17.8361 26.717Z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M14.8725 23.7492C16.7365 21.8852 18.5482 20.6693 18.9106 21.0316C19.2769 21.398 18.0611 23.2057 16.193 25.0697C14.329 26.9337 12.5173 28.1536 12.155 27.7872C11.7886 27.4249 13.0045 25.6172 14.8725 23.7492Z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M11.9045 20.7864C13.7685 18.9224 15.5802 17.7025 15.9425 18.0689C16.3089 18.4353 15.093 20.2429 13.225 22.107C11.3609 23.971 9.54926 25.1908 9.18692 24.8245C8.82458 24.4581 10.0404 22.6505 11.9045 20.7864Z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M22.1265 17.8195C23.9905 19.6835 25.2064 21.4952 24.844 21.8575C24.4777 22.2239 22.67 21.0081 20.806 19.14C18.9419 17.276 17.7221 15.4643 18.0884 15.102C18.4508 14.7396 20.2584 15.9555 22.1265 17.8195Z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M25.0913 14.8559C26.9553 16.7199 28.1712 18.5316 27.8089 18.894C27.4425 19.2603 25.6348 18.0445 23.7708 16.1764C21.9068 14.3124 20.6869 12.5007 21.0533 12.1384C21.4156 11.772 23.2273 12.9879 25.0913 14.8559Z"
+                                fill="currentColor"></path>
+                            <path
+                                d="M28.0562 11.8888C29.9202 13.7529 31.1401 15.5645 30.7737 15.9269C30.4073 16.2932 28.5997 15.0774 26.7357 13.2094C24.8716 11.3453 23.6518 9.53364 24.0181 9.1713C24.3805 8.80896 26.1881 10.0248 28.0562 11.8888Z"
+                                fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0">
+                                <rect width="31" height="31" fill="white"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <h2 style="color: white;">Re<span style="color: white;">Estate</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <i class='bx bxs-log-out-circle'></i>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="/dashboard">
+                    <i class='bx bxs-grid-alt'></i>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="/customers">
+                    <i class='bx bxs-user-account'></i>
+                    <h3>Add User</h3>
+                </a>
+                <!-- <a href="#">
+                    <i class='bx bxs-chat'></i>
+                    <h3>Messages</h3>
+                    <span class="message-count">26</span>
+                </a> -->
+                <a href="/users">
+                    <i class='bx bx-list-ol'></i>
+                    <h3>Users</h3>
+                </a>
+                <a href="/pendadmins">
+                    <i class='bx bx-error-circle'></i>
+                    <h3>Pending Admins</h3>
+                    <span class="message-count">26</span>
+                </a>
+                <a href="/pendingproperty">
+                    <i class='bx bx-alarm-exclamation'></i>
+                    <h3>Pending Property</h3>
+                    <span class="message-count">302</span>
+                </a>
+                <a class="active" href="#">
+                    <i class='bx bx-plus'></i>
+                    <h3>Add Property</h3>
+                </a>
+                <a href="/">
+                    <i class='bx bxs-log-out'></i>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!--=================== END OF ASIDE ===================-->
+        <main>
+            <button id="prev-btn">
+                <i class='bx bxs-left-arrow'></i>
+            </button>
+
+            <form id="book" class="book" method="post">
+                <!-- Paper 1-->
+                <div id="p1" class="paper">
+                    <div class="front">
+                        <div id="f1" class="front-content">
+                            <div class="page">
+                                <div class="pageTitle">
+                                    <h1>Post Your Ad Here!</h1>
+                                </div>
+                                <div class="inputs">
+                                    <div class="class13">
+                                        <label for="title" class="labol"> <br>
+                                            <img src="Images/title.png" alt="icon image" class="imgbox2">
+                                            <span class="spano">Ad title *</span>
+                                        </label>
+                                        <div class="inputo">
+                                            <input id="title" name="title" spellcheck="false" class="inputo2"
+                                                maxlength="70" autocomplete="nope" value=""
+                                                placeholder="Enter the Place Name">
+                                        </div>
+                                        <div class="inputo3">
+                                            <div id="titleErr" class="err margin00"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="b1" class="back-content">
+                            <div class="page">
+                                <div class="pageTitle">
+                                    <h1>Now for the Desription</h1>
+                                </div>
+                                <div class="inputs">
+                                    <div class="textarea-desc">
+                                        <label for="description" class="labol">
+                                            <img src="/images/info.png" alt=" description icon image" class="imgbox2">
+                                            <span class="spano custom-cursor-default-hover">Description *</span>
+                                        </label>
+                                        <textarea id="description1" name="description"
+                                            class="radio2 custom-cursor-on-hover"
+                                            placeholder="Enter a description for you post"></textarea>
+                                    </div>
+                                    <div class="type">
+                                        <div class="container-radio-type">
+                                            <div class="toggle">
+                                                <input type="radio" id="choice1" name="type" value="Villa">
+                                                <label for="choice1">Villa</label>
+
+                                                <input type="radio" id="choice2" name="type" value="Apartment">
+                                                <label for="choice2">Apartment</label>
+
+                                                <div id="flap"><span class="content">Chosen</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="condition">
+                                        <div class="container-radio-condition">
+                                            <div class="toggle1">
+                                                <input type="radio" id="choice3" name="condition" value="Sale">
+                                                <label for="choice3">Sale</label>
+                                                <input type="radio" id="choice4" name="condition" value="Rent">
+                                                <label for="choice4">Rent</label>
+                                                <div id="flap1"><span class="content1">Chosen</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Paper 2-->
+                <div id="p2" class="paper">
+                    <div class="front">
+                        <div id="f2" class="front-content">
+                            <div class="page">
+                                <div class="pageTitle">
+                                    <h1>And the Stats...</h1>
+                                </div>
+                                <div class="inputs-area">
+                                    <div class="area-input">
+                                        <label for="Area" class="labol">
+                                            <img src="/images/area.png" alt="area icon image" class="imgbox2">
+                                            <span class="spano custom-cursor-default-hover">Area *</span>
+                                        </label>
+                                        <div class="inputo">
+                                            <span class="EGP">
+                                                <span class="desc">Meters</span>
+                                            </span>
+                                            <input id="Area" name="Area" spellcheck="false" class="inputo2"
+                                                autocomplete="nope" type="number" value="">
+                                        </div>
+                                    </div>
+                                    <div class="price-input">
+                                        <label for="Area" class="labol">
+                                            <img src="/images/tags.png" alt="price icon image" class="imgbox2">
+                                            <span class="spano custom-cursor-default-hover">Price *</span>
+                                        </label>
+                                        <div class="inputo">
+                                            <span class="EGP">
+                                                <span class="desc">Price</span>
+                                            </span>
+                                            <input id="Area" name="Price" spellcheck="false" class="inputo2"
+                                                autocomplete="nope" type="number" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="b2" class="back-content">
+                            <div class="page">
+                                <div class="pageTitle">
+                                    <h1>Now Set The Post's Location</h1>
+                                </div>
+                                <div class="inputs">
+                                    <div class="class13">
+                                        <label for="type" class="labol">
+                                            <img src="/images/marker.png" alt="location icon image" class="imgbox2">
+
+                                            <span class="spano custom-cursor-default-hover">Location *</span>
+
+                                        </label>
+                                        <div class="inputo">
+                                            <input id="loc" name="loc" list="locations" class="inputo2"
+                                                spellcheck="false" autocomplete="nope" value="">
+                                            <datalist id="locations" class="inputo2">
+                                                <option value="Cairo">
+                                                </option>
+                                                <option value="Giza">
+                                                </option>
+                                                <option value="Sharqya">
+                                                </option>
+                                                <option value="Gharbya">
+                                                </option>
+                                                <option value="Menofya">
+                                                </option>
+                                                <option value="Kafr-Elsheikh">
+                                                </option>
+                                                <option value="Beni-Suef">
+                                                </option>
+                                                <option value="Fayoum">
+                                                </option>
+                                                <option value="Daqhlya">
+                                                </option>
+                                                <option value="Asyout">
+                                                </option>
+                                                <option value="Alexandria">
+                                                </option>
+                                            </datalist>
+                                            <span>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                    <div class="class13">
+                                        <label for="Name" class="labol">
+                                            <img src="/images/user.png" alt="name icon image" class="imgbox2">
+
+                                            <span class="spano custom-cursor-default-hover">URL Location *</span>
+                                        </label>
+                                        <div class="inputo">
+                                            <input id="URL" name="URL" spellcheck="false" class="inputo2"
+                                                autocomplete="nope" value="">
+                                        </div>
+                                    </div>
+                                    <div class="class13">
+                                        <label for="Name" class="labol">
+                                            <img src="/images/user.png" alt="name icon image" class="imgbox2">
+
+                                            <span class="spano custom-cursor-default-hover">Enter the place *</span>
+                                        </label>
+                                        <div class="calssflex">
+                                            <div class="inputo onwidth">
+                                                <input type="text" id="placeInput" class="inputo2"
+                                                    placeholder="Enter a place">
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btnsearch" onclick="searchPlace()">Search</button>
+                                        <!-- <div class="infoof">
+                                            <div>Enter the place of your property!</div>
+                                            <div>After you enter the place you can edit your pin on the map!</div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Paper 3-->
+                <div id="p3" class="paper">
+                    <div class="front">
+                        <div id="f3" class="front-content">
+                            <div class="page-loc">
+                                <div class="page-map">
+                                    <div id="map"></div>
+                                    <p class="addressmap" id="locationAddress"></p>
+                                </div>
+                                <!--  -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="b3" class="back-content">
+                            <div class="page-room">
+                                <div class="radio-bathrooms">
+                                    <div class="label">
+                                        <img src="/images/bath.png" alt="rent image" class="imgbox">
+                                        <label for="BathRooms" class="spano2 custom-cursor-default-hover">Number Of
+                                            Bathrooms</label>
+                                    </div>
+                                    <div class="wrapper">
+                                        <input type="radio" name="select" id="option-1" checked>
+                                        <input type="radio" name="select" id="option-2">
+                                        <input type="radio" name="select" id="option-3">
+                                        <input type="radio" name="select" id="option-4">
+                                        <input type="radio" name="select" id="option-5">
+                                        <label for="option-1" class="option option-1">
+                                            <div class="dot"></div>
+                                            <span>1</span>
+                                        </label>
+                                        <label for="option-2" class="option option-2">
+                                            <div class="dot"></div>
+                                            <span>2</span>
+                                        </label>
+                                        <label for="option-3" class="option option-3">
+                                            <div class="dot"></div>
+                                            <span>3</span>
+                                        </label>
+                                        <label for="option-4" class="option option-4">
+                                            <div class="dot"></div>
+                                            <span>4</span>
+                                        </label>
+                                        <label for="option-5" class="option option-5">
+                                            <div class="dot"></div>
+                                            <span>5+</span>
+                                        </label>
+                                    </div> <!---->
+                                </div>
+                                <div class="radio-rooms">
+                                    <div class="label">
+                                        <img src="/images/bed-alt.png" alt="room icon image" class="imgbox">
+                                        <label for="Rooms" class="spano2 custom-cursor-default-hover">Number Of
+                                            Rooms</label>
+                                    </div>
+                                    <div class="wrapper">
+                                        <input type="radio" name="select1" id="option-6" checked>
+                                        <input type="radio" name="select1" id="option-7">
+                                        <input type="radio" name="select1" id="option-8">
+                                        <input type="radio" name="select1" id="option-9">
+                                        <input type="radio" name="select1" id="option-10">
+                                        <label for="option-6" class="option option-6">
+                                            <div class="dot1"></div>
+                                            <span>1</span>
+                                        </label>
+                                        <label for="option-7" class="option option-7">
+                                            <div class="dot1"></div>
+                                            <span>2</span>
+                                        </label>
+                                        <label for="option-8" class="option option-8">
+                                            <div class="dot1"></div>
+                                            <span>3</span>
+                                        </label>
+                                        <label for="option-9" class="option option-9">
+                                            <div class="dot1"></div>
+                                            <span>4</span>
+                                        </label>
+                                        <label for="option-10" class="option option-10">
+                                            <div class="dot1"></div>
+                                            <span>5+</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="p4" class="paper">
+                    <div class="front">
+                        <div id="f4" class="front-content">
+                            <div class="page-map">
+                                <h1>Now for the Last Part of the Post Registration</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div id="b4" class="back-content">
+                            <div class="page-doc">
+                                <div class="wrapper-files">
+                                    <div class="box">
+                                        <div class="input-bx">
+                                            <h2 class="upload-area-title">Now Upload the Files and Submit! (4 MAX)</h2>
+                                            <input type="file" name="" id="upload" accept=".png, .jpeg, .jpg" hidden>
+                                            <label for="upload" class="uploadlabel">
+                                                <span><i class="fa fa-cloud-upload"></i></span>
+                                                <p>Click To Upload</p>
+                                            </label>
+                                        </div>
+                                        <div id="filewrapper">
+                                            <h3 class="uploaded">Uploaded Documents</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <section id="submit">
+                                    <button class="continue-application">
+                                        <div>
+                                            <div class="pencil"></div>
+                                            <div class="folder">
+                                                <div class="top">
+                                                    <svg viewBox="0 0 24 27">
+                                                        <path
+                                                            d="M1,0 L23,0 C23.5522847,-1.01453063e-16 24,0.44771525 24,1 L24,8.17157288 C24,8.70200585 23.7892863,9.21071368 23.4142136,9.58578644 L20.5857864,12.4142136 C20.2107137,12.7892863 20,13.2979941 20,13.8284271 L20,26 C20,26.5522847 19.5522847,27 19,27 L1,27 C0.44771525,27 6.76353751e-17,26.5522847 0,26 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z">
+                                                        </path>
+                                                    </svg>
+                                                </div>
+                                                <div class="paper"></div>
+                                            </div>
+                                        </div>
+                                        Submit Application
+                                    </button>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+            <button id="next-btn">
+                <i class='bx bxs-right-arrow'></i>
+            </button>
+
+        </main>
+        <!-- ----------------------- END OF MAIN -------------------- -->
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <i class='bx bx-menu'></i>
+                </button>
+                <div class="profile">
+                    <div class="info">
+                        <p>Hey, <b>Abood</b></p>
+                        <small class="text-muted">Admin</small>
+                    </div>
+                    <div class="profile-photo">
+                        <img src="./images/profile-1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- --- END OF TOP --- -->
+        </div>
+
+</body>
+
+</html>
+<script src="/scripts/book.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="/scripts/jsfile.js"></script>
+<script type="text/javascript" src="/scripts/addproduct.js"></script>
+<script>
+    var map;
+    var marker;
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 0, lng: 0 },
+            zoom: 2
+        });
+
+        map.addListener('click', function (event) {
+            placeMarker(event.latLng);
+        });
+    }
+
+    function searchPlace() {
+        var place = document.getElementById('placeInput').value;
+        if (!place) {
+            return;
+        }
+
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode({ address: place }, function (results, status) {
+            if (status === 'OK' && results.length > 0) {
+                var location = results[0].geometry.location;
+                placeMarker(location);
+                map.setCenter(location);
+                map.setZoom(15);
+            }
+        });
+    }
+
+    function placeMarker(location) {
+        if (marker) {
+            marker.setMap(null);
+        }
+
+        marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+
+        getAddress(location);
+    }
+
+    function getAddress(location) {
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode({ location: location }, function (results, status) {
+            if (status === 'OK' && results.length > 0) {
+                var address = results[0].formatted_address;
+                document.getElementById('locationAddress').textContent = 'Location Address: ' + address;
+            } else {
+                document.getElementById('locationAddress').textContent = 'Cannot retrieve location address.';
+            }
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGJ_yAToa0xfxBh1EhqoOe5MnZCLebbIQ&callback=initMap" async
+    defer></script>
