@@ -1,0 +1,363 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+   <link rel="stylesheet" href="./css/nav.css">
+   <link rel="stylesheet" href="./css/fonts.css">
+   <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css"/>
+   <link rel="stylesheet" href="./css/editdetails.css">
+   <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+   <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <title>
+        Product Details
+    </title>
+</head>
+<body>
+
+    <div class="intro"></div>
+    <%- include("./partials/nav2.ejs") %>
+            <section id="details" class="section-p1">
+              <form id="myFrom21" method='post' action='/editdetails' enctype="multipart/form-data">
+
+                <div class="w3-content w3-display-container" style="max-width:800px">
+                    <% search.images.forEach(image=> { %>
+                        <img class="mySlides" src="./images/uploaded/<%=image%>">
+                      <% }); %>
+
+                      <label class=" mySlides custum-file-upload" for="file-input">
+                        <div class="icon">
+                        <svg  xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24"><g stroke-width="0"
+                             id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round"
+                              stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g 
+                              id="SVGRepo_iconCarrier"> <path fill="" 
+                              d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289
+                               7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 
+                               23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 
+                               21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 
+                               8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 
+                               10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 
+                               1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 
+                               15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 
+                               17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954
+                               21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 
+                               11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 
+                               9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305
+                               22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z" 
+                               clip-rule="evenodd" fill-rule="evenodd"></path> </g></svg>
+                        </div>
+                        <div class="text">
+                           <span>Click to upload image</span>
+                           </div>
+                           <input type="file" id="file-input" accept="image/png, image/jpeg, image/webp" multiple />
+                        </label>
+                        
+
+                    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+                      <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                      <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                      <% search.images.forEach((_, index) => { %>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv( index + 1 )"></span>
+                        <%});%>
+
+                    </div>
+                    <div id="num-of-files">No Files Choosen</div>
+                    <div id="files-list">
+                        <div class="myphotos">New Photos</div>
+                    </div>
+                    <div id="files-list1">
+                    <div class="myphotos">My Photos</div>
+                    <% search.images.forEach(image=> { %>
+                     <span>
+                    <span class="img11s"><%= image %></span>
+                    <div class="btnmarg"><button type="button" class="buton1">Remove</button></div>
+                     </span>
+                    <% }); %>
+                    </div> 
+                    </div>
+
+
+
+                <div class="spd">
+                    <div class="block-wrap">
+                        <div class="block-title-wrap-host">
+                            <h2 class="title1" id="title1"><%=search.title%></h2>
+                            <input type="button" value="Edit1"  class="btn-list" onclick="enableEditing(this)">
+                        </div>
+                        <div class="detail-wrap-table">
+                            <div class="rowData">
+                                <div><strong>City:</stong></div>
+                                <input type="text" id="City" value="<%= search.location%>" value="Initial value" readonly>
+                            </div>
+                            <div class="rowData">
+                                <div><strong>Price:</stong></div>
+                                    <span>EGP</span>
+                                    <input type="text" id="price" value="<%= (search.price * 1).toLocaleString() %>" value="Initial value" readonly>
+                                </div>
+                            <div class="rowData">
+                                <div><strong>Property Size:</strong></div>
+                                <span class="marginnn">m²</span>
+                                <div>
+                                <input type="text" id="area" value="<%=search.area%>" value="Initial value" readonly>
+                                </div>
+
+                            </div>
+                            <div class="rowData">
+                                <div><strong>Bedrooms:</strong></div>
+                                <div>
+                                <div id="bedrooms"><%=search.bedrooms%></div>
+                                </div>
+                                <div class="radio-input" id="radio-input">
+                                    <input type="radio" id="value-1" name="value-radio" value="1">
+                                    <label for="value-1">1</label>
+                                    <input type="radio" id="value-2" name="value-radio" value="2">
+                                    <label for="value-2">2</label>
+                                    <input type="radio" id="value-3" name="value-radio" value="3">
+                                    <label for="value-3">3</label>
+                                    <input type="radio" id="value-4" name="value-radio" value="4">
+                                    <label for="value-4">4</label>
+                                    <input type="radio" id="value-5" name="value-radio" value="5">
+                                    <label for="value-5">5+</label>
+                                  </div>                                 
+                            </div>
+
+                            <div class="rowData">
+                                <div><strong>Bathrooms:</strong></div>
+                                <div> 
+                                    <div id="bathrooms"><%=search.bathrooms%></div>
+                                 </div>
+                                <div class="radio-input1" id="radio-input1">
+                                    <input type="radio" id="value-11" name="value-radio1" value="1">
+                                    <label for="value-11">1</label>
+                                    <input type="radio" id="value-22" name="value-radio1" value="2">
+                                    <label for="value-22">2</label>
+                                    <input type="radio" id="value-33" name="value-radio1" value="3">
+                                    <label for="value-33">3</label>
+                                    <input type="radio" id="value-44" name="value-radio1" value="4">
+                                    <label for="value-44">4</label>
+                                    <input type="radio" id="value-55" name="value-radio1" value="5">
+                                    <label for="value-55">5+</label>
+                                  </div>
+                            </div>
+
+                            <div class="rowData">
+                                <div><strong>Property Type:</strong></div>
+                                <div>
+                                <div id="type"><%=search.type%></div>
+                              </div>
+                                <div class="radio-container" id="radio-container">
+                                  <input type="radio" id="radio1" name="radio-group" value="Apartment" checked>
+                                  <label for="radio1">Apartment</label>
+                                </div>
+                                <div class="radio-container" id="radio-container1">
+                                  <input type="radio" id="radio2" name="radio-group" value="Villa">
+                                  <label for="radio2">Villa</label>
+                                </div>
+                            </div>
+
+                            <div class="rowData">
+                                <div><strong>Property Status:</strong>
+                                </div>
+                                <div>
+                                <div id="condition"><%=search.condition%></div>
+                                </div>
+                                <div class="radio-container1" id="radio-container11">
+                                  <input type="radio" id="radio11" name="radio-group1" value="Sale" checked>
+                                  <label for="radio11">Sale</label>
+                                </div>
+                                <div class="radio-container1" id="radio-container12">
+                                  <input type="radio" id="radio22" name="radio-group1" value="Rent">
+                                  <label for="radio22">Rent</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                    <div class="block-wrap">
+                        <div class="block-title-wrap-host">
+                            <h2>Description</h2>
+                            <input type="button" value="Edit2"  class="btn-list" onclick="enableEditing(this)">
+                        </div>
+                        <div>
+                          <textarea id="Description" class="Description" cols="30" rows="10"  value="Initial value" readonly ><%=search.description%></textarea>                        </div>
+                    </div>
+
+                
+                    <div class="block-wrap">
+                        <div class="block-title-wrap-host">
+                            <h2>Address</h2>
+                            <input type="button" value="Edit3"  class="btn-list" onclick="enableEditing(this)">
+                        </div>
+                        <div class="youcanedit" id="youcanedit">You can edit and mark a place on the map</div>
+                       <div id="map"></div>
+                       <span style="display: none;" id="placeInput"><%=search.locationgps%></span>
+                       <p class="addressmap" id="locationAddress"></p>
+
+                       <div class="calssflex" id="calssflex">
+                        <div class="inputo onwidth">
+                        <input type="text" id="placeInput1" class="inputo2" placeholder="Enter a place" />
+                        </div>
+                        <button type="button" class="btnsearch" onclick="searchPlace1()">Search</button>
+                    </div>
+                    </div>
+                    <button class="subbut" id="subbut" type="submit">Submit Changes</button>
+                    <label id="prop-label" class="fade-label hidden">Your Post Will Be Updated Soon </label>
+                  </form>
+
+
+
+                    <div class="comments-section">
+                       <h2> 0 Comments</h2>
+                       <ul class="comment-list">
+                        <li>
+                        </li>
+                     
+                       </ul>
+
+                    </div>
+                    </div>
+                </div>
+            </section>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity=
+  "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous">
+</script>
+
+<script src="./scripts/product.js"></script>
+<script src="./scripts/details.js"></script>
+<script src="./scripts/editdetails.js"></script>
+<script>
+     var map;
+    var marker;
+
+    function searchPlace() {
+      var place = document.getElementById('placeInput').innerHTML;
+    
+      if (!place) {
+        return;
+      }
+    
+      var geocoder = new google.maps.Geocoder();
+    
+      geocoder.geocode({ address: place }, function(results, status) {
+        if (status === 'OK' && results.length > 0) {
+          var location = results[0].geometry.location;
+          placeMarker(location);
+          map.setCenter(location);
+          map.setZoom(15);
+        }
+      });
+    }
+
+    function searchPlace1() {
+       var place = document.getElementById('placeInput1').value;
+       console.log(place);
+      if (!place) {
+        return;
+      }
+    
+      var geocoder = new google.maps.Geocoder();
+    
+      geocoder.geocode({ address: place }, function(results, status) {
+        if (status === 'OK' && results.length > 0) {
+          var location = results[0].geometry.location;
+          placeMarker(location);
+          map.setCenter(location);
+          map.setZoom(15);
+        }
+      });
+    }
+   
+    
+    function placeMarker(location) {
+      if (marker) {
+        marker.setMap(null);
+      }
+    
+      marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    
+      getAddress(location);
+    }
+    
+    function getAddress(location) {
+      var geocoder = new google.maps.Geocoder();
+    
+      geocoder.geocode({ location: location }, function(results, status) {
+        if (status === 'OK' && results.length > 0) {
+          var address = results[0].formatted_address;
+          document.getElementById('locationAddress').textContent = 'Location Address: ' + address;
+        } else {
+          document.getElementById('locationAddress').textContent = 'Cannot retrieve location address.';
+        }
+      });
+    }
+    
+    // Define the initMap function
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 0, lng: 0 },
+        zoom: 10
+      });
+    
+      // Call the searchPlace function
+      searchPlace();
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGJ_yAToa0xfxBh1EhqoOe5MnZCLebbIQ&callback=initMap" async defer></script>
+<script>
+    const cursor = new MouseFollower({
+      el: null,
+      container: document.body,
+      className: "mf-cursor",
+      innerClassName: "mf-cursor-inner",
+      textClassName: "mf-cursor-text",
+      mediaClassName: "mf-cursor-media",
+      mediaBoxClassName: "mf-cursor-media-box",
+      iconSvgClassName: "mf-svgsprite",
+      iconSvgNamePrefix: "-",
+      iconSvgSrc: "",
+      dataAttr: "cursor",
+      hiddenState: "-hidden",
+      textState: "-text",
+      iconState: "-icon",
+      activeState: "-active",
+      mediaState: "-media",
+      stateDetection: {
+        "-pointer": "a,button",
+        "-hidden": "iframe"
+      },
+      visible: true,
+      visibleOnState: false,
+      speed: 1,
+      ease: "expo.out",
+      overwrite: true,
+      skewing: 0,
+      skewingText: 0,
+      skewingIcon: 2,
+      skewingMedia: 2,
+      skewingDelta: 0.001,
+      skewingDeltaMax: 0.15,
+      stickDelta: 0.15,
+      showTimeout: 20,
+      hideOnLeave: true,
+      hideTimeout: 300,
+      hideMediaTimeout: 300,
+    });
+  </script>
+
+
+
+

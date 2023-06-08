@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Nunito:wght@400;900&family=Roboto:wght@400;900&display=swap");
+
+.intro {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #171717;
+  transition: 1s;
+}
+
+body {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.logo{
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
+.container {
+  background: #f2f2f2;
+  width: 95%;
+  height: 650px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 2%;
+  box-shadow: 2px 5px 20px rgba(119, 119, 119, 0.5);
+}
+
+.CTA {
+  width: 92px;
+  height: 30px;
+  right: -30px;
+  bottom: 0;
+  margin-bottom: 170px;
+  position: absolute;
+  z-index: 1;
+  background: #7c142c;
+  transform: rotate(-90deg);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.CTA:hover {
+  background: #7c142c;
+  transform: scale(1.1);
+}
+
+.leftbox {
+  float: left;
+  top: -2%;
+  left: 7%;
+  position: absolute;
+  width: 6%;
+  height: 105%;
+  background: #7c142c;
+  box-shadow: 3px 3px 10px rgba(119, 119, 119, 0.5);
+}
+
+nav a {
+  list-style: none;
+  padding: 35px;
+  color: #fff;
+  font-size: 2.0em;
+  display: block;
+  transition: all 0.3s ease-in-out;
+  margin-left: -8%;
+  margin-top: 40%;
+}
+
+nav a:hover {
+  color: silver;
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+nav a:first-child {
+  margin-top: 7px;
+}
+
+.active {
+  color: darkgrey;
+}
+
+.rightbox {
+  float: right;
+  width: 150%;
+  height: 120%;
+  margin-right: -75%;
+  margin-top: 1.5%;
+
+}
+
+.profile {
+  position: absolute;
+  width: 70%;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #7c142c;
+  font-size: 25px;
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
+
+h2 {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  width: 80%;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin-left: 2px;
+}
+h3{
+  color: #fff;
+  font-size: 20px;
+  margin-top: 0%;
+}
+#username,#email,#phone{
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, black, black) 1
+    0%;
+  border-top: 0;
+  width: 80%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  padding: 7px 0;
+  color: #5c5c5c;
+  background-color: transparent;
+  font-family: 'BW Gradual Bold';
+}
+#username:focus,
+#email:focus,
+#phone:focus
+{
+  outline: none;
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, black, black) 1
+    0%;
+  border-top: 0;
+}
+.changeuser
+{
+  font-family: 'BW Gradual Bold';
+  background-color: transparent;
+  border: transparent ;
+  font-size: 14px;
+  margin-left: -11%;
+  cursor: pointer;
+}
+
+.btn {
+  float: right;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  border: none;
+  color: black;
+  background-color: silver;
+}
+
+.btn:hover {
+  text-decoration: underline;
+  font-weight:bold;
+}
+
+.footer__logo__top{
+text-decoration: none;
+}
+
+
+
+.error-icon{
+  opacity: 0;
+   color: #7c142c;
+   margin-left:113%;
+   transform: translateY(-50px);
+  }
+  .err{
+      color: #7c142c;
+      font-size: smaller;
+      padding: 0;
+  }
+
+
+  .fontchange
+  {
+    font-family: 'BW Gradual Bold';
+  }
+
+  
+#changebutton
+{
+  display: none;
+  border-radius: 20px;
+  border: 1px #7c142c;
+  background: #7c142c;
+  font-family: 'BW Gradual Bold';
+  color: white;
+  font-size: 25px;
+  width: 300px;
+  height: 50px;
+  margin-top: 5%;
+  margin-left: 25%;
+}
+
+#donechange{
+  font-size: 25px;
+  margin-top: 5%;
+  margin-left: 28%;
+  font-family: 'BW Gradual Bold';
+  color: rgb(17, 120, 29);
+  display: none;
+}
+.mypost
+{
+  color: #7c142c;
+  font-size: 20px;
+  font-family: 'BW Gradual Bold';
+  margin-left: 70%;
+  margin-top: 5%;
+
+
+}

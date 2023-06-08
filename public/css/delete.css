@@ -1,0 +1,252 @@
+/* .button1 {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: .5s;
+    overflow: hidden;
+    position: absolute;
+    margin-left: -20%;
+    margin-top:-15.5%;
+    z-index: 1;
+  }
+  
+  .svgIcon {
+    width: 12px;
+    transition-duration: .5s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .button1:hover {
+    transition-duration: .5s;
+    background-color:white ;
+
+  }
+  .button1:hover .svgIcon path{
+    fill: #7c142c;
+    transition: 0.8 ease-out all;
+  }
+  .myposts
+  {
+    font-family: 'BW Gradual Bold';
+    font-size:65px ;
+    color: black;
+  }
+  .updates
+  {
+    margin-left: 42.5%;
+    
+  }
+  .backimage{
+    background-image: url(../images/SLdHiptLduvZMh5vPpGbAJ.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 105vh;
+    z-index: -1;
+    margin-top: -11%;
+  }
+
+  .__title{
+color:white;
+z-index: 1;
+  }
+  .__titleH2{
+    color: white;
+  }
+  
+  */
+  
+  
+  .photo1{
+    position: relative;
+  }
+  .button1 {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .condition{
+    top: 40%;
+    right: 25%;
+  }
+  
+  .myposts {
+    font-family: 'BW Gradual Bold';
+    font-size:65px ;
+    color: black;
+  }
+  
+  .updates {
+    text-align: center;
+    margin-left: 0;
+  }
+  
+  .list-grid {
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  
+  .popular__card {
+
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .button1:hover .svgIcon path{
+    fill: #7c142c;
+    transition: 0.8 ease-out all;
+  }
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .button1:hover {
+    transition-duration: .5s;
+    background-color:white ;
+
+  }
+  .svgIcon {
+    width: 12px;
+    transition-duration: .5s;
+  }
+  
+  #menuToggle-design a {
+    text-decoration: none;
+    z-index: 100;
+          }
+    
+    #menuToggle-design{
+    top: 35px;
+    right: 10px;
+    position: fixed;
+    width: 100px;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    margin-right: 5%;
+    z-index: 100;
+    }
+    #menuToggle-designinput {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0; /* hide input */
+    z-index: 100; /* top of the menu */
+    margin-left: 2%;
+    margin-right: 280%;
+    }
+    #menuToggle-designspan{
+    width: 19px;
+    height: 2px;
+    margin: 2px;
+    background-color:#F2F2F2 ;
+    transition: all 0.3s cubic-bezier(.455,.03,.515,.955);
+    z-index: 100;
+    margin-right: 280%;
+    }
+    
+    #menuToggle-designinput:checked ~ #span1 {
+    
+    transform: rotate(45deg) translate(7px);
+    }
+    #menuToggle-designinput:checked ~ #span2 {
+     
+    transform: translateX(-40px);
+    opacity: 0;
+    }
+    #menuToggle-designinput:checked ~ #span3 {
+    transform: rotate(-45deg) translate(8px);
+    }
+    input:checked ~ nav {
+    opacity: 1;
+    background-color: rgb(30, 30, 30);
+    height: 110vh;
+    margin-right: -10vh;
+    margin-top: -7vh;
+width: 600%;
+    }
+
+    nav {
+    opacity: 0;
+    width: 400px;
+    height: 35px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    }
+    .nav1 a{
+    text-decoration: none;
+    font-family: BW Gradual ;
+    font-size: 35px;
+    color: #F2F2F2;
+    margin-top: 50px;
+    margin-right: 20px;
+    position: relative;
+    transition: 0.5s;
+    -webkit-animation: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition:0.5s;
+    -o-transition: 0.5s;
+    display: block;
+    margin-left: 20%;
+    }
+    .nav1{
+        margin-top: 20%;
+        margin-left: 20%;
+    }
+    
+    
+    .nav1 a::before{
+    position:absolute;
+    content: '';
+    height: 2px;
+    left: 0px;
+    width: 0px;
+    background-color:white;
+    bottom: 0px;
+    transition: 0.5s;
+    -webkit-animation: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition:0.5s;
+    -o-transition: 0.5s;
+    }
+    .nav1 a:hover{
+    color: white;
+    }
+    .nav1 a:hover::before{
+    width: 100%;
+    height: 0.7px;
+    }
+  @media (min-width: 600px) {
+    .list-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .list-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
