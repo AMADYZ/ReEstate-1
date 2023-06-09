@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles2.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/list.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href= "./css/delete.css">
+
+    <title>MY Product</title>
+</head>
+<body>
+
+    <div class="intro"></div>
+    <%- include("./partials/nav2.ejs") %>
+    <div class="backimage">
+    </div>
+    <div class="__title">MY Posts</div>
+    <h2 class="__titleH2">Here you can find All your properties</h2>
+    <div class="container2">
+        <div class="list-grid">
+            <%if(pro.length>0){%>
+                <% pro.forEach(estate=> { %>
+                <article class="popular__card">
+                <div class="photo1">
+                    <input type="hidden" class="estate-id" value="<%= estate._id %>">
+                        <button class="button1" onclick="getButton(this)">
+                            <svg viewBox="0 0 448 512" class="svgIcon"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path></svg>
+                        </button>
+                    <a href="/editdetails?id=<%= estate._id %>"><img src="./images/uploaded/<%= estate.images[0] %>" class="popular__img"></a>
+                    <div class="img1text">Click for information</div>
+                   
+                    <% if(estate.condition=="Rent"){ %>
+                    <span class="condition">Rent</span>
+                    <%}else{%>
+                    <span class="condition">Sale</span>
+                    <% }%>
+
+                </div>
+                <div class="popular__data">
+                    <h3 class="popular__title">
+                        <%=estate.title%>
+                    </h3>
+                    <h2 class="popular_price" style="
+                    font-family: 'Degular';
+                    ">
+                    <span>EGP <%= (estate.price * 1).toLocaleString() %></span>
+                    <span>EGP</span>
+                    </h2>
+                    <p class="popular__description">
+                        <%=estate.location%>
+                    </p>
+                </div>
+                <div class="line"></div>
+                <div class="inner-details">
+                    <div class="bed-details"><img class="bed" src="./images/bedrooms.png">
+                        <div class="number"><%=estate.bedrooms%> Bedrooms</div>
+                    </div>
+                    <div class="bath-details">
+                        <img class="bath" src="./images/bathrooms.png">
+                      <div class="number"><%=estate.bathrooms%> Bathrooms</div>
+                    </div>
+                    <div class="vl"></div>
+                    <p id="meter"><%=estate.area%> m<sup>2</sup></p>
+                </div>
+                <div class="line"></div>
+                <div>
+                    <h3 class="info">
+                        <bold>Relator</bold>
+                    </h3>
+                    <div class="relator">
+                        <img class="channel" src="./images/user-pic1 - Copy.png" alt="">
+                        <div class="relator-info">
+                            <p class="author"><%= estate.username%></p>
+                            <p><%=phone%></p>
+                        </div>
+                        
+
+                    </div>
+                  
+                   
+                </div>
+                
+            </article>
+                <%})%>    
+            <% } else { %>
+                <p>There are no Data to display...</p>
+                <% } %>
+        </div>
+          
+          </div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	          <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		        integrity=
+		        "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		        crossorigin="anonymous">
+	          </script>
+<script src="./scripts/myproduct.js"></script>

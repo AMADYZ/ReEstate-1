@@ -1,0 +1,701 @@
+      .mf-cursor{
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:250;
+        direction:ltr;
+        contain:layout style size;
+        pointer-events:none;
+        transition:opacity .3s,color .4s;
+        color:rgb(78, 78, 78)
+      }
+      .mf-cursor:before{
+        content:"";
+        position:absolute;
+        top:-24px;
+        left:-24px;
+        display:block;
+        width:48px;
+        height:48px;
+        transform:scale(0.2);
+        background:currentColor;
+        border-radius:50%;
+        transition:transform .25s ease-in-out,opacity .1s
+      }
+      .mf-cursor-text{
+      position:absolute;
+      top:-18px;
+      left:-18px;
+      width:36px;
+      height:36px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transform:scale(0) rotate(10deg);
+      opacity:0;
+      color:#000000;
+      font-size:16px;
+      line-height:20px;
+      text-align:center;
+      transition:opacity .4s,transform .3s
+      }
+      .mf-cursor.-text:before{
+        opacity:.95;
+        transform:scale(1.7);
+        /* color: transparent;
+        border-color: red;
+        border-style: solid;
+        border-radius: 4px;
+        border-radius: 50%; */
+      }
+
+    .intro
+    {
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #171717;
+        transition: 1s;
+    }
+
+    body{
+        background-color: rgb(20, 20, 20);
+        color: white;
+    }
+    .section1{
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+    .TopLsection1
+    {
+        font-size: 190px;
+        font-family: 'BW Gradual';
+        margin-bottom: 10%;
+        margin-left: 5%;
+
+
+    }
+    .TopLsection1 span{
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+    }
+    .BotLsection1{
+        font-size: 70px;
+        font-family: 'BW Gradual';
+        line-height: 130%;
+        margin-bottom: 10%;
+        margin-left: 5%;
+        color: grey;
+    }
+    .BotLsection1 span:hover{
+        color: lightgray;
+        cursor: pointer;
+    }
+    /*-----------------section2-----------------*/
+    .section2{
+        display: flex;
+
+    }
+    .Lsection2{
+        width: 100%;
+    }
+
+    .inLsection2{
+        width: 74%;
+        max-width: 75%;
+        margin-left: 6%;
+        border-radius: 2%;
+        transition: 0.8s;
+    }
+    .inLsection2:hover
+    {
+        width: 75%;
+    }
+    .topRsection2,.BottomRsection2
+    {
+        display: flex;
+    }
+    .phonetel
+    {
+        margin-left: -25%;
+        transition: 0.5s;
+    }
+   
+    .inphonetel
+    { 
+        font-family: 'Degular';
+        margin-top: 5%;
+        font-size: 20px;
+        color: rgb(159, 159, 159);
+    }
+    .thephonetel
+    {
+        font-family: 'BW Gradual';
+        font-size: 30px;
+        margin-top: 10%;
+        transition: 0.5s;
+    }
+    .thephonetel:hover
+    {
+        margin-top: 12%;
+        cursor: pointer;
+    }
+    .line1
+    {
+        margin-left: 25%;
+    }
+
+    
+    .inAddress
+    {
+        font-family: 'Degular';
+        margin-top: 5%;
+        font-size: 20px;
+        color: rgb(159, 159, 159);
+        margin-left: 25%;
+        transition: 0.5s;
+    }
+    .theAddress
+    {
+        font-family: 'BW Gradual';
+        font-size: 30px;
+        margin-top: 5%;
+        margin-left: 25%;
+        transition: 0.5s;
+    }
+    .theAddress:hover
+    {
+        margin-top: 7%;
+        cursor: pointer;
+    }
+
+    .gathered
+    {
+        margin-top: 40%;
+        margin-left: -25%;
+        
+    }
+    
+    .gathered2
+    {
+        margin-top: 40%;
+        margin-left: 20%;
+    }
+    .thegathred,.thegathred1
+    {
+        font-family: 'BW GradualR';
+        margin-top: 5%;
+        transition: 0.5s;
+    }
+    .thegathred:hover,.thegathred1:hover
+    {
+        margin-top: 7%;
+        cursor: pointer;
+    }
+
+
+    /*---------section3----------*/
+    .section3{
+        margin-left: 0%;
+    }
+    .Bigtitle3{
+            margin-left: 0%;
+            font-size: 2000%;
+            font-family: 'BW Gradual';
+            line-height: 150%;
+            color: black;
+
+    }
+    /*------section4--------*/
+    .section4{
+        display: flex;
+        margin-top: -5%;
+        margin-left: -10%;
+
+    }
+    .TopLsection4{
+    font-size: 210%;
+    font-family: "BW Gradual sans-serif";
+    margin-left: 28%;
+    }
+    .midLsection4{
+    font-size: 150%;
+    font-family: "degular sans-serif";
+    margin-left: 28%;
+    margin-top: 10%;
+    color: lightgray;
+    }
+    .imgsection4{
+        width: 80%;
+        height: 80%;
+        margin-left: 15%;
+        box-shadow: 5px 6px 7px 5px rgba(86, 86, 86, 0.5);
+        border-radius: 1%;
+        transition: 0.8s;
+    }
+    .imgsection4:hover
+    {
+        width: 81%;
+        height: 81%;
+    }
+    .botLsection4{
+        margin-top: 12%;
+        margin-left: 28%;
+
+    }
+    .arrowsection4{
+
+        margin-left: 4%;
+        transition: 0.5s;
+        display: inline-block;
+    }
+    .arrowsection4:hover
+    {
+        cursor: pointer;
+        transform: translateX(14%);
+    }
+    .arrow3{
+        width: 10%;
+    }
+    /*------section5-----*/
+    .section5{
+        color:white;
+        font-size: 160px;
+        font-family: 'BW Gradual';
+        margin-left: 17%;
+        letter-spacing: 10px;
+        margin-bottom: 17%;
+        display: flex;
+        margin-top: 25%;
+    }
+    .arrow5{
+        height: 90px;
+    }
+    .arrowsection5{
+        margin-left: 4%;
+        transition: 0.5s;
+        display: inline-block;
+    }
+    .arrowsection5:hover{
+        cursor: pointer;
+        transform: translateX(14%);
+    }
+
+
+    @media screen and (min-width: 360px) and (max-width: 380px){
+       
+        .TopLsection1{
+            font-size: 55px;
+            width: 100%;
+            margin-top: 20%;
+        }
+        .BotLsection1{
+            font-size: 20px;
+            width: 100%;
+            
+        }
+        .phonetel{
+    margin-left: 7%; 
+}
+.inphonetel
+{ 
+    margin-top: 2%;
+    margin-left: 3%;
+    font-size: 20px;
+   
+}
+.thephonetel
+{
+    margin-top: 5%;
+    margin-left: 3%;
+    font-size: 20px;
+    
+}
+.line1{
+    margin-top: 30%;
+    margin-left: -100%;
+    padding-top: 5%;
+}
+.inAddress{
+    margin-top: -2%;
+    margin-left: -99%;
+    padding-top: 5%;
+    font-size: 20px;
+}
+    .theAddress{
+        margin-top: -2%;
+        margin-left: -99%;
+        padding-top: 5%;
+        font-size: 20px;
+    }
+    .topRsection2{
+        margin-top: 10%;
+    }
+    .BottomRsection2{
+        margin-left: 90%;
+    }
+    .gathered{
+        margin-left: -830%;
+    }
+.thegathred{
+    margin-left: 5%;
+}
+.thegathred1{
+    margin-left: 5%;
+}
+.gathered2{
+    margin-top: 320%;
+    margin-left: -490%;
+    padding-top: 5%;
+    font-size: 15px;
+}
+.section4{
+    display: block;
+}
+.Bigtitle3{
+    font-size: 550%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+.imgsection4{
+    width: 80%;
+    height: 60%;
+    margin-left: 15%;
+    margin-top: 8%;
+}
+.imgsection4:hover
+{
+    width: 81%;
+    height: 61%;
+}
+.TopLsection4{
+    font-size: 30px;
+    margin-left: 15%;
+    }
+    .midLsection4{
+    font-size: 170%;
+    font-family: "degular sans-serif";
+    margin-left: 15%;
+    margin-top: 5%;
+    }
+    .botLsection4{
+        margin-top: 12%;
+        margin-left: 15%;
+        width: 120%;
+        font-size: 150%;
+
+    }
+    .arrowsection4{
+
+        margin-left: 2%;
+        
+        
+    }
+    .section5{
+        font-size: 50px;
+        margin-left: 5%;
+        letter-spacing: 7px;
+        margin-bottom: 17%;
+        display: flex;
+        margin-top: 10%;
+        width: 100%;
+    }
+    .arrow5{
+        height: 35px;
+    }
+   
+
+    }
+
+
+    @media screen and (min-width: 381px) and (max-width: 400px){
+        
+        .TopLsection1{
+            font-size: 55px;
+            width: 100%;
+            margin-top: 20%;
+        }
+        .BotLsection1{
+            font-size: 20px;
+            width: 100%;
+            
+        }
+        .phonetel{
+    margin-left: 7%; 
+}
+.inphonetel
+{ 
+    margin-top: 2%;
+    margin-left: 3%;
+    font-size: 20px;
+   
+}
+.thephonetel
+{
+    margin-top: 5%;
+    margin-left: 3%;
+    font-size: 20px;
+    
+}
+.line1{
+    margin-top: 30%;
+    margin-left: -100%;
+    padding-top: 5%;
+}
+.inAddress{
+    margin-top: -2%;
+    margin-left: -99%;
+    padding-top: 5%;
+    font-size: 20px;
+}
+    .theAddress{
+        margin-top: -2%;
+        margin-left: -99%;
+        padding-top: 5%;
+        font-size: 20px;
+    }
+    .topRsection2{
+        margin-top: 10%;
+    }
+    .BottomRsection2{
+        margin-left: 90%;
+    }
+    .gathered{
+        margin-left: -830%;
+    }
+.thegathred{
+    margin-left: 5%;
+}
+.thegathred1{
+    margin-left: 5%;
+}
+.gathered2{
+    margin-top: 320%;
+    margin-left: -490%;
+    padding-top: 5%;
+    font-size: 15px;
+}
+.section4{
+    display: block;
+}
+.Bigtitle3{
+    font-size: 550%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+.imgsection4{
+    width: 80%;
+    height: 60%;
+    margin-left: 15%;
+    margin-top: 8%;
+}
+.imgsection4:hover
+{
+    width: 81%;
+    height: 61%;
+}
+.TopLsection4{
+    font-size: 30px;
+    margin-left: 15%;
+    }
+    .midLsection4{
+    font-size: 170%;
+    font-family: "degular sans-serif";
+    margin-left: 15%;
+    margin-top: 5%;
+    }
+    .botLsection4{
+        margin-top: 12%;
+        margin-left: 15%;
+        width: 120%;
+        font-size: 150%;
+
+    }
+    .arrowsection4{
+
+        margin-left: 2%;
+        
+        
+    }
+    .section5{
+        font-size: 50px;
+        margin-left: 5%;
+        letter-spacing: 7px;
+        margin-bottom: 50%;
+        display: flex;
+        margin-top: 10%;
+        width: 100%;
+    }
+    .arrow5{
+        height: 35px;
+    }
+   
+    }
+    @media screen and (min-width: 401px) and (max-width: 420px){
+        
+        .TopLsection1{
+            font-size: 55px;
+            width: 100%;
+            margin-top: 20%;
+        }
+        .BotLsection1{
+            font-size: 20px;
+            width: 100%;
+            
+        }
+        .phonetel{
+    margin-left: 7%; 
+}
+.inphonetel
+{ 
+    margin-top: 2%;
+    margin-left: 3%;
+    font-size: 20px;
+   
+}
+.thephonetel
+{
+    margin-top: 5%;
+    margin-left: 3%;
+    font-size: 20px;
+    
+}
+.line1{
+    margin-top: 30%;
+    margin-left: -100%;
+    padding-top: 5%;
+}
+.inAddress{
+    margin-top: -2%;
+    margin-left: -99%;
+    padding-top: 5%;
+    font-size: 20px;
+}
+    .theAddress{
+        margin-top: -2%;
+        margin-left: -99%;
+        padding-top: 5%;
+        font-size: 20px;
+    }
+    .topRsection2{
+        margin-top: 10%;
+    }
+    .BottomRsection2{
+        margin-left: 90%;
+    }
+    .gathered{
+        margin-left: -830%;
+    }
+.thegathred{
+    margin-left: 5%;
+}
+.thegathred1{
+    margin-left: 5%;
+}
+.gathered2{
+    margin-top: 320%;
+    margin-left: -490%;
+    padding-top: 5%;
+    font-size: 15px;
+}
+.section4{
+    display: block;
+}
+.Bigtitle3{
+    font-size: 550%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+.imgsection4{
+    width: 80%;
+    height: 60%;
+    margin-left: 15%;
+    margin-top: 8%;
+}
+.imgsection4:hover
+{
+    width: 81%;
+    height: 61%;
+}
+.TopLsection4{
+    font-size: 30px;
+    margin-left: 15%;
+    }
+    .midLsection4{
+    font-size: 170%;
+    font-family: "degular sans-serif";
+    margin-left: 15%;
+    margin-top: 5%;
+    }
+    .botLsection4{
+        margin-top: 12%;
+        margin-left: 15%;
+        width: 120%;
+        font-size: 150%;
+
+    }
+    .arrowsection4{
+
+        margin-left: 2%;
+        
+        
+    }
+    .section5{
+        font-size: 50px;
+        margin-left: 5%;
+        letter-spacing: 7px;
+        margin-bottom: 50%;
+        display: flex;
+        margin-top: 10%;
+        width: 100%;
+    }
+    .arrow5{
+        height: 35px;
+    }
+   
+    }
+    /* @media screen and (max-width: 1366px)
+    {
+
+        .TopLsection1
+    {
+        font-size: 160px;
+        font-family: 'BW Gradual';
+        margin-bottom: 10%;
+        margin-left: 5%;
+    }
+    .BotLsection1{
+        font-size: 60px;
+        font-family: 'BW Gradual';
+        line-height: 130%;
+        margin-bottom: 10%;
+        margin-left: 5%;
+        color: grey;
+    }
+
+
+
+
+
+
+    } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    

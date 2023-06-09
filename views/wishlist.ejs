@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles2.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/list.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/wishlist.css">
+
+    <title>MY Product</title>
+</head>
+<body>
+    <div class="intro"></div>
+    <%- include("./partials/nav.ejs") %>
+    <div class="backimage">
+    </div>
+    <div class="__title">MY Wishlist</div>
+    <h2 class="__titleH2">Here you can find All the properties that you've liked</h2>
+    <div class="container2">
+        <div class="list-grid">
+            <% if(isFound){%>
+                <% wishlist.forEach(estate=> { %>
+                <article class="popular__card">
+                <div class="photo1">
+                    <input type="hidden" class="estate-id" value="<%= estate._id %>">
+                    <button onclick="getButton(this)" class="button12">
+                        <svg height="32" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H24V24H0z" fill="none"></path><path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2z"></path></svg>
+                        Remove
+                      </button>
+                    <a href="/details?id=<%= estate._id %>"><img src="./images/uploaded/<%= estate.images[0] %>" class="popular__img"></a>
+                    <div class="img1text">Click for information</div>
+                    <% if(estate.condition=="Rent"){ %>
+                    <span class="condition">Rent</span>
+                    <%}else{%>
+                    <span class="condition">Sale</span>
+                    <% }%>
+
+                </div>
+                <div class="popular__data">
+                    <h3 class="popular__title">
+                        <%=estate.title%>
+                    </h3>
+                    <h2 class="popular_price" style="
+                    font-family: 'Degular';
+                    ">
+                    <span>EGP <%= (estate.price * 1).toLocaleString() %></span>
+                    </h2>
+                    <p class="popular__description">
+                        <%=estate.location%>
+                    </p>
+                </div>
+                <div class="line"></div>
+                <div class="inner-details">
+                    <div class="bed-details"><img class="bed" src="./images/bedrooms.png">
+                        <div class="number"><%=estate.bedrooms%> Bedrooms</div>
+                    </div>
+                    <div class="bath-details">
+                        <img class="bath" src="./images/bathrooms.png">
+                      <div class="number"><%=estate.bathrooms%> Bathrooms</div>
+                    </div>
+                    <div class="vl"></div>
+                    <p id="meter"><%=estate.area%> m<sup>2</sup></p>
+                </div>
+                <div class="line"></div>
+                <div>
+                    <h3 class="info">
+                        <bold>Relator</bold>
+                    </h3>
+                    <div class="relator">
+                        <img class="channel" src="./images/user-pic1 - Copy.png" alt="">
+                        <div class="relator-info">
+                            <p class="author"><%= estate.username%></p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+                <%})%>    
+            <% } else { %>
+                <p>There are no Data to display...</p>
+                <% } %>
+        </div>
+          
+          </div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity=
+  "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous">
+</script>
+<script>
+    let intro = document.querySelector('.intro');
+setTimeout(() => {
+    setTimeout(() => {
+        intro.style.top = '-125vh';
+
+    }, 600);
+})
+    function getButton(button){
+    let id = button.parentElement.querySelector('.estate-id').value;
+    const username = sessionStorage.getItem('username')
+    let card = button.closest('.popular__card');
+    card.remove(); 
+    
+          $.ajax({
+            url: '/wishlist',
+            method: 'delete',
+            data: {id:id,username:username},
+            success: function (response) {
+
+            },
+            error: function (error) {
+              console.error(error); // Log any errors that occurred
+            },
+          });
+        }
+</script>

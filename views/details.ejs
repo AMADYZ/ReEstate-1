@@ -1,0 +1,331 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+   <link rel="stylesheet" href="./css/nav.css">
+   <link rel="stylesheet" href="./css/fonts.css">
+   <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css"/>
+   <link rel="stylesheet" href="./css/product.css">
+   <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+   <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <title>
+        Product Details
+    </title>
+</head>
+<body>
+  <%- include("./partials/nav2.ejs") %>
+    <div class="intro"></div>
+    <%- include("./partials/chatgpt.ejs") %>
+
+            <section id="details" class="section-p1">
+                <div class="w3-content w3-display-container" style="max-width:800px">
+                    <% search.images.forEach(image=> { %>
+                        <img class="mySlides" src="./images/uploaded/<%=image%>">
+                      <% }); %>
+                    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+                      <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                      <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                      <% search.images.forEach((_, index) => { %>
+                        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv( index + 1 )"></span>
+                      <% }); %>
+                    </div>
+                  </div>
+                <div class="spd">
+                    <div class="block-wrap">
+                        <div class="block-title-wrap-host">
+                            <h2 class="title1"><%=search.title%></h2>
+                            <button class="btn-list" id="wishlist-button">+ Add To WishList</button>
+                            <label id="prop-label" class="fade-label hidden">Added To Your Wishlist</label>
+                        </div>
+                        <div class="detail-wrap-table">
+                            <div class="rowData">
+                                <div><strong>City:</stong></div>
+                                <div><%= search.location%></div>
+                            </div>
+                            <div class="rowData">
+                                <div><strong>Price:</stong></div>
+                                    <span>EGP <%= (search.price * 1).toLocaleString() %></span>
+                                </div>
+                            <div class="rowData">
+                                <div><strong>Property Size:</strong></div>
+                                <div><%=search.area%></div>
+                            </div>
+                            <div class="rowData">
+                                <div><strong>Bedrooms:</strong></div>
+                                <div><%=search.bedrooms%></div>
+                            </div>
+                            <div class="rowData">
+                                <div><strong>Bathrooms:</strong></div>
+                                <div><%=search.bathrooms%></div>
+                            </div>
+                            <div class="rowData">
+                                <div><strong>Property Type:</strong></div>
+                                <div><%=search.type%></div>
+                            </div>
+                            <div class="rowData">
+                                <div><strong>Property Status:</strong>
+                                </div>
+                                <div><%=search.condition%></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-wrap">
+                        <div class="block-title-wrap">
+                            <h2>Description</h2>
+                        </div>
+                        <div>
+                            <p class="Description"><%=search.description%></p>
+                        </div>
+                    </div>
+                    <div class="block-wrap">
+                      <div class="block-title-wrap-host">
+                        <h2>More Details</h2>
+                        <input type="hidden" id="id_prop" value="<%=search._id%>">
+                          <button class="btn-list" id="but-comp" type="submit" name="compareBtn" value="first">Compare</button>
+                          <label id="myLabel" class="fade-label hidden">Add Another Property to compare</label>
+                    </div>                    
+                        <div class="offer">
+                            <ul>
+                                <li>
+                                    <strong>Apartment</strong>
+                                </li>
+                                <li>
+                                    Property Type
+                                </li>
+                            </ul> 
+                                <div class="perks-details">
+                                    <ul>
+                                        <li class="Property-view"><img class="perk-img" src="./images/bedrooms.png" alt="bedrooms"><div><%=search.bedrooms%></div></li>
+                                       <li>Bedrooms</li>
+                                    </ul>
+                                </div>
+                                <div class="perks-details">
+                                    <ul>
+                                        <li class="Property-view"><img class="perk-img" src="./images/bathrooms.png" alt="bathrooms"><div><%=search.bathrooms%></div></li>
+                                       <li>Bathrooms</li> 
+                                    </ul>
+                                </div>
+                                <div class="perks-details">
+                                    <ul>
+                                        <li class="Property-view"><img class="perk-img" src="./images/home.png" alt="area"><div><%=search.area%></div></li>
+                                        <li> Sq Ft</li>
+                                    </ul>
+                                </div>
+                                <div class="perks-details">
+                                    <ul>
+                                        <li class="Property-view"><img class="perk-img" src="./images/calendar.png" alt="area"><div>2023</div></li>
+                                        <li>Year Posted</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="block-wrap">
+                        <div class="block-title-wrap-host">
+                            <h2>Address</h2>
+                            <button type="button" onclick="window.open('<%= search.urllocation %>', '_blank')" class="btn-list">Open On Google Maps</button>
+                        </div>
+                       <div id="map"></div>
+                       <span style="display: none;" id="placeInput"><%=search.locationgps%></span>
+                    </div>
+                    <div class="block-wrap">
+                        <div class="block-title-wrap-host">
+                            <h2>Host</h2>
+                            <form action="/listing" method="get">
+                            <button type="submit" class="btn-list">View Listing</button>
+                        </form>
+                        </div>
+                        <div class="host-info">
+                            <img src="./images/user-pic1 - Copy.png" class="channel" alt="channel">
+                            <div class="image-info">
+                                <div class="personal-details">
+                                    
+                                    <img src="./images/user-pic1 - Copy.png" class="contact-img" alt="channel">
+                                    <span><%=user1[0].username%></span>
+                                </div>
+                               <div class="personal-details">
+                                <img src="./images/smartphone.png" class="contact-img" alt="channel">
+                                <span>+<%=user1[0].phone%></span>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                      <ul class="comment-list" id="comments">
+                        <h2><%= search.comment.length %> Comments</h2>
+
+                        <% search.comment.forEach(comment => { %>
+                          <li>
+                            <h3><%= comment.title %></h3>
+                            <p><%= comment.text %></p>
+                          </li>
+                        <% }) %>
+                      </ul>
+                    </div>     
+                    <div class="block-wrap">
+                        <div class="block-title-wrap">
+                            <h2>Leave A Comment</h2>
+                        </div>
+                        <div>
+                                <form action="/details" method="post" id="myForm1">
+                                  <div class="form-group">
+                                    <label for="review-title">Title:</label>
+                                    <input type="text" id="review-title" name="review-title" placeholder="Add a title" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="review-text">Comment:</label>
+                                    <textarea id="review-text" name="review-text" placeholder="Write your comment" required></textarea>
+                                  </div>
+                                  <input type="hidden" id="id" value="<%=search.id%>">
+                                  <button type="submit" onclick="render()" class="submit-btn">Submit Review</button>
+                                </form>
+                                <div class="success-message">
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <h2 class="marginns">Featured Projects</h2>
+            <div class="container2"> 
+                <% similar.forEach(relate => {
+                    if (relate._id != search._id) { %>
+                      <div class="pro">
+                        <div class="image-container">
+                          <img class="inimg" src="./images/uploaded/<%=relate.images[1]%>" alt="image1">
+                        </div>
+                        <div class="des">
+                          <span><%= relate.location %></span>
+                          <h5><%= relate.title %></h5>
+                          <h4>EGP <%= (relate.price * 1).toLocaleString() %></h4>
+                          <div>
+                            <button class="btn" onclick="redirectToPage('<%= relate._id %>')">Details</button>
+                          </div> 
+                        </div>
+                      </div>
+                    <% }
+                  }) %>              
+              </div>
+    <section id="banner" class="section-m1" style="background-image:url(../images/img-7.jpg);">
+        <h4>Repair Service</h4>
+        <h2>Explore Move Now Pay Later Projects</h2>
+        <button class="btn">Explore More </button>
+    </section>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity=
+  "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous">
+</script>
+<script src="./scripts/product.js"></script>
+<script src="./scripts/details.js"></script>
+<script src="./scripts/SetWishlist.js"></script>
+
+<script> 
+   
+
+    
+  function redirectToPage(id) {
+    window.location.href = `/details?id=${id}`; 
+  }
+     var map;
+    var marker;
+    function searchPlace() {
+       
+      var place = document.getElementById('placeInput').innerHTML;
+    
+      if (!place) {
+        return;
+      }
+    
+      var geocoder = new google.maps.Geocoder();
+    
+      geocoder.geocode({ address: place }, function(results, status) {
+        if (status === 'OK' && results.length > 0) {
+          var location = results[0].geometry.location;
+          placeMarker(location);
+          map.setCenter(location);
+          map.setZoom(15);
+        }
+      });
+    }
+    
+    function placeMarker(location) {
+      if (marker) {
+        marker.setMap(null);
+      }
+    
+      marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    
+      getAddress(location);
+    }
+    
+    function getAddress(location) {
+      var geocoder = new google.maps.Geocoder();
+    
+      geocoder.geocode({ location: location }, function(results, status) {
+        if (status === 'OK' && results.length > 0) {
+          var address = results[0].formatted_address;
+        } 
+      });
+    }
+    
+    // Define the initMap function
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 0, lng: 0 },
+        zoom: 10
+      });
+    
+      // Call the searchPlace function
+      searchPlace();
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGJ_yAToa0xfxBh1EhqoOe5MnZCLebbIQ&callback=initMap" async defer></script>
+<script>
+    const cursor = new MouseFollower({
+      el: null,
+      container: document.body,
+      className: "mf-cursor",
+      innerClassName: "mf-cursor-inner",
+      textClassName: "mf-cursor-text",
+      mediaClassName: "mf-cursor-media",
+      mediaBoxClassName: "mf-cursor-media-box",
+      iconSvgClassName: "mf-svgsprite",
+      iconSvgNamePrefix: "-",
+      iconSvgSrc: "",
+      dataAttr: "cursor",
+      hiddenState: "-hidden",
+      textState: "-text",
+      iconState: "-icon",
+      activeState: "-active",
+      mediaState: "-media",
+      stateDetection: {
+        "-pointer": "a,button",
+        "-hidden": "iframe"
+      },
+      visible: true,
+      visibleOnState: false,
+      speed: 1,
+      ease: "expo.out",
+      overwrite: true,
+      skewing: 0,
+      skewingText: 0,
+      skewingIcon: 2,
+      skewingMedia: 2,
+      skewingDelta: 0.001,
+      skewingDeltaMax: 0.15,
+      stickDelta: 0.15,
+      showTimeout: 20,
+      hideOnLeave: true,
+      hideTimeout: 300,
+      hideMediaTimeout: 300,
+    });
+  </script>

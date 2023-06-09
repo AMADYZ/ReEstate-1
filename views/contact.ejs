@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css"/>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+</head>
+<body>
+    <div id="google_translate_element">
+
+    <div class="intro"></div>
+    <div>
+
+        <%- include("./partials/nav.ejs") %>
+        </div>
+
+
+        
+    <div class="section1">
+        <div class="TopLsection1">
+            Get in <span>Touch.</span>
+        </div>
+        <div class="BotLsection1">
+            <span>Cairo</span>/<span>Alexandria</span>/<span>Giza</span>/
+            <span>Luxor</span>/<span>Aswan</span>/<br><span>Port-Said</span>/
+            <span>Sharqia</span>/<span>Gharbia</span>/<span>Asyut</span>/
+            <span>Damietta</span>/<span>ismailia</span>/<span>Suez</span>/
+            <span>Faiyum</span>/<br><span>Sharm El-Sheikh</span>/<span>Minya</span>/
+            <span>Tanta</span>
+        </div>
+    </div>
+    <div class="section2">
+        <div class="Lsection2">
+            <img class="inLsection2" src="./images/AZ_Pic_AdobeStock_135404302_1.webp">
+        </div>
+        <div class="Rsection2">
+            <div class="topRsection2">
+                <div class="phonetel">
+                    <div>__________________________________</div>
+                    <div class="inphonetel">PHONE NUMBER</div>
+                    <div class="thephonetel">720.923.5410</div>
+
+                </div>
+                <div class="Address">
+                    <div class="line1">__________________________________</div>
+                    <div class="inAddress">Address</div>
+                    <div class="theAddress">1660 Wynkoop,<br> Suite 1120
+                        Denver, CO 80202</div>
+
+                </div>
+            </div>
+            <div class="BottomRsection2">
+                <div class="gathered">
+                    <div>__________________________________</div>
+                    <div class="inphonetel">ACQUISITIONS - AUSTIN</div>
+                    <div class="thegathred">Peter Llorente</div>
+                    <div class="thegathred">Phone: 720.932.2868</div>
+                    <div class="thegathred">pllorente@sReEstatellc.com</div>
+
+                </div>
+                <div class="gathered2">
+                    <div>__________________________________</div>
+                    <div class="inphonetel">LEASING - AUSTIN</div>
+                    <div class="thegathred1">Monica Baytos</div>
+                    <div class="thegathred1">Phone: 720.932.2868</div>
+                    <div class="thegathred1">pllorente@ReEstatellc.com</div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    <div class="section3">
+        <div class="Bigtitle3">
+            Careers
+        </div>
+    </div>
+    <div class="section4">
+        <div class="Lsection4">
+            <div class="TopLsection4">
+        We foster a creative and collaborative environment 
+        that employs a team-first philosophy
+            </div>
+        <div class="midLsection4">
+            Check out the open positions available at ReEstate.
+        </div>
+        <div data-cursor-text="Careers" class="botLsection4">
+            View Careers
+            <div class="arrowsection4">
+                <img class="arrow3" src="./images/download (1) (1).png">
+            </div>
+        </div>
+        
+    </div>
+    <div class="Rsection4">
+        <img class="imgsection4" src="./images/contact2.webp">
+    </div>
+    </div>
+    <div data-cursor-text="Contact" class="section5">
+        Let's Talk 
+        <div class="arrowsection5">
+            <img class="arrow5" src="./images/download (1) (1).png">
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="./scripts/contact.js"></script>
+</html>
+
+<script>
+    const cursor = new MouseFollower({
+      el: null,
+      container: document.body,
+      className: "mf-cursor",
+      innerClassName: "mf-cursor-inner",
+      textClassName: "mf-cursor-text",
+      mediaClassName: "mf-cursor-media",
+      mediaBoxClassName: "mf-cursor-media-box",
+      iconSvgClassName: "mf-svgsprite",
+      iconSvgNamePrefix: "-",
+      iconSvgSrc: "",
+      dataAttr: "cursor",
+      hiddenState: "-hidden",
+      textState: "-text",
+      iconState: "-icon",
+      activeState: "-active",
+      mediaState: "-media",
+      stateDetection: {
+        "-pointer": "a,button",
+        "-hidden": "iframe"
+      },
+      visible: true,
+      visibleOnState: false,
+      speed: 1,
+      ease: "expo.out",
+      overwrite: true,
+      skewing: 0,
+      skewingText: 0,
+      skewingIcon: 2,
+      skewingMedia: 2,
+      skewingDelta: 0.001,
+      skewingDeltaMax: 0.15,
+      stickDelta: 0.15,
+      showTimeout: 20,
+      hideOnLeave: true,
+      hideTimeout: 300,
+      hideMediaTimeout: 300,
+    });
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

@@ -1,0 +1,1056 @@
+
+a {
+    text-decoration: none;
+          }
+#menuToggle {
+    top: 35px;
+    right: 10px;
+    position: fixed;
+    width: 120px;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    margin-right: 5%;
+  }
+  #menuToggle input {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0; 
+    z-index: 1; 
+  }
+
+  #menuToggle span {
+    width: 19px;
+    height: 2px;
+    margin: 2px;
+    background-color: #F2F2F2;
+    transition: all 0.3s cubic-bezier(.455, .03, .515, .955);
+  }
+
+  #menuToggle input:checked ~ #span1 {
+    transform: rotate(45deg) translate(7px);
+  }
+  #menuToggle input:checked ~ #span2 {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  #menuToggle input:checked ~ #span3 {
+    transform: rotate(-45deg) translate(8px);
+  }
+  input:checked ~ nav {
+    display: block;
+  }
+
+  nav {
+    display: none; 
+    width: 450px;
+    height: 35px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav1 a {
+    text-decoration: none;
+    font-family: BW Gradual;
+    font-size: 15px;
+    color: #F2F2F2;
+    margin-top: 100px;
+    margin-right: 20px;
+    position: relative;
+    transition: 0.5s;
+    -webkit-animation: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+  }
+
+  .nav1 a::before {
+    position: absolute;
+    content: '';
+    height: 2px;
+    left: 0px;
+    width: 0px;
+    background-color: white;
+    bottom: 0px;
+    transition: 0.5s;
+    -webkit-animation: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+  }
+
+  .nav1 a:hover {
+    color: white;
+  }
+
+  .nav1 a:hover::before {
+    width: 100%;
+    height: 0.7px;
+  }
+
+
+
+/* -----------------nav menu for about---------------- */
+#menuToggle-about {
+    top: 35px;
+    right: 10px;
+    position: fixed;
+    width: 100px;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    margin-right: 5%;
+    }
+    #menuToggle-about input {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0; /* hide input */
+    z-index: 1; /* top of the menu */
+    }
+    #menuToggle-about span{
+    width: 19px;
+    height: 2px;
+    margin: 2px;
+    background-color:black ;
+    transition: all 0.3s cubic-bezier(.455,.03,.515,.955);
+    }
+    
+    #menuToggle-about input:checked ~ #span1 {
+    
+    transform: rotate(45deg) translate(7px);
+    }
+    #menuToggle-about input:checked ~ #span2 {
+     
+    transform: translateX(-40px);
+    opacity: 0;
+    }
+    #menuToggle-about input:checked ~ #span3 {
+    transform: rotate(-45deg) translate(8px);
+    }
+    .nav1-about a{
+        text-decoration: none;
+        font-family: BW Gradual ;
+        font-size: 15px;
+        color: black;
+        margin-top: 100px;
+        margin-right: 20px;
+        position: relative;
+        transition: 0.5s;
+        -webkit-animation: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition:0.5s;
+        -o-transition: 0.5s;
+        }
+        
+        .nav1-about a::before{
+        position:absolute;
+        content: '';
+        height: 2px;
+        left: 0px;
+        width: 0px;
+        background-color:rgb(28, 28, 28);
+        bottom: 0px;
+        transition: 0.5s;
+        -webkit-animation: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition:0.5s;
+        -o-transition: 0.5s;
+        }
+        .nav1-about a:hover{
+        color: rgb(27, 27, 27);
+        }
+        .nav1-about a:hover::before{
+        width: 100%;
+        height: 0.7px;
+        }
+
+
+
+
+
+
+
+        /* -----------------nav menu for design---------------- */
+        #menuToggle-design {
+            top: 35px;
+            right: 10px;
+            position: fixed;
+            width: 100px;
+            height: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            margin-right: 5%;
+            }
+            #menuToggle-design input {
+            display: flex;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            cursor: pointer;
+            opacity: 0; /* hide input */
+            z-index: 1; /* top of the menu */
+            }
+            #menuToggle-design span{
+            width: 19px;
+            height: 2px;
+            margin: 2px;
+            background-color:black ;
+            transition: all 0.3s cubic-bezier(.455,.03,.515,.955);
+            }
+            
+            #menuToggle-design input:checked ~ #span1 {
+            
+            transform: rotate(45deg) translate(7px);
+            }
+            #menuToggle-design input:checked ~ #span2 {
+             
+            transform: translateX(-40px);
+            opacity: 0;
+            }
+            #menuToggle-design input:checked ~ #span3 {
+            transform: rotate(-45deg) translate(8px);
+            }
+            .nav1-design a{
+                text-decoration: none;
+                font-family: BW Gradual ;
+                font-size: 15px;
+                color: black;
+                margin-top: 100px;
+                margin-right: 20px;
+                position: relative;
+                transition: 0.5s;
+                -webkit-animation: 0.5s;
+                -moz-transition: 0.5s;
+                -ms-transition:0.5s;
+                -o-transition: 0.5s;
+                }
+                
+                .nav1-design a::before{
+                position:absolute;
+                content: '';
+                height: 2px;
+                left: 0px;
+                width: 0px;
+                background-color:rgb(28, 28, 28);
+                bottom: 0px;
+                transition: 0.5s;
+                -webkit-animation: 0.5s;
+                -moz-transition: 0.5s;
+                -ms-transition:0.5s;
+                -o-transition: 0.5s;
+                }
+                .nav1-design a:hover{
+                color: rgb(27, 27, 27);
+                }
+                .nav1-design a:hover::before{
+                width: 100%;
+                height: 0.7px;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #searchnav
+        {  
+        display: none;
+        }
+        #Signupnav
+        {
+            display: inline;
+        }
+        #admin-dash
+        {
+            display: none;
+        }
+
+        @media screen and (min-width: 2048px) {
+            nav {
+                opacity: 0;
+                width: 600px;
+                height: 35px;
+                position: absolute;
+                right: 30px;
+                top: 10px;
+                overflow: hidden;
+                transition: 0.3s ease-in-out;
+                }
+                .nav1-about a{
+                    text-decoration: none;
+                    font-family: BW Gradual ;
+                    font-size: 25px;
+                    color: black;
+                    margin-top: 100px;
+                    margin-right: 20px;
+                    position: relative;
+                    transition: 0.5s;
+                    -webkit-animation: 0.5s;
+                    -moz-transition: 0.5s;
+                    -ms-transition:0.5s;
+                    -o-transition: 0.5s;
+                    }
+                    .nav1 a{
+                        font-size: 25px;
+                    }
+                    .nav1-about a::before{
+                        position:absolute;
+                        content: '';
+                        height: 2px;
+                        left: 0px;
+                        width: 0px;
+                        background-color:black;
+                        bottom: 0px;
+                        transition: 0.5s;
+                        -webkit-animation: 0.5s;
+                        -moz-transition: 0.5s;
+                        -ms-transition:0.5s;
+                        -o-transition: 0.5s;
+                        }
+                        .nav1-about a:hover{
+                        color: rgb(100, 97, 97);
+                        }
+                        .nav1-about a:hover::before{
+                        width: 100%;
+                        height: 0.7px;
+                        }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width: 351px)
+        {
+            /* ---------------------nav menu for home---------------------- */
+            a {
+                text-decoration: none;
+                z-index: 1;
+                      }
+                
+                #menuToggle {
+                top: 35px;
+                right: 10px;
+                position: fixed;
+                width: 100px;
+                height: 35px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: transparent;
+                margin-right: 5%;
+                z-index: 1;
+                }
+                #menuToggle input {
+                display: flex;
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                cursor: pointer;
+                opacity: 0; /* hide input */
+                z-index: 1; /* top of the menu */
+                margin-left: 2%;
+                }
+                #menuToggle span{
+                width: 19px;
+                height: 2px;
+                margin: 2px;
+                background-color:#F2F2F2 ;
+                transition: all 0.3s cubic-bezier(.455,.03,.515,.955);
+                z-index: 1;
+                }
+                
+                #menuToggle input:checked ~ #span1 {
+                
+                transform: rotate(45deg) translate(7px);
+                }
+                #menuToggle input:checked ~ #span2 {
+                 
+                transform: translateX(-40px);
+                opacity: 0;
+                }
+                #menuToggle input:checked ~ #span3 {
+                transform: rotate(-45deg) translate(8px);
+                }
+                input:checked ~ nav {
+                opacity: 1;
+                background-color: rgb(30, 30, 30);
+                height: 110vh;
+                margin-right: -10vh;
+                margin-top: -7vh;
+
+                }
+
+                nav {
+                opacity: 0;
+                width: 400px;
+                height: 35px;
+                position: absolute;
+                right: 30px;
+                top: 10px;
+                overflow: hidden;
+                transition: 0.3s ease-in-out;
+                }
+                .nav1 a{
+                text-decoration: none;
+                font-family: BW Gradual ;
+                font-size: 35px;
+                color: #F2F2F2;
+                margin-top: 50px;
+                margin-right: 20px;
+                position: relative;
+                transition: 0.5s;
+                -webkit-animation: 0.5s;
+                -moz-transition: 0.5s;
+                -ms-transition:0.5s;
+                -o-transition: 0.5s;
+                display: block;
+                margin-left: 20%;
+                }
+                .nav1{
+                    margin-top: 30%;
+                }
+                
+                
+                .nav1 a::before{
+                position:absolute;
+                content: '';
+                height: 2px;
+                left: 0px;
+                width: 0px;
+                background-color:white;
+                bottom: 0px;
+                transition: 0.5s;
+                -webkit-animation: 0.5s;
+                -moz-transition: 0.5s;
+                -ms-transition:0.5s;
+                -o-transition: 0.5s;
+                }
+                .nav1 a:hover{
+                color: white;
+                }
+                .nav1 a:hover::before{
+                width: 100%;
+                height: 0.7px;
+                }
+
+
+                /* ------------------- nav menu for about----------------- */
+                
+
+                #menuToggle-about {
+                    top: 35px;
+                    right: 10px;
+                    position: fixed;
+                    width: 100px;
+                    height: 35px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background: transparent;
+                    margin-right: 5%;
+                    z-index: 1;
+                    }
+                    #menuToggle-about input {
+                    display: flex;
+                    width: 55px;
+                    height: 50px;
+                    position: absolute;
+                    cursor: pointer;
+                    opacity: 0; /* hide input */
+                    z-index: 1; /* top of the menu */
+                    }
+                    #menuToggle-about span{
+                    width: 19px;
+                    height: 2px;
+                    margin: 2px;
+                    background-color:black ;
+                    transition: all 0.3s cubic-bezier(.455,.03,.515,.955);
+                    z-index: 1;
+                    }
+                    
+                    #menuToggle-about input:checked ~ #span1 {
+                    
+                    transform: rotate(45deg) translate(7px);
+                    }
+                    #menuToggle-about input:checked ~ #span2 {
+                     
+                    transform: translateX(-40px);
+                    opacity: 0;
+                    }
+                    #menuToggle-about input:checked ~ #span3 {
+                    transform: rotate(-45deg) translate(8px);
+                    }
+                    .nav1-about a{
+                     text-decoration: none;
+                    font-family: BW Gradual ;
+                    font-size: 35px;
+                    color: #F2F2F2;
+                    margin-top: 50px;
+                    margin-right: 20px;
+                    position: relative;
+                    transition: 0.5s;
+                    -webkit-animation: 0.5s;
+                    -moz-transition: 0.5s;
+                    -ms-transition:0.5s;
+                    -o-transition: 0.5s;
+                    display: block;
+                    margin-left: 20%;
+                        }
+                        .nav1-about
+                        {
+                            margin-top: 30%; 
+                        }
+                        
+                        .nav1-about a::before{
+                        position:absolute;
+                        content: '';
+                        height: 2px;
+                        left: 0px;
+                        width: 0px;
+                        background-color:rgb(28, 28, 28);
+                        bottom: 0px;
+                        transition: 0.5s;
+                        -webkit-animation: 0.5s;
+                        -moz-transition: 0.5s;
+                        -ms-transition:0.5s;
+                        -o-transition: 0.5s;
+                        }
+                        .nav1-about a:hover{
+                        color: rgb(27, 27, 27);
+                        }
+                        .nav1-about a:hover::before{
+                        width: 100%;
+                        height: 0.7px;
+                        }
+                
+                        #searchnav
+                        {  
+                        display: none;
+                        }
+                        #Signupnav
+                        {
+                            display: block;
+                            
+                        }
+                        #admin-dash
+                        {
+                            display: none;
+                        }
+
+
+                        /* ----------------------nav menu for design---------------- */
+                            #menuToggle-design {
+                            top: 35px;
+                            right: 10px;
+                            position: fixed;
+                            width: 100px;
+                            height: 35px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            background: transparent;
+                            margin-right: 5%;
+                            z-index: 1;
+                            }
+                            #menuToggle-design input {
+                            display: flex;
+                            width: 35px;
+                            height: 35px;
+                            position: absolute;
+                            cursor: pointer;
+                            opacity: 0; /* hide input */
+                            z-index: 1; /* top of the menu */
+                            }
+                            #menuToggle-design span{
+                            width: 19px;
+                            height: 2px;
+                            margin: 2px;
+                            background-color:black ;
+                            transition: all 0.3s cubic-bezier(.455,.03,.515,.955);
+                            }
+                            
+                            #menuToggle-design input:checked ~ #span1 {
+                            
+                            transform: rotate(45deg) translate(7px);
+                            }
+                            #menuToggle-design input:checked ~ #span2 {
+                             
+                            transform: translateX(-40px);
+                            opacity: 0;
+                            }
+                            #menuToggle-design input:checked ~ #span3 {
+                            transform: rotate(-45deg) translate(8px);
+                            }
+                            .nav1-design a{
+                                text-decoration: none;
+                                font-family: BW Gradual ;
+                                font-size: 15px;
+                                color: black;
+                                margin-top: 100px;
+                                margin-right: 20px;
+                                position: relative;
+                                transition: 0.5s;
+                                -webkit-animation: 0.5s;
+                                -moz-transition: 0.5s;
+                                -ms-transition:0.5s;
+                                -o-transition: 0.5s;
+                                }
+                                
+                                .nav1-design a::before{
+                                position:absolute;
+                                content: '';
+                                height: 2px;
+                                left: 0px;
+                                width: 0px;
+                                background-color:rgb(28, 28, 28);
+                                bottom: 0px;
+                                transition: 0.5s;
+                                -webkit-animation: 0.5s;
+                                -moz-transition: 0.5s;
+                                -ms-transition:0.5s;
+                                -o-transition: 0.5s;
+                                }
+                                .nav1-design a:hover{
+                                color: rgb(27, 27, 27);
+                                }
+                                .nav1-design a:hover::before{
+                                width: 100%;
+                                height: 0.7px;
+                                }
+                                
+                                @media screen and (min-width: 2048px) {
+                                    nav {
+                                        opacity: 0;
+                                        width: 600px;
+                                        height: 35px;
+                                        position: absolute;
+                                        right: 30px;
+                                        top: 10px;
+                                        overflow: hidden;
+                                        transition: 0.3s ease-in-out;
+                                        }
+                                        .nav1-about a{
+                                            text-decoration: none;
+                                            font-family: BW Gradual ;
+                                            font-size: 25px;
+                                            color: black;
+                                            margin-top: 100px;
+                                            margin-right: 20px;
+                                            position: relative;
+                                            transition: 0.5s;
+                                            -webkit-animation: 0.5s;
+                                            -moz-transition: 0.5s;
+                                            -ms-transition:0.5s;
+                                            -o-transition: 0.5s;
+                                            }
+                                            .nav1 a{
+                                                font-size: 25px;
+                                            }
+                                            .nav1-about a::before{
+                                                position:absolute;
+                                                content: '';
+                                                height: 2px;
+                                                left: 0px;
+                                                width: 0px;
+                                                background-color:black;
+                                                bottom: 0px;
+                                                transition: 0.5s;
+                                                -webkit-animation: 0.5s;
+                                                -moz-transition: 0.5s;
+                                                -ms-transition:0.5s;
+                                                -o-transition: 0.5s;
+                                                }
+                                                .nav1-about a:hover{
+                                                color: rgb(100, 97, 97);
+                                                }
+                                                .nav1-about a:hover::before{
+                                                width: 100%;
+                                                height: 0.7px;
+                                                }
+                                }
+                        
+                        
+                                @media screen and (min-width: 1056px) and (max-width: 1366px)
+                                {
+                                    #menuToggle input {
+                                        display: flex;
+                                        width: 50px;
+                                        height: 50px;
+                                        position: absolute;
+                                        cursor: pointer;
+                                        opacity: 0; 
+                                        z-index: 1; 
+                                        margin-left: 2%;
+                                        margin-right: 580px;
+                                        }
+                                        #menuToggle span{
+                                        width: 19px;
+                                        height: 2px;
+                                        margin: 2px;
+                                        background-color:#F2F2F2 ;
+                                        transition: all 0.3s cubic-bezier(.455,.03,.515,.955);
+                                        z-index: 1;
+                                        margin-right: 580px;
+                                        }
+                                        nav {
+                                            opacity: 0;
+                                            width: 400px;
+                                            height: 35px;
+                                            position: absolute;
+                                            right: 30px;
+                                            top: 10px;
+                                            margin-right: 300px;
+                                        }
+                                }   
+                        
+                        
+                                @media screen and (min-width: 360px) and (max-width: 420px)
+                                {
+                                    /* ---------------------nav menu for home---------------------- */
+                                    a {
+                                        text-decoration: none;
+                                        z-index: 1;
+                                              }
+                                        
+                                        #menuToggle {
+                                        top: 35px;
+                                        right: 10px;
+                                        position: fixed;
+                                        width: 100px;
+                                        height: 35px;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        align-items: center;
+                                        background: transparent;
+                                        margin-right: 5%;
+                                        z-index: 1;
+                                        }
+                                        #menuToggle input {
+                                        display: flex;
+                                        width: 50px;
+                                        height: 50px;
+                                        position: absolute;
+                                        cursor: pointer;
+                                        opacity: 0; /* hide input */
+                                        z-index: 1; /* top of the menu */
+                                        margin-left: 2%;
+                                        margin-right: 280%;
+                                        }
+                                        #menuToggle span{
+                                        width: 19px;
+                                        height: 2px;
+                                        margin: 2px;
+                                        background-color:#F2F2F2 ;
+                                        transition: all 0.3s cubic-bezier(.455,.03,.515,.955);
+                                        z-index: 1;
+                                        margin-right: 280%;
+                                        }
+                                        
+                                        #menuToggle input:checked ~ #span1 {
+                                        
+                                        transform: rotate(45deg) translate(7px);
+                                        }
+                                        #menuToggle input:checked ~ .nav-menu {
+                                            display: none;
+                                        }
+                                        #menuToggle input:checked ~ #span2 {
+                                         
+                                        transform: translateX(-40px);
+                                        opacity: 0;
+                                        }
+                                        #menuToggle input:checked ~ #span3 {
+                                        transform: rotate(-45deg) translate(8px);
+                                        }
+                                        input:checked ~ nav {
+                                        opacity: 1;
+                                        background-color: rgb(30, 30, 30);
+                                        height: 110vh;
+                                        margin-right: -10vh;
+                                        margin-top: -7vh;
+                        width: 500%;
+                                        }
+                        
+                                        nav {
+                                        opacity: 0;
+                                        width: 400px;
+                                        height: 35px;
+                                        position: absolute;
+                                        right: 30px;
+                                        top: 10px;
+                                        overflow: hidden;
+                                        transition: 0.3s ease-in-out;
+                                        }
+                                        .nav1 a{
+                                        text-decoration: none;
+                                        font-family: BW Gradual ;
+                                        font-size: 35px;
+                                        color: #F2F2F2;
+                                        margin-top: 50px;
+                                        margin-right: 20px;
+                                        position: relative;
+                                        transition: 0.5s;
+                                        -webkit-animation: 0.5s;
+                                        -moz-transition: 0.5s;
+                                        -ms-transition:0.5s;
+                                        -o-transition: 0.5s;
+                                        display: block;
+                                        margin-left: 20%;
+                                        }
+                                        .nav1{
+                                            margin-top: 20%;
+                                            margin-left: 20%;
+                                        }
+                                        
+                                        
+                                        .nav1 a::before{
+                                        position:absolute;
+                                        content: '';
+                                        height: 2px;
+                                        left: 0px;
+                                        width: 0px;
+                                        background-color:white;
+                                        bottom: 0px;
+                                        transition: 0.5s;
+                                        -webkit-animation: 0.5s;
+                                        -moz-transition: 0.5s;
+                                        -ms-transition:0.5s;
+                                        -o-transition: 0.5s;
+                                        }
+                                        .nav1 a:hover{
+                                        color: white;
+                                        }
+                                        .nav1 a:hover::before{
+                                        width: 100%;
+                                        height: 0.7px;
+                                        }
+                        
+                        
+                                        /* ------------------- nav menu for about----------------- */
+                                        
+                        
+                                        #menuToggle-about {
+                                            top: 35px;
+                                            right: 10px;
+                                            position: fixed;
+                                            width: 100px;
+                                            height: 35px;
+                                            display: flex;
+                                            flex-direction: column;
+                                            justify-content: center;
+                                            align-items: center;
+                                            background: transparent;
+                                            margin-right: 5%;
+                                            z-index: 1;
+                                            }
+                                            #menuToggle-about input {
+                                            display: flex;
+                                            width: 55px;
+                                            height: 50px;
+                                            position: absolute;
+                                            cursor: pointer;
+                                            opacity: 0; /* hide input */
+                                            z-index: 1; /* top of the menu */
+                                            }
+                                            #menuToggle-about span{
+                                            width: 19px;
+                                            height: 2px;
+                                            margin: 2px;
+                                            background-color:black ;
+                                            transition: all 0.3s cubic-bezier(.455,.03,.515,.955);
+                                            z-index: 1;
+                                            }
+                                            
+                                            #menuToggle-about input:checked ~ #span1 {
+                                            
+                                            transform: rotate(45deg) translate(7px);
+                                            }
+                                            #menuToggle-about input:checked ~ #span2 {
+                                             
+                                            transform: translateX(-40px);
+                                            opacity: 0;
+                                            }
+                                            #menuToggle-about input:checked ~ #span3 {
+                                            transform: rotate(-45deg) translate(8px);
+                                            }
+                                            .nav1-about a{
+                                             text-decoration: none;
+                                            font-family: BW Gradual ;
+                                            font-size: 35px;
+                                            color: #F2F2F2;
+                                            margin-top: 50px;
+                                            margin-right: 20px;
+                                            position: relative;
+                                            transition: 0.5s;
+                                            -webkit-animation: 0.5s;
+                                            -moz-transition: 0.5s;
+                                            -ms-transition:0.5s;
+                                            -o-transition: 0.5s;
+                                            display: block;
+                                            margin-left: 20%;
+                                                }
+                                                .nav1-about
+                                                {
+                                                    margin-top: 30%;
+                                                    margin-left: 20%; 
+                                                }
+                                                
+                                                .nav1-about a::before{
+                                                position:absolute;
+                                                content: '';
+                                                height: 2px;
+                                                left: 0px;
+                                                width: 0px;
+                                                background-color:rgb(28, 28, 28);
+                                                bottom: 0px;
+                                                transition: 0.5s;
+                                                -webkit-animation: 0.5s;
+                                                -moz-transition: 0.5s;
+                                                -ms-transition:0.5s;
+                                                -o-transition: 0.5s;
+                                                }
+                                                .nav1-about a:hover{
+                                                color: rgb(27, 27, 27);
+                                                }
+                                                .nav1-about a:hover::before{
+                                                width: 100%;
+                                                height: 0.7px;
+                                                }
+                                        
+                                                #searchnav
+                                                {  
+                                                display: none;
+                                                }
+                                                #Signupnav
+                                                {
+                                                    display: block;
+                                                    
+                                                }
+                                                #admin-dash
+                                                {
+                                                    display: none;
+                                                }
+                        
+                        
+                                                /* ----------------------nav menu for design---------------- */
+                                                    #menuToggle-design {
+                                                    top: 35px;
+                                                    right: 10px;
+                                                    position: fixed;
+                                                    width: 100px;
+                                                    height: 35px;
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    justify-content: center;
+                                                    align-items: center;
+                                                    background: transparent;
+                                                    margin-right: 5%;
+                                                    z-index: 1;
+                                                    }
+                                                    #menuToggle-design input {
+                                                    display: flex;
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    cursor: pointer;
+                                                    opacity: 0; /* hide input */
+                                                    z-index: 1; /* top of the menu */
+                                                    }
+                                                    #menuToggle-design span{
+                                                    width: 19px;
+                                                    height: 2px;
+                                                    margin: 2px;
+                                                    background-color:black ;
+                                                    transition: all 0.3s cubic-bezier(.455,.03,.515,.955);
+                                                    }
+                                                    
+                                                    #menuToggle-design input:checked ~ #span1 {
+                                                    
+                                                    transform: rotate(45deg) translate(7px);
+                                                    }
+                                                    #menuToggle-design input:checked ~ #span2 {
+                                                     
+                                                    transform: translateX(-40px);
+                                                    opacity: 0;
+                                                    }
+                                                    #menuToggle-design input:checked ~ #span3 {
+                                                    transform: rotate(-45deg) translate(8px);
+                                                    }
+                                                    .nav1-design a{
+                                                        text-decoration: none;
+                                                        font-family: BW Gradual ;
+                                                        font-size: 15px;
+                                                        color: black;
+                                                        margin-top: 100px;
+                                                        margin-right: 20px;
+                                                        position: relative;
+                                                        transition: 0.5s;
+                                                        -webkit-animation: 0.5s;
+                                                        -moz-transition: 0.5s;
+                                                        -ms-transition:0.5s;
+                                                        -o-transition: 0.5s;
+                                                        }
+                                                        
+                                                        .nav1-design a::before{
+                                                        position:absolute;
+                                                        content: '';
+                                                        height: 2px;
+                                                        left: 0px;
+                                                        width: 0px;
+                                                        background-color:rgb(28, 28, 28);
+                                                        bottom: 0px;
+                                                        transition: 0.5s;
+                                                        -webkit-animation: 0.5s;
+                                                        -moz-transition: 0.5s;
+                                                        -ms-transition:0.5s;
+                                                        -o-transition: 0.5s;
+                                                        }
+                                                        .nav1-design a:hover{
+                                                        color: rgb(27, 27, 27);
+                                                        }
+                                                        .nav1-design a:hover::before{
+                                                        width: 100%;
+                                                        height: 0.7px;
+                                                        }
+                        
+                                }
+
+
+        }
